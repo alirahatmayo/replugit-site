@@ -43,21 +43,42 @@ jobs:
       
       - name: Build Next.js app
         run: |
+          echo "Starting build process..."
+          echo "Current directory contents:"
+          ls -la
+          echo "Package.json scripts:"
+          cat package.json | grep -A 10 '"scripts"'
+          echo "Next.js config:"
+          cat next.config.ts
+          echo "Running npm run build..."
           npm run build
           echo "Build completed, checking output..."
           ls -la
+          echo "Looking for out directory..."
+          find . -name "out" -type d 2>/dev/null || echo "No out directory found"
+          echo "Looking for .next directory..."
+          find . -name ".next" -type d 2>/dev/null || echo "No .next directory found"
           if [ -d "out" ]; then
             echo "✅ Out directory exists"
             ls -la out/ | head -10
-          else
-            echo "❌ Out directory missing - trying alternative build"
-            npx next build
+          elif [ -d ".next" ]; then
+            echo "⚠️ Found .next but no out directory - trying export script"
+            npm run export || echo "Export script failed"
             if [ -d "out" ]; then
-              echo "✅ Alternative build successful"
+              echo "✅ Export script successful"
             else
-              echo "❌ Build failed - no out directory created"
-              exit 1
+              echo "❌ Export script failed - trying deploy script"
+              npm run deploy || echo "Deploy script failed"
+              if [ -d "out" ]; then
+                echo "✅ Deploy script successful"
+              else
+                echo "❌ All build methods failed"
+                exit 1
+              fi
             fi
+          else
+            echo "❌ No build output found at all"
+            exit 1
           fi
       
       - name: Setup Pages
