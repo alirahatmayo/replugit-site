@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  // For GitHub Pages deployment
-  basePath: process.env.NODE_ENV === 'production' ? '/replugit-site' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/replugit-site/' : '',
+  // For custom domain deployment - no basePath needed
+  // basePath: process.env.NODE_ENV === 'production' ? '/replugit-site' : '',
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '/replugit-site/' : '',
 };
 
 export default nextConfig;
