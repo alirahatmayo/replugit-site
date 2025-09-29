@@ -1,0 +1,152 @@
+{
+  "video_prompt_8_second": {
+    "title": "Replugit Scroll Transformation - Junk to Retail Ready",
+    "duration": "8 seconds",
+    "aspect_ratio": "16:9",
+    "resolution": "1920x1080",
+    "style": "Cinematic product transformation with scroll metaphor",
+    "color_palette": ["#10B981", "#1B4332", "#1E293B", "#64748B", "#FFFFFF"],
+
+    "concept": "Camera pans horizontally across a row of laptops that magically transform from junk to retail-ready as they 'scroll' through the frame, mimicking website scroll behavior",
+
+    "detailed_scene_breakdown": {
+      "0-1s": {
+        "description": "Static shot: 5 severely damaged laptops in a row - cracked screens, missing keys, scratched cases, cables everywhere",
+        "camera": "Wide shot, all laptops visible, slight downward angle",
+        "lighting": "Dim, industrial lighting with harsh shadows",
+        "mood": "Problem state - chaotic, neglected electronics"
+      },
+
+      "1-3s": {
+        "description": "Camera begins smooth horizontal pan from left to right. As each laptop enters the 'sweet spot' center of frame, it instantly transforms",
+        "camera": "Smooth lateral tracking shot, maintaining consistent framing",
+        "lighting": "Lighting gradually becomes brighter and cleaner",
+        "transformation_effect": "Magical shimmer/particle effect as each device transforms"
+      },
+
+      "3-6s": {
+        "description": "Transformation sequence: Laptop 1 & 2 become pristine - screens repair, keyboards complete, cases polish to perfection",
+        "camera": "Continued smooth pan, each laptop gets 1 second of transformation time",
+        "lighting": "Professional product lighting kicks in as each transforms",
+        "visual_effects": "Subtle green glow (#10B981) emanates during transformation"
+      },
+
+      "6-8s": {
+        "description": "Final reveal: All 5 laptops now retail-ready, camera completes pan. Text overlay: 'Scroll into Grade A quality'",
+        "camera": "Pan completes, slight pull-back to show all transformed laptops",
+        "lighting": "Bright, premium retail lighting across entire scene",
+        "branding": "Replugit logo appears bottom right, tagline fades in"
+      }
+    },
+
+    "scroll_metaphor_elements": [
+      "Horizontal camera movement mimics web scrolling",
+      "Transformation happens as devices enter 'viewport center'",
+      "Progressive revelation mirrors scroll-triggered animations",
+      "Smooth, continuous motion like smooth scrolling",
+      "Text appears as if scrolling into view"
+    ],
+
+    "transformation_details": {
+      "before_state": [
+        "Cracked LCD screens with visible damage",
+        "Missing keyboard keys",
+        "Scratched and dented cases",
+        "Tangled cables and debris",
+        "Dusty, worn appearance"
+      ],
+
+      "transformation_effect": [
+        "Magical particle shimmer in Replugit green",
+        "Subtle 'whoosh' sound effect",
+        "Brief golden glow during change",
+        "Smooth morph, not jump cut",
+        "Professional lighting enhancement"
+      ],
+
+      "after_state": [
+        "Pristine HD screens displaying clean desktop",
+        "Complete keyboards with perfect keys",
+        "Polished cases reflecting studio lights",
+        "Organized, premium presentation",
+        "Retail-ready appearance"
+      ]
+    },
+
+    "technical_execution": {
+      "camera_movement": "Smooth gimbal tracking shot, consistent speed",
+      "timing": "1.6 seconds per laptop transformation",
+      "visual_effects": "Subtle particle system, color grading enhancement",
+      "lighting_transition": "Gradual shift from industrial to premium retail",
+      "sound_design": "Whoosh for movement, chime for each transformation"
+    },
+
+    "text_overlays": {
+      "6s": "'Scroll into Grade A quality' fades in",
+      "7s": "'Replugit.com' appears bottom right",
+      "7.5s": "Subtle 'Learn More' call-to-action"
+    }
+  },
+
+  "web_integration_concept": {
+    "scroll_trigger_implementation": "Video plays as user scrolls through hero section, creating seamless interaction between video content and scroll behavior",
+
+    "user_experience": [
+      "Video starts paused on frame 1 (junk laptops)",
+      "As user scrolls down, video progresses frame by frame",
+      "Transformation happens in sync with scroll position",
+      "Creates illusion that user scrolling is causing the transformation",
+      "Can loop back if user scrolls up"
+    ],
+
+    "technical_specs": {
+      "format": "MP4 with frame-by-frame control capability",
+      "optimization": "Compressed for web, smooth playback",
+      "fallback": "Static hero image for mobile/low bandwidth",
+      "accessibility": "Alt text describing transformation concept"
+    }
+  },
+
+  "alternative_8_second_concepts": {
+    "concept_2_stack_transformation": {
+      "description": "Vertical stack of damaged devices that transform one by one from bottom to top as camera tilts upward",
+      "metaphor": "Scrolling through inventory grades",
+      "duration": "8 seconds - 1.5s per device"
+    },
+
+    "concept_3_conveyor_belt": {
+      "description": "Damaged devices enter left side of conveyor belt, travel through 'Replugit process zone' (compressed into 4 seconds), emerge right side as Grade A",
+      "metaphor": "Manufacturing process efficiency",
+      "visual_highlight": "Green transformation zone in center"
+    },
+
+    "concept_4_before_after_reveal": {
+      "description": "Split screen that slides from left (damaged) to right (restored), revealing transformation section by section",
+      "metaphor": "Progressive web app reveal",
+      "timing": "Smooth 8-second wipe transition"
+    }
+  },
+
+  "production_notes": {
+    "prop_requirements": [
+      "5 identical laptop models in various damage states",
+      "5 pristine versions of the same laptop models",
+      "Professional studio lighting setup",
+      "Smooth camera tracking system"
+    ],
+
+    "post_production": [
+      "Color grading for dramatic before/after contrast",
+      "Particle effects for transformation moments",
+      "Sound design for whoosh and transformation chimes",
+      "Text animation for overlays"
+    ],
+
+    "brand_integration": [
+      "Replugit green (#10B981) for transformation effects",
+      "Clean typography matching website",
+      "Subtle logo placement",
+      "Consistent with existing brand aesthetic"
+    ]
+  }
+}

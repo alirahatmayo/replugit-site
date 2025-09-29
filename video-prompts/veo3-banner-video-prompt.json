@@ -1,0 +1,94 @@
+{
+  "video_prompt": {
+    "title": "Replugit Banner Video - Electronics Transformation",
+    "duration": "15 seconds",
+    "aspect_ratio": "16:9",
+    "resolution": "1920x1080",
+    "style": "Professional, modern, clean corporate aesthetic",
+    "color_palette": ["#10B981", "#1B4332", "#1E293B", "#64748B", "#FFFFFF"],
+
+    "scene_breakdown": {
+      "0-3s": {
+        "description": "Close-up of weathered, scratched Grade C smartphone lying on industrial metal surface",
+        "camera": "Macro lens, shallow depth of field",
+        "lighting": "Dramatic side lighting emphasizing scratches and wear",
+        "mood": "Problem state - worn, neglected"
+      },
+
+      "3-6s": {
+        "description": "Smooth transition to clean, modern workspace. Skilled technician's hands in white gloves carefully examining the device with precision tools",
+        "camera": "Medium shot transitioning to close-up of hands",
+        "lighting": "Bright, clinical white lighting",
+        "mood": "Professional expertise and care"
+      },
+
+      "6-9s": {
+        "description": "Time-lapse montage: device disassembly, component testing with digital multimeters, screen replacement, cleaning processes",
+        "camera": "Multiple angles, quick cuts, overhead shots",
+        "lighting": "Clean laboratory lighting",
+        "mood": "Precision, technology, transformation"
+      },
+
+      "9-12s": {
+        "description": "Device reassembly with new components, final quality testing showing 'GRADE A CERTIFIED' on digital display",
+        "camera": "Close-up of certification screen, pull back to full device",
+        "lighting": "Soft professional lighting with green accent (#10B981)",
+        "mood": "Achievement, quality, trust"
+      },
+
+      "12-15s": {
+        "description": "Final reveal: pristine Grade A device on premium white surface, subtle Replugit logo overlay, tagline appears: 'Replug into performance. Unplug from waste.'",
+        "camera": "Hero product shot, slow zoom out",
+        "lighting": "Premium product photography lighting",
+        "mood": "Success, premium quality, environmental consciousness"
+      }
+    },
+
+    "key_elements": [
+      "Smooth transitions between scenes",
+      "Minimal text overlay - focus on visual storytelling",
+      "Professional hands wearing white gloves",
+      "High-tech testing equipment and tools",
+      "Clean, sterile work environment",
+      "Subtle environmental elements (green accents, recycling symbols)",
+      "Grade transformation clearly visible",
+      "Modern typography for final tagline"
+    ],
+
+    "audio_requirements": {
+      "background_music": "Ambient, tech-forward, inspiring without being overwhelming",
+      "sound_effects": [
+        "Subtle tool sounds (screwdriver, component clicks)",
+        "Electronic beeps from testing equipment",
+        "Soft 'whoosh' for transitions",
+        "Satisfying 'click' for final assembly"
+      ],
+      "voiceover": "None - purely visual storytelling"
+    },
+
+    "brand_elements": {
+      "logo_placement": "Subtle watermark in bottom right, more prominent in final frame",
+      "color_consistency": "Replugit green (#10B981) for UI elements and accents",
+      "typography": "Clean, modern sans-serif for tagline",
+      "brand_mood": "Professional, trustworthy, innovative, environmentally conscious"
+    }
+  },
+
+  "technical_specifications": {
+    "format": "MP4",
+    "codec": "H.264",
+    "frame_rate": "30fps",
+    "bitrate": "High quality for web use",
+    "optimization": "Optimized for both desktop and mobile viewing"
+  },
+
+  "usage_context": {
+    "primary_use": "Website hero section background video",
+    "secondary_uses": [
+      "Social media marketing",
+      "Email campaigns",
+      "Trade show displays",
+      "Investor presentations"
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+<table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; max-width: 500px;">
+  <tr>
+    <td style="padding-right: 20px; vertical-align: top;">
+      <!-- Animated Replugit Logo -->
+      <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="plugGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#3498db;stop-opacity:1">
+              <animate attributeName="stop-color" values="#3498db;#2ecc71;#e74c3c;#3498db" dur="4s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:1">
+              <animate attributeName="stop-color" values="#2ecc71;#e74c3c;#3498db;#2ecc71" dur="4s" repeatCount="indefinite"/>
+            </stop>
+          </linearGradient>
+        </defs>
+        
+        <!-- Background Circle -->
+        <circle cx="40" cy="40" r="38" fill="none" stroke="#ecf0f1" stroke-width="2">
+          <animate attributeName="stroke-dasharray" values="0 240;120 120;240 0" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Plug Icon -->
+        <g transform="translate(25, 25)">
+          <!-- Plug Body -->
+          <rect x="8" y="15" width="14" height="15" rx="2" fill="url(#plugGradient)">
+            <animateTransform attributeName="transform" type="rotate" values="0 15 22.5;5 15 22.5;-5 15 22.5;0 15 22.5" dur="2s" repeatCount="indefinite"/>
+          </rect>
+          
+          <!-- Plug Pins -->
+          <rect x="11" y="10" width="2" height="8" fill="url(#plugGradient)">
+            <animate attributeName="height" values="8;10;8" dur="1.5s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="17" y="10" width="2" height="8" fill="url(#plugGradient)">
+            <animate attributeName="height" values="8;10;8" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+          </rect>
+          
+          <!-- Power Waves -->
+          <circle cx="15" cy="22" r="3" fill="none" stroke="#3498db" stroke-width="1" opacity="0.6">
+            <animate attributeName="r" values="3;8;3" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="15" cy="22" r="5" fill="none" stroke="#2ecc71" stroke-width="1" opacity="0.4">
+            <animate attributeName="r" values="5;12;5" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </svg>
+    </td>
+    <td style="vertical-align: top;">
+      <!-- Animated Name with Gradient -->
+      <div style="font-weight: bold; font-size: 18px; margin-bottom: 5px; position: relative;">
+        <span style="background: linear-gradient(45deg, #2c3e50, #3498db, #2ecc71); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          Ali K.
+        </span>
+        <!-- Animated underline -->
+        <div style="height: 2px; background: linear-gradient(90deg, #3498db, #2ecc71); margin-top: 2px; width: 0%; animation: expandLine 2s ease-in-out infinite;"></div>
+      </div>
+      
+      <div style="color: #3498db; font-weight: 500; margin-bottom: 5px; position: relative;">
+        CEO & Co-Founder
+        <!-- Animated bullet point -->
+        <span style="margin-left: 8px; color: #2ecc71; font-size: 12px;">●</span>
+      </div>
+      
+      <div style="margin-bottom: 5px; position: relative;">
+        <span style="color: #7f8c8d; font-weight: 600;">Replugit</span>
+        <!-- Animated sustainability icon -->
+        <svg width="16" height="16" style="margin-left: 8px; vertical-align: middle;" viewBox="0 0 16 16">
+          <circle cx="8" cy="8" r="6" fill="none" stroke="#2ecc71" stroke-width="1.5">
+            <animate attributeName="stroke-dasharray" values="0 37.7;18.85 18.85;37.7 0" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <path d="M5 8l2 2 4-4" fill="none" stroke="#2ecc71" stroke-width="1.5" stroke-linecap="round">
+            <animate attributeName="stroke-dasharray" values="0 8;8 0" dur="1s" begin="1s" repeatCount="indefinite"/>
+          </path>
+        </svg>
+      </div>
+      
+      <div style="margin-bottom: 15px;">
+        <div style="margin-bottom: 5px; display: flex; align-items: center;">
+          <!-- Animated Email Icon -->
+          <svg width="16" height="16" style="margin-right: 8px;" viewBox="0 0 16 16">
+            <rect x="2" y="4" width="12" height="8" rx="1" fill="none" stroke="#2c3e50" stroke-width="1">
+              <animate attributeName="stroke" values="#2c3e50;#3498db;#2c3e50" dur="3s" repeatCount="indefinite"/>
+            </rect>
+            <path d="M2 6l6 4 6-4" fill="none" stroke="#2c3e50" stroke-width="1">
+              <animate attributeName="stroke" values="#2c3e50;#3498db;#2c3e50" dur="3s" repeatCount="indefinite"/>
+              <animateTransform attributeName="transform" type="translate" values="0 0;0 -1;0 0" dur="2s" repeatCount="indefinite"/>
+            </path>
+          </svg>
+          <a href="mailto:ali@replugit.com" style="color: #2c3e50; text-decoration: none;">ali@replugit.com</a>
+        </div>
+        
+        <div style="margin-bottom: 5px; display: flex; align-items: center;">
+          <!-- Animated Phone Icon -->
+          <svg width="16" height="16" style="margin-right: 8px;" viewBox="0 0 16 16">
+            <rect x="4" y="2" width="8" height="12" rx="1.5" fill="none" stroke="#2c3e50" stroke-width="1">
+              <animate attributeName="stroke" values="#2c3e50;#2ecc71;#2c3e50" dur="2.5s" repeatCount="indefinite"/>
+            </rect>
+            <circle cx="8" cy="12" r="1" fill="#2c3e50">
+              <animate attributeName="fill" values="#2c3e50;#2ecc71;#2c3e50" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Signal waves -->
+            <path d="M6 4h4" stroke="#2c3e50" stroke-width="0.5" opacity="0.6">
+              <animate attributeName="opacity" values="0.6;1;0.6" dur="1s" repeatCount="indefinite"/>
+            </path>
+          </svg>
+          <a href="tel:+14168184435" style="color: #2c3e50; text-decoration: none;">+1 (416) 818-4435</a>
+        </div>
+        
+        <div style="margin-bottom: 5px; display: flex; align-items: center;">
+          <!-- Animated Globe Icon -->
+          <svg width="16" height="16" style="margin-right: 8px;" viewBox="0 0 16 16">
+            <circle cx="8" cy="8" r="6" fill="none" stroke="#3498db" stroke-width="1">
+              <animateTransform attributeName="transform" type="rotate" values="0 8 8;360 8 8" dur="10s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M2 8h12M8 2a6 6 0 0 0 0 12 6 6 0 0 0 0-12" fill="none" stroke="#3498db" stroke-width="0.8"/>
+            <circle cx="8" cy="8" r="1" fill="#3498db">
+              <animate attributeName="r" values="1;1.5;1" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+          <a href="https://www.replugit.com" style="color: #3498db; text-decoration: none;">www.replugit.com</a>
+        </div>
+      </div>
+      
+      <!-- Animated Divider -->
+      <div style="position: relative; margin-bottom: 10px;">
+        <div style="height: 1px; background: linear-gradient(90deg, transparent, #ecf0f1, transparent);"></div>
+        <div style="height: 1px; background: linear-gradient(90deg, transparent, #3498db, transparent); position: absolute; top: 0; width: 0%; animation: shimmer 3s ease-in-out infinite;"></div>
+      </div>
+      
+      <div style="font-size: 11px; color: #95a5a6; position: relative;">
+        <!-- Animated lock icon -->
+        <svg width="12" height="12" style="margin-right: 5px; vertical-align: middle;" viewBox="0 0 12 12">
+          <rect x="3" y="5" width="6" height="4" rx="0.5" fill="none" stroke="#95a5a6" stroke-width="0.8"/>
+          <path d="M4 5V3.5a2 2 0 1 1 4 0V5" fill="none" stroke="#95a5a6" stroke-width="0.8"/>
+          <circle cx="6" cy="7" r="0.5" fill="#95a5a6">
+            <animate attributeName="fill" values="#95a5a6;#f39c12;#95a5a6" dur="4s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+        This email and any attachments are confidential and may be privileged.
+      </div>
+    </td>
+  </tr>
+</table>
+
+<!-- CSS Animations (some email clients support this) -->
+<style>
+  @keyframes expandLine {
+    0%, 100% { width: 0%; }
+    50% { width: 60%; }
+  }
+  
+  @keyframes shimmer {
+    0% { width: 0%; left: 0%; }
+    50% { width: 100%; left: 0%; }
+    100% { width: 0%; left: 100%; }
+  }
+  
+  /* Pulse effect for better email client compatibility */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+</style>

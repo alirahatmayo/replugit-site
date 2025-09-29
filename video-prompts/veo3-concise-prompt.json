@@ -1,0 +1,54 @@
+{
+  "google_veo3_prompt": {
+    "title": "Replugit 8-Second Scroll Transformation",
+    "duration": "8 seconds",
+    "aspect_ratio": "16:9",
+    "character_count": 896,
+
+    "optimized_prompt": "Create 8-second cinematic video: 5 damaged laptops in row (cracked screens, missing keys, scratched cases). Camera smoothly pans left-to-right mimicking scroll behavior. Each laptop magically transforms to pristine retail condition with green shimmer effect (#10B981) as it enters frame center. Start: dim industrial lighting on junk devices. End: bright premium lighting on perfect Grade A laptops. Text overlay at 6s: 'Scroll into Grade A quality'. Professional product photography style, smooth gimbal movement, subtle particle effects during transformation. Replugit logo bottom-right at end.",
+
+    "key_elements_included": [
+      "8-second duration specified",
+      "5 laptops transformation concept",
+      "Scroll metaphor with camera pan",
+      "Before/after state contrast",
+      "Brand color integration (#10B981)",
+      "Professional lighting transition",
+      "Text overlay timing",
+      "Logo placement",
+      "Visual effects description"
+    ],
+
+    "alternative_shorter_prompts": {
+      "version_a_minimalist": {
+        "character_count": 512,
+        "prompt": "8-second video: Camera pans across 5 damaged laptops that magically transform to pristine condition with green shimmer effects. Starts dim lighting on broken devices, ends bright lighting on perfect Grade A laptops. Text: 'Scroll into Grade A quality'. Professional cinematic style, smooth movement, Replugit branding."
+      },
+
+      "version_b_action_focused": {
+        "character_count": 678,
+        "prompt": "Create 8-second transformation video: 5 junk laptops (cracked, damaged) in row. Camera smoothly pans left-to-right. Each laptop magically repairs to retail-ready condition with green particle effect as it enters center frame. Industrial lighting becomes premium studio lighting. End with 'Scroll into Grade A quality' text overlay. Professional product shot, cinematic style."
+      },
+
+      "version_c_brand_focused": {
+        "character_count": 743,
+        "prompt": "8-second Replugit brand video: Horizontal camera pan across 5 severely damaged laptops that transform into pristine Grade A devices. Green shimmer effect (#10B981) during each transformation. Lighting shifts from harsh industrial to premium retail. Text appears: 'Scroll into Grade A quality'. Smooth gimbal movement, professional studio aesthetic, subtle Replugit logo placement."
+      }
+    },
+
+    "prompt_breakdown": {
+      "core_concept": "8-second transformation video with scroll metaphor",
+      "visual_elements": "5 laptops, damage-to-pristine transformation",
+      "camera_work": "Smooth horizontal pan left-to-right",
+      "effects": "Green shimmer, lighting transition, particle effects",
+      "branding": "Replugit colors, logo, tagline text",
+      "style": "Professional cinematic product photography"
+    },
+
+    "submission_ready": {
+      "final_prompt": "Create 8-second cinematic video: 5 damaged laptops in row (cracked screens, missing keys, scratched cases). Camera smoothly pans left-to-right mimicking scroll behavior. Each laptop magically transforms to pristine retail condition with green shimmer effect (#10B981) as it enters frame center. Start: dim industrial lighting on junk devices. End: bright premium lighting on perfect Grade A laptops. Text overlay at 6s: 'Scroll into Grade A quality'. Professional product photography style, smooth gimbal movement, subtle particle effects during transformation. Replugit logo bottom-right at end.",
+      "character_count": 896,
+      "within_limit": true
+    }
+  }
+}

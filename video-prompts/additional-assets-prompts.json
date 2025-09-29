@@ -1,0 +1,119 @@
+{
+  "additional_video_assets": {
+    "short_form_social_video": {
+      "title": "Replugit 60-Second Process Showcase",
+      "duration": "60 seconds",
+      "aspect_ratio": "9:16 (vertical for TikTok/Instagram Stories)",
+      "description": "Detailed walkthrough of the 6-day refurbishment process with on-screen text callouts",
+
+      "scene_breakdown": {
+        "0-10s": "Day 1: Device intake and initial assessment with tracking number generation",
+        "10-20s": "Day 2: Complete disassembly and component cataloging",
+        "20-30s": "Day 3: Individual component testing and quality scoring",
+        "30-40s": "Day 4: Replacement of failed components and cleaning",
+        "40-50s": "Day 5: Reassembly and comprehensive quality testing",
+        "50-60s": "Day 6: Final certification and packaging for shipment"
+      },
+
+      "text_overlays": [
+        "TRACK: Every device gets unique ID",
+        "TEST: 47-point quality inspection",
+        "PROVE: Grade A certification guaranteed"
+      ]
+    },
+
+    "environmental_impact_animation": {
+      "title": "Replugit Environmental Impact Visualization",
+      "duration": "30 seconds",
+      "aspect_ratio": "16:9",
+      "style": "Motion graphics animation",
+
+      "description": "Animated infographic showing environmental benefits of refurbishment vs new device manufacturing",
+
+      "key_visuals": [
+        "70kg CO₂ saved per device (animated counter)",
+        "Circular economy flow diagram",
+        "Landfill waste reduction visualization",
+        "Carbon footprint comparison charts",
+        "Tree planting equivalency animation"
+      ],
+
+      "color_scheme": "Replugit green with earth tones",
+      "animation_style": "Clean, modern motion graphics with smooth transitions"
+    },
+
+    "trust_building_testimonial_template": {
+      "title": "Customer Success Story Template",
+      "duration": "45 seconds",
+      "aspect_ratio": "16:9",
+      "format": "Green screen template for real customer testimonials",
+
+      "background_elements": [
+        "Subtle Replugit branding",
+        "Quality certification badges",
+        "Professional office environment",
+        "Before/after device comparison"
+      ],
+
+      "lower_thirds": [
+        "Customer name and company",
+        "Device type and quantity",
+        "Satisfaction rating visualization"
+      ]
+    }
+  },
+
+  "supporting_asset_prompts": {
+    "hero_background_images": {
+      "prompt_1": "Ultra-high resolution product photography of pristine Grade A refurbished smartphones arranged in perfect grid pattern on white background, professional studio lighting, shallow depth of field, minimalist composition, Replugit green accent lighting",
+
+      "prompt_2": "Modern electronics refurbishment laboratory, clean white surfaces, high-tech testing equipment, organized tool stations, bright LED lighting, professional technicians in background (slightly blurred), conveying precision and expertise",
+
+      "prompt_3": "Close-up macro photography of circuit board components being tested, colorful electronic components, precision instruments, shallow depth of field with Replugit green accent lighting, conveying technical expertise"
+    },
+
+    "icon_illustrations": {
+      "tracking_icon": "Minimalist line art icon of smartphone with location pin and dotted path, Replugit green (#10B981), suitable for web use at multiple sizes",
+
+      "testing_icon": "Simple line art icon of magnifying glass over circuit board, professional style, Replugit brand colors, scalable vector graphic",
+
+      "certification_icon": "Clean badge/shield icon with checkmark, premium feel, Replugit green and dark gray, conveying trust and quality",
+
+      "environmental_icon": "Stylized recycling symbol with leaf elements, modern interpretation, Replugit green, environmental consciousness"
+    },
+
+    "infographic_elements": {
+      "process_timeline": "Horizontal timeline graphic showing 6-day process, each day represented by icon and brief description, Replugit brand colors, clean modern design",
+
+      "quality_comparison_chart": "Before/after comparison graphic showing Grade C vs Grade A specifications, professional charts and graphs, easy to understand visuals",
+
+      "environmental_impact_infographic": "Comprehensive infographic showing CO₂ savings, waste reduction, and environmental benefits with visual metaphors and statistics"
+    }
+  },
+
+  "music_and_audio_prompts": {
+    "background_music_brief": {
+      "style": "Corporate ambient electronic",
+      "mood": "Professional, inspiring, forward-thinking",
+      "instruments": "Subtle synthesizers, soft percussion, ambient pads",
+      "tempo": "Moderate (120-130 BPM)",
+      "duration": "Loop-able for various video lengths",
+      "energy": "Building from calm to inspiring without being overwhelming"
+    },
+
+    "sound_design_elements": [
+      "Precise tool sounds (screwdriver, component placement)",
+      "Electronic testing equipment beeps and chirps",
+      "Smooth transition whooshes",
+      "Satisfying mechanical clicks",
+      "Subtle ambient workshop atmosphere"
+    ]
+  },
+
+  "implementation_guidelines": {
+    "file_organization": "Organize all assets with consistent naming convention: replugit_[asset-type]_[description]_[dimensions]",
+    "web_optimization": "Provide multiple formats and sizes for responsive design",
+    "brand_consistency": "All assets must use official Replugit color palette and typography",
+    "accessibility": "Include alt-text descriptions for all visual assets"
+  }
+}
