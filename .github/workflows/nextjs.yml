@@ -39,94 +39,58 @@ jobs:
           cache: "npm"
       
       - name: Install dependencies
-        run: npm ci
-      
-      - name: Debug environment
         run: |
-          echo "=== Environment Debug ==="
-          pwd
+          echo "Installing dependencies..."
+          npm ci
+          echo "Dependencies installed successfully"
+      
+      - name: Build Next.js app
+        run: |
+          echo "Starting build..."
+          echo "Current directory: $(pwd)"
           echo "Node version: $(node --version)"
           echo "NPM version: $(npm --version)"
-          echo "=== Directory contents before build ==="
-          ls -la
-          echo "=== Package.json scripts ==="
-          cat package.json | grep -A 10 '"scripts"'
-          echo "=== Next.js config ==="
-          cat next.config.ts
-      
-      - name: Build with detailed logging
-        run: |
-          echo "=== Starting build process ==="
-          set -x  # Enable command tracing
-          npm run build 2>&1 | tee build.log
-          BUILD_EXIT_CODE=${PIPESTATUS[0]}
-          set +x  # Disable command tracing
-          echo "=== Build exit code: $BUILD_EXIT_CODE ==="
-          if [ $BUILD_EXIT_CODE -ne 0 ]; then
-            echo "❌ Build failed with exit code $BUILD_EXIT_CODE"
-            echo "=== Build log ==="
-            cat build.log
-            exit $BUILD_EXIT_CODE
-          fi
-          echo "✅ Build completed successfully"
-      
-      - name: Verify build output
-        run: |
-          echo "=== Post-build directory contents ==="
-          ls -la
-          echo "=== Looking for any 'out' directories recursively ==="
-          find . -name "out" -type d 2>/dev/null || echo "No 'out' directories found"
-          echo "=== Looking for any '.next' directories ==="
-          find . -name ".next" -type d 2>/dev/null || echo "No '.next' directories found"
-          echo "=== Contents of current directory ==="
-          for item in *; do
-            if [ -d "$item" ]; then
-              echo "Directory: $item/"
-              ls -la "$item/" | head -5
-            else
-              echo "File: $item"
-            fi
-          done
           
-          # Try to find the actual build output
-          if [ -d "out" ]; then
-            echo "✅ Found out/ directory"
-            ls -la out/
-            echo "out/ contains $(ls out/ | wc -l) items"
-          elif [ -d ".next" ]; then
-            echo "⚠️ Found .next/ but no out/ - trying manual export"
-            npx next export
-            if [ -d "out" ]; then
-              echo "✅ Manual export created out/ directory"
-              ls -la out/
+          # Create a simple build that should work
+          echo "Running build command..."
+          npm run build || {
+            echo "Build failed, trying alternative methods..."
+            
+            # Try with explicit next export
+            echo "Trying npm run export..."
+            npm run export || {
+              echo "Export failed, trying manual export..."
+              npx next build && npx next export || {
+                echo "All build methods failed"
+                exit 1
+              }
+            }
+          }
+          
+          echo "Build completed, checking output..."
+          ls -la
+          
+          # Make sure out directory exists
+          if [ ! -d "out" ]; then
+            echo "No out directory found, listing all directories:"
+            find . -type d -name "*" | head -20
+            echo "Creating out directory manually if .next exists..."
+            if [ -d ".next" ]; then
+              echo "Found .next directory, trying export..."
+              npx next export
             else
-              echo "❌ Manual export failed"
+              echo "No .next directory either - build completely failed"
               exit 1
             fi
+          fi
+          
+          if [ -d "out" ]; then
+            echo "✅ Out directory exists with $(ls out/ | wc -l) files"
+            echo "Sample files in out/:"
+            ls -la out/ | head -10
           else
-            echo "❌ No build output found - build may have failed"
-            echo "Trying alternative build methods..."
-            
-            # Try the export script
-            echo "Trying npm run export..."
-            npm run export || echo "Export script failed"
-            
-            if [ -d "out" ]; then
-              echo "✅ Export script worked"
-            else
-              echo "Export script didn't create out/ directory"
-              
-              # Last resort - try deploy script
-              echo "Trying npm run deploy..."
-              npm run deploy || echo "Deploy script failed"
-              
-              if [ -d "out" ]; then
-                echo "✅ Deploy script worked"
-              else
-                echo "❌ All methods failed"
-                exit 1
-              fi
-            fi
+            echo "❌ Still no out directory after all attempts"
+            exit 1
           fi
       
       - name: Setup Pages
