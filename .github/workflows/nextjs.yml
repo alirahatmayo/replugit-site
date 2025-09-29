@@ -31,21 +31,43 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "npm"
+      
       - name: Install dependencies
         run: npm ci
-      - name: Build
-        run: npm run build
+      
+      - name: Build Next.js app
+        run: |
+          npm run build
+          echo "Build completed, checking output..."
+          ls -la
+          if [ -d "out" ]; then
+            echo "✅ Out directory exists"
+            ls -la out/ | head -10
+          else
+            echo "❌ Out directory missing - trying alternative build"
+            npx next build
+            if [ -d "out" ]; then
+              echo "✅ Alternative build successful"
+            else
+              echo "❌ Build failed - no out directory created"
+              exit 1
+            fi
+          fi
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: './out'
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
