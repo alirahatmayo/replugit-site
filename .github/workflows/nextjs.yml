@@ -41,44 +41,92 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build Next.js app
+      - name: Debug environment
         run: |
-          echo "Starting build process..."
-          echo "Current directory contents:"
+          echo "=== Environment Debug ==="
+          pwd
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "=== Directory contents before build ==="
           ls -la
-          echo "Package.json scripts:"
+          echo "=== Package.json scripts ==="
           cat package.json | grep -A 10 '"scripts"'
-          echo "Next.js config:"
+          echo "=== Next.js config ==="
           cat next.config.ts
-          echo "Running npm run build..."
-          npm run build
-          echo "Build completed, checking output..."
+      
+      - name: Build with detailed logging
+        run: |
+          echo "=== Starting build process ==="
+          set -x  # Enable command tracing
+          npm run build 2>&1 | tee build.log
+          BUILD_EXIT_CODE=${PIPESTATUS[0]}
+          set +x  # Disable command tracing
+          echo "=== Build exit code: $BUILD_EXIT_CODE ==="
+          if [ $BUILD_EXIT_CODE -ne 0 ]; then
+            echo "❌ Build failed with exit code $BUILD_EXIT_CODE"
+            echo "=== Build log ==="
+            cat build.log
+            exit $BUILD_EXIT_CODE
+          fi
+          echo "✅ Build completed successfully"
+      
+      - name: Verify build output
+        run: |
+          echo "=== Post-build directory contents ==="
           ls -la
-          echo "Looking for out directory..."
-          find . -name "out" -type d 2>/dev/null || echo "No out directory found"
-          echo "Looking for .next directory..."
-          find . -name ".next" -type d 2>/dev/null || echo "No .next directory found"
-          if [ -d "out" ]; then
-            echo "✅ Out directory exists"
-            ls -la out/ | head -10
-          elif [ -d ".next" ]; then
-            echo "⚠️ Found .next but no out directory - trying export script"
-            npm run export || echo "Export script failed"
-            if [ -d "out" ]; then
-              echo "✅ Export script successful"
+          echo "=== Looking for any 'out' directories recursively ==="
+          find . -name "out" -type d 2>/dev/null || echo "No 'out' directories found"
+          echo "=== Looking for any '.next' directories ==="
+          find . -name ".next" -type d 2>/dev/null || echo "No '.next' directories found"
+          echo "=== Contents of current directory ==="
+          for item in *; do
+            if [ -d "$item" ]; then
+              echo "Directory: $item/"
+              ls -la "$item/" | head -5
             else
-              echo "❌ Export script failed - trying deploy script"
+              echo "File: $item"
+            fi
+          done
+          
+          # Try to find the actual build output
+          if [ -d "out" ]; then
+            echo "✅ Found out/ directory"
+            ls -la out/
+            echo "out/ contains $(ls out/ | wc -l) items"
+          elif [ -d ".next" ]; then
+            echo "⚠️ Found .next/ but no out/ - trying manual export"
+            npx next export
+            if [ -d "out" ]; then
+              echo "✅ Manual export created out/ directory"
+              ls -la out/
+            else
+              echo "❌ Manual export failed"
+              exit 1
+            fi
+          else
+            echo "❌ No build output found - build may have failed"
+            echo "Trying alternative build methods..."
+            
+            # Try the export script
+            echo "Trying npm run export..."
+            npm run export || echo "Export script failed"
+            
+            if [ -d "out" ]; then
+              echo "✅ Export script worked"
+            else
+              echo "Export script didn't create out/ directory"
+              
+              # Last resort - try deploy script
+              echo "Trying npm run deploy..."
               npm run deploy || echo "Deploy script failed"
+              
               if [ -d "out" ]; then
-                echo "✅ Deploy script successful"
+                echo "✅ Deploy script worked"
               else
-                echo "❌ All build methods failed"
+                echo "❌ All methods failed"
                 exit 1
               fi
             fi
-          else
-            echo "❌ No build output found at all"
-            exit 1
           fi
       
       - name: Setup Pages
