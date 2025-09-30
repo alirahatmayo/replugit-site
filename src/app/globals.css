@@ -14,3 +14,26 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
 }
+
+/* Hide scrollbars for scroll stack */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Smooth scroll behavior for mobile stack */
+.snap-y {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.snap-always {
+  scroll-snap-stop: always;
+}
