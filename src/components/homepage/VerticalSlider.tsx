@@ -34,8 +34,8 @@ export default function VerticalSlider() {
         "Dedicated account manager"
       ],
       metrics: {
-        value: "100s",
-        label: "Units Monthly"
+        value: "1000s",
+        label: "of Units Monthly"
       },
       color: "blue",
       icon: WholesaleIcon,

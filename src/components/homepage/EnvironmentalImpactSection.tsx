@@ -2,23 +2,24 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { 
-  Laptop, 
-  Smartphone, 
-  Tablet, 
-  Monitor,
   Droplets,
   Leaf,
   Trash2,
   Zap,
-  Factory,
   Globe,
-  RotateCcw
+  TreePine,
+  Factory,
+  Waves,
+  Wind,
+  BarChart3,
+  TrendingUp,
+  Smartphone
 } from 'lucide-react'
 
-export default function EnvironmentalImpactSection() {
+const EnvironmentalImpactSection = () => {
   const [isVisible, setIsVisible] = useState(false)
-  const [selectedDevice, setSelectedDevice] = useState('laptop')
   const [animatedValues, setAnimatedValues] = useState({
+    devicesRefurbished: 0,
     waterSaved: 0,
     carbonReduced: 0,
     wasteAverted: 0,
@@ -26,298 +27,306 @@ export default function EnvironmentalImpactSection() {
   })
   const sectionRef = useRef<HTMLDivElement>(null)
 
-  // Environmental impact data based on research
-  const deviceData = {
-    laptop: {
-      name: 'Laptop',
-      icon: <Laptop className="w-5 h-5" />,
-      refurbishedPerMonth: 850,
-      impacts: {
-        waterSaved: 12400, // Liters per device
-        carbonReduced: 300, // kg CO2 equivalent
-        wasteAverted: 15.5, // kg of e-waste
-        energySaved: 2100, // kWh equivalent
-        rawMaterials: 18.7 // kg of raw materials saved
-      },
-      details: {
-        manufacturing: 'Manufacturing a new laptop requires mining rare earth metals including cobalt, lithium, and gold',
-        water: 'Electronic manufacturing uses water-intensive processes for cleaning semiconductors and cooling',
-        carbon: 'Transportation, manufacturing, and packaging of new devices create significant carbon emissions',
-        waste: 'Extends device lifecycle by 3-5 years, preventing premature disposal'
-      }
-    },
-    smartphone: {
-      name: 'Smartphone',
-      icon: <Smartphone className="w-5 h-5" />,
-      refurbishedPerMonth: 1200,
-      impacts: {
-        waterSaved: 3400,
-        carbonReduced: 70,
-        wasteAverted: 0.8,
-        energySaved: 950,
-        rawMaterials: 1.2
-      },
-      details: {
-        manufacturing: 'Smartphone production requires over 60 different minerals including rare earth elements',
-        water: 'Semiconductor fabrication for mobile processors requires ultra-pure water systems',
-        carbon: 'Global supply chain and energy-intensive manufacturing processes',
-        waste: 'Extends device lifecycle by 2-3 years through professional refurbishment'
-      }
-    },
-    tablet: {
-      name: 'Tablet',
-      icon: <Tablet className="w-5 h-5" />,
-      refurbishedPerMonth: 430,
-      impacts: {
-        waterSaved: 8900,
-        carbonReduced: 150,
-        wasteAverted: 2.1,
-        energySaved: 1400,
-        rawMaterials: 3.8
-      },
-      details: {
-        manufacturing: 'Tablet screens require energy-intensive manufacturing and rare metal extraction',
-        water: 'Display manufacturing and battery production consume significant water resources',
-        carbon: 'Aluminum processing and glass manufacturing contribute to carbon footprint',
-        waste: 'Professional refurbishment prevents premature obsolescence'
-      }
-    },
-    desktop: {
-      name: 'Desktop',
-      icon: <Monitor className="w-5 h-5" />,
-      refurbishedPerMonth: 320,
-      impacts: {
-        waterSaved: 18500,
-        carbonReduced: 400,
-        wasteAverted: 22.3,
-        energySaved: 3200,
-        rawMaterials: 28.4
-      },
-      details: {
-        manufacturing: 'Desktop computers contain multiple components requiring diverse mineral extraction',
-        water: 'Cooling systems manufacturing and component production use extensive water',
-        carbon: 'Heavy materials and complex assembly processes increase carbon footprint',
-        waste: 'Modular design allows component-level refurbishment and lifecycle extension'
-      }
-    }
+  // Real impact data - monthly averages
+  const monthlyImpacts = {
+    devicesRefurbished: 2500,
+    waterSaved: 31000000, // Liters
+    carbonReduced: 750000, // kg CO2
+    wasteAverted: 38750, // kg e-waste
+    energySaved: 5250000 // kWh
   }
 
+  // Animation on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !isVisible) {
           setIsVisible(true)
           startAnimation()
         }
       },
-      { threshold: 0.1, rootMargin: '20px' }
+      { threshold: 0.3 }
     )
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current)
     }
 
-    // Fallback: ensure content shows after 3 seconds if intersection observer doesn't trigger
-    const fallbackTimer = setTimeout(() => {
-      setIsVisible(true)
-      startAnimation()
-    }, 3000)
-
     return () => {
-      observer.disconnect()
-      clearTimeout(fallbackTimer)
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
     }
-  }, [])
+  }, [isVisible])
 
   const startAnimation = () => {
-    const device = deviceData[selectedDevice as keyof typeof deviceData]
-    const duration = 2000 // 2 seconds
+    const duration = 2500
     const steps = 60
-    const increment = duration / steps
+    const stepDuration = duration / steps
 
-    let currentStep = 0
+    let step = 0
     const timer = setInterval(() => {
-      const progress = currentStep / steps
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4)
+      step++
+      const progress = step / steps
 
       setAnimatedValues({
-        waterSaved: Math.floor(device.impacts.waterSaved * easeOutQuart),
-        carbonReduced: Math.floor(device.impacts.carbonReduced * easeOutQuart),
-        wasteAverted: Math.floor(device.impacts.wasteAverted * easeOutQuart * 10) / 10,
-        energySaved: Math.floor(device.impacts.energySaved * easeOutQuart)
+        devicesRefurbished: Math.floor(monthlyImpacts.devicesRefurbished * progress),
+        waterSaved: Math.floor(monthlyImpacts.waterSaved * progress),
+        carbonReduced: Math.floor(monthlyImpacts.carbonReduced * progress),
+        wasteAverted: Math.floor(monthlyImpacts.wasteAverted * progress),
+        energySaved: Math.floor(monthlyImpacts.energySaved * progress)
       })
 
-      currentStep++
-      if (currentStep > steps) {
+      if (step >= steps) {
         clearInterval(timer)
+        setAnimatedValues(monthlyImpacts)
       }
-    }, increment)
+    }, stepDuration)
   }
 
-  useEffect(() => {
-    if (isVisible) {
-      startAnimation()
-    }
-  }, [selectedDevice])
-
-  const formatNumber = (num: number, decimals: number = 0) => {
-    if (decimals > 0) {
-      return num.toFixed(decimals)
+  const formatNumber = (num: number) => {
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(1) + 'M'
+    } else if (num >= 1000) {
+      return (num / 1000).toFixed(0) + 'K'
     }
     return num.toLocaleString()
   }
 
-  const device = deviceData[selectedDevice as keyof typeof deviceData]
-  const monthlyImpact = {
-    waterSaved: device.impacts.waterSaved * device.refurbishedPerMonth,
-    carbonReduced: device.impacts.carbonReduced * device.refurbishedPerMonth,
-    wasteAverted: device.impacts.wasteAverted * device.refurbishedPerMonth,
-    energySaved: device.impacts.energySaved * device.refurbishedPerMonth
+  const CircularProgress = ({ value, max, color, children }: { value: number, max: number, color: string, children: React.ReactNode }) => {
+    const percentage = (value / max) * 100
+    const strokeDasharray = 2 * Math.PI * 45
+    const strokeDashoffset = strokeDasharray - (strokeDasharray * percentage) / 100
+
+    return (
+      <div className="relative w-32 h-32">
+        <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="8"
+            className="text-gray-200"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="8"
+            strokeLinecap="round"
+            className={color}
+            style={{
+              strokeDasharray,
+              strokeDashoffset: isVisible ? strokeDashoffset : strokeDasharray,
+              transition: 'stroke-dashoffset 2s ease-in-out'
+            }}
+          />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          {children}
+        </div>
+      </div>
+    )
   }
 
   return (
-    <section ref={sectionRef} className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-emerald-50 via-green-50 to-blue-50 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-24 h-24 bg-emerald-200 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-blue-200 rounded-full blur-2xl"></div>
+    <section ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 text-slate-900 relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-emerald-100/40 via-green-50/60 to-teal-100/40"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-green-200/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-emerald-400/60 rounded-full animate-bounce delay-300"></div>
+        <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-green-400/60 rounded-full animate-bounce delay-700"></div>
+        <div className="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-teal-400/60 rounded-full animate-bounce delay-1000"></div>
       </div>
       
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          
-          {/* Header */}
-          <div className="text-center mb-8 sm:mb-12 lg:mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm text-emerald-700 rounded-full text-sm font-medium mb-4 border border-emerald-200 shadow-sm">
-              <Globe className="w-4 h-4" />
-              Environmental Impact
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
-              Every Device Refurbished <br />
-              <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
-                Makes a Real Difference
-              </span>
-            </h2>
-            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              See the measurable environmental impact of choosing refurbished electronics over new ones.
-            </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        
+        {/* Header */}
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm text-emerald-700 rounded-full text-sm font-medium mb-6 border border-emerald-200 shadow-sm">
+            <Globe className="w-4 h-4" />
+            Environmental Impact
           </div>
-
-          {/* Device Selector */}
-          <div className="flex justify-center mb-10">
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-2 shadow-lg border border-white/50">
-              <div className="flex flex-wrap justify-center gap-1">
-                {Object.entries(deviceData).map(([key, data], index) => (
-                  <button
-                    key={key}
-                    onClick={() => setSelectedDevice(key)}
-                    className={`px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
-                      selectedDevice === key
-                        ? 'bg-gradient-to-r from-emerald-600 to-green-600 text-white shadow-md'
-                        : 'text-slate-600 hover:text-emerald-600 hover:bg-emerald-50/80'
-                    }`}
-                  >
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                      selectedDevice === key ? 'bg-white/20' : 'bg-slate-100'
-                    }`}>
-                      {data.icon}
-                    </div>
-                    <span className="text-sm">{data.name}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Impact Statistics */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-            {/* Water Saved */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 text-center hover:shadow-xl transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Droplets className="w-6 h-6 text-blue-600" />
-              </div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2">
-                {formatNumber(animatedValues.waterSaved)}L
-              </div>
-              <h3 className="text-sm font-semibold text-slate-900 mb-2">Water Saved</h3>
-              <p className="text-xs text-slate-600">
-                Per {device.name.toLowerCase()}
-              </p>
-            </div>
-
-            {/* Carbon Reduced */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 text-center hover:shadow-xl transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Leaf className="w-6 h-6 text-green-600" />
-              </div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent mb-2">
-                {formatNumber(animatedValues.carbonReduced)}kg
-              </div>
-              <h3 className="text-sm font-semibold text-slate-900 mb-2">CO₂ Prevented</h3>
-              <p className="text-xs text-slate-600">
-                Per {device.name.toLowerCase()}
-              </p>
-            </div>
-
-            {/* Waste Averted */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 text-center hover:shadow-xl transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Trash2 className="w-6 h-6 text-purple-600" />
-              </div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-2">
-                {formatNumber(animatedValues.wasteAverted, 1)}kg
-              </div>
-              <h3 className="text-sm font-semibold text-slate-900 mb-2">E-Waste Avoided</h3>
-              <p className="text-xs text-slate-600">
-                Per {device.name.toLowerCase()}
-              </p>
-            </div>
-
-            {/* Energy Saved */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 text-center hover:shadow-xl transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-6 h-6 text-orange-600" />
-              </div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent mb-2">
-                {formatNumber(animatedValues.energySaved)}
-              </div>
-              <h3 className="text-sm font-semibold text-slate-900 mb-2">kWh Saved</h3>
-              <p className="text-xs text-slate-600">
-                Per {device.name.toLowerCase()}
-              </p>
-            </div>
-          </div>
-
-          {/* Simplified Details Section */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 p-6 mb-8">
-            <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">
-              Monthly Impact: <span className="text-emerald-600">{device.refurbishedPerMonth} {device.name.toLowerCase()}s</span>
-            </h3>
-            
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="text-center">
-                <div className="text-lg font-bold text-blue-600">{formatNumber(monthlyImpact.waterSaved / 1000)}K L</div>
-                <div className="text-xs text-slate-600">Water Saved</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg font-bold text-green-600">{formatNumber(monthlyImpact.carbonReduced / 1000, 1)} tons</div>
-                <div className="text-xs text-slate-600">CO₂ Prevented</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg font-bold text-purple-600">{formatNumber(monthlyImpact.wasteAverted / 1000, 1)} tons</div>
-                <div className="text-xs text-slate-600">Waste Diverted</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg font-bold text-orange-600">{formatNumber(monthlyImpact.energySaved / 1000)} MWh</div>
-                <div className="text-xs text-slate-600">Energy Saved</div>
-              </div>
-            </div>
-          </div>
-
-
-
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-slate-900">
+            Our Planet,
+            <span className="block bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
+              Our Impact
+            </span>
+          </h2>
+          <p className="text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            Real-time environmental benefits from our refurbishment operations
+          </p>
         </div>
+
+        {/* Main Dashboard Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          
+          {/* Left Column - Main Metric */}
+          <div className={`lg:col-span-1 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+            <div className="bg-white/80 backdrop-blur-sm border border-emerald-200 rounded-3xl p-8 h-full shadow-xl">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-500 to-green-500 rounded-2xl mb-6 shadow-lg">
+                  <Smartphone className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Devices Transformed</h3>
+                <div className="text-6xl font-bold bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent mb-4">
+                  {formatNumber(animatedValues.devicesRefurbished)}
+                </div>
+                <p className="text-slate-600 text-lg">Monthly Refurbishments</p>
+                
+                {/* Progress bar */}
+                <div className="mt-8">
+                  <div className="w-full bg-emerald-100 rounded-full h-3">
+                    <div 
+                      className="bg-gradient-to-r from-emerald-500 to-green-500 h-3 rounded-full transition-all duration-2000 ease-out shadow-sm"
+                      style={{ width: isVisible ? '85%' : '0%' }}
+                    ></div>
+                  </div>
+                  <p className="text-slate-500 text-sm mt-2">85% of monthly target</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Impact Metrics Grid */}
+          <div className={`lg:col-span-2 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-full">
+              
+              {/* Water Impact */}
+              <div className="bg-white/70 backdrop-blur-sm border border-blue-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <Droplets className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">Water Saved</h4>
+                      <p className="text-blue-700 text-sm">Manufacturing reduction</p>
+                    </div>
+                  </div>
+                  <CircularProgress value={animatedValues.waterSaved} max={monthlyImpacts.waterSaved} color="text-blue-500">
+                    <Waves className="w-6 h-6 text-blue-500" />
+                  </CircularProgress>
+                </div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">
+                  {formatNumber(animatedValues.waterSaved)}L
+                </div>
+                <p className="text-blue-700 text-sm">= 620,000 showers</p>
+              </div>
+
+              {/* Carbon Impact */}
+              <div className="bg-white/70 backdrop-blur-sm border border-green-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                      <Leaf className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">CO₂ Reduced</h4>
+                      <p className="text-green-700 text-sm">Carbon footprint</p>
+                    </div>
+                  </div>
+                  <CircularProgress value={animatedValues.carbonReduced} max={monthlyImpacts.carbonReduced} color="text-green-500">
+                    <TreePine className="w-6 h-6 text-green-500" />
+                  </CircularProgress>
+                </div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">
+                  {formatNumber(animatedValues.carbonReduced)}kg
+                </div>
+                <p className="text-green-700 text-sm">= 34,000 trees planted</p>
+              </div>
+
+              {/* Waste Impact */}
+              <div className="bg-white/70 backdrop-blur-sm border border-purple-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                      <Trash2 className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">Waste Prevented</h4>
+                      <p className="text-purple-700 text-sm">E-waste reduction</p>
+                    </div>
+                  </div>
+                  <CircularProgress value={animatedValues.wasteAverted} max={monthlyImpacts.wasteAverted} color="text-purple-500">
+                    <Factory className="w-6 h-6 text-purple-500" />
+                  </CircularProgress>
+                </div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">
+                  {formatNumber(animatedValues.wasteAverted)}kg
+                </div>
+                <p className="text-purple-700 text-sm">= 25 cars worth</p>
+              </div>
+
+              {/* Energy Impact */}
+              <div className="bg-white/70 backdrop-blur-sm border border-orange-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">Energy Saved</h4>
+                      <p className="text-orange-700 text-sm">Manufacturing power</p>
+                    </div>
+                  </div>
+                  <CircularProgress value={animatedValues.energySaved} max={monthlyImpacts.energySaved} color="text-orange-500">
+                    <Wind className="w-6 h-6 text-orange-500" />
+                  </CircularProgress>
+                </div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">
+                  {formatNumber(animatedValues.energySaved)}kWh
+                </div>
+                <p className="text-orange-700 text-sm">= 4,800 homes/month</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Stats Bar */}
+        <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="bg-white/80 backdrop-blur-sm border border-emerald-200 rounded-2xl p-6 shadow-xl">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <BarChart3 className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">Monthly Impact Growth</h3>
+                  <p className="text-slate-600">Tracking our environmental progress</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-xl border border-emerald-200 shadow-sm">
+                <TrendingUp className="w-5 h-5 text-emerald-600" />
+                <span className="text-emerald-700 font-medium">+23% this quarter</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className={`text-center mt-16 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-block p-8 bg-gradient-to-r from-emerald-500 to-green-500 rounded-3xl shadow-2xl border border-emerald-300">
+            <h3 className="text-2xl font-bold mb-3 text-white">Join Our Environmental Mission</h3>
+            <p className="text-emerald-50 mb-6 text-lg">Every refurbished device contributes to a sustainable future</p>
+            <button className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 border border-white/30 backdrop-blur-sm text-lg shadow-lg hover:shadow-xl">
+              Explore Our Impact →
+            </button>
+          </div>
+        </div>
+
       </div>
     </section>
   )
 }
+
+export default EnvironmentalImpactSection

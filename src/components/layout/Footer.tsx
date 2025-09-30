@@ -3,22 +3,22 @@ export default function Footer() {
 
   const footerLinks = {
     Company: [
-      { name: 'About', href: '#' },
-      { name: 'How It Works', href: '#process' },
-      { name: 'Why Choose Us', href: '#difference' },
-      { name: 'Contact', href: '/contact' }
+      { name: 'About', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Platform', href: '/platform' },
+      { name: 'Sustainability', href: '/sustainability' }
     ],
     Services: [
       { name: 'Device Refurbishment', href: '/refurbishing' },
-      { name: 'Quality Testing', href: '#' },
-      { name: 'Data Wiping', href: '#' },
-      { name: 'Environmental Reports', href: '#environmental' }
+      { name: 'Quality Assurance', href: '/services' },
+      { name: 'Wholesale Solutions', href: '/wholesale' },
+      { name: 'Environmental Impact', href: '/environmental-impact' }
     ],
-    Legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Data Security', href: '#' },
-      { name: 'Certifications', href: '#' }
+    Resources: [
+      { name: 'Blog', href: '/blog' },
+      { name: 'Warranty Information', href: '/warranty' },
+      { name: 'Best Buy Repricer', href: '/bestbuy-repricer' },
+      { name: 'Privacy Policy', href: '/privacy' }
     ]
   }
 
@@ -39,11 +39,15 @@ export default function Footer() {
               Your complete electronics lifecycle partner - from wholesale procurement and expert refurbishment to quality assurance, secure data wiping, and transparent environmental impact reporting.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200">
-                <div className="w-5 h-5 bg-white rounded opacity-90"></div>
+              <a href="https://linkedin.com/company/replugit" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200" aria-label="LinkedIn">
+                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd"/>
+                </svg>
               </a>
-              <a href="#" className="w-10 h-10 bg-gradient-to-br from-sky-500 to-sky-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200">
-                <div className="w-4 h-4 bg-white rounded-full opacity-90"></div>
+              <a href="mailto:hello@replugit.com" className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200" aria-label="Email">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </a>
             </div>
           </div>
@@ -100,14 +104,11 @@ export default function Footer() {
             © {currentYear} Replugit. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6">
-            <a href="#" className="text-slate-400 hover:text-primary-400 text-sm transition-colors">
+            <a href="/privacy" className="text-slate-400 hover:text-primary-400 text-sm transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-slate-400 hover:text-primary-400 text-sm transition-colors">
+            <a href="/terms" className="text-slate-400 hover:text-primary-400 text-sm transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="text-slate-400 hover:text-primary-400 text-sm transition-colors">
-              Cookie Policy
             </a>
           </div>
         </div>
