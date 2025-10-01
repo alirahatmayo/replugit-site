@@ -96,7 +96,7 @@ export default function VerticalSlider() {
       },
       color: "red",
       icon: QualityIcon,
-      link: "/services"
+      link: "/qc-auditing"
     },
     {
       title: "Environmental Impact",

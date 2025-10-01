@@ -25,32 +25,32 @@ export default function EnvironmentalImpact() {
 
   const impactStats = [
     {
-      number: '2.5M',
+      number: '2.4K+',
       label: 'Devices refurbished',
-      subtext: 'Since 2018'
+      subtext: 'Professional quality restoration'
     },
     {
-      number: '847K',
+      number: '260+',
       label: 'Tons CO₂ saved',
-      subtext: 'Equivalent to 184K cars off road'
+      subtext: 'Equivalent to planting 5,900 trees'
     },
     {
-      number: '99.2%',
-      label: 'Customer satisfaction',
-      subtext: 'Based on 50K+ reviews'
+      number: '3.6M+',
+      label: 'Liters water saved',
+      subtext: 'Manufacturing water conservation'
     },
     {
-      number: '156',
-      label: 'Jobs created',
-      subtext: 'Local employment opportunities'
+      number: '330K+',
+      label: 'kWh energy saved',
+      subtext: 'Manufacturing energy reduction'
     }
   ]
 
   const certifications = [
-    'ISO 14001 Environmental',
-    'R2 Responsible Recycling',
-    'e-Stewards Certified',
-    'ENERGY STAR Partner'
+    'HTM Certification (In Progress)',
+    'Professional Standards',
+    'Quality Assurance Protocols',
+    'Environmental Commitment'
   ]
 
   return (

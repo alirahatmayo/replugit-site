@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Award, Shield, Leaf, Globe, CheckCircle, Star, ExternalLink } from 'lucide-react'
+import { Target, Leaf, Globe, TrendingUp, Star, CheckCircle, Clock, Award } from 'lucide-react'
 
 export default function CertificationsSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -10,87 +10,85 @@ export default function CertificationsSection() {
     setIsVisible(true)
   }, [])
 
-  const certifications = [
+  const pursuitGoals = [
     {
-      name: "ISO 14001",
-      description: "Environmental Management Systems",
-      issuer: "International Organization for Standardization",
-      year: "2024",
+      name: "HTM Certification",
+      description: "Hardware Technology Management certification for professional electronics handling",
+      status: "In Progress",
+      timeline: "Q2 2025",
+      icon: <Award className="w-8 h-8" />,
+      color: "from-blue-500 to-blue-600",
+      progress: 65,
+      why: "Ensuring professional standards in device management and refurbishment processes"
+    },
+    {
+      name: "ISO 14001 Preparation",
+      description: "Environmental Management Systems framework implementation",
+      status: "Planning",
+      timeline: "Q4 2025",
       icon: <Leaf className="w-8 h-8" />,
       color: "from-green-500 to-emerald-600",
-      status: "Certified"
+      progress: 30,
+      why: "Formalizing our environmental impact reduction processes and documentation"
     },
     {
       name: "R2 Responsible Recycling",
-      description: "Electronics Recycling Standard",
-      issuer: "SERI (Sustainable Electronics Initiative)",
-      year: "2024",
-      icon: <Shield className="w-8 h-8" />,
-      color: "from-blue-500 to-blue-600",
-      status: "Certified"
-    },
-    {
-      name: "EPEAT Gold",
-      description: "Electronic Product Environmental Assessment",
-      issuer: "Green Electronics Council",
-      year: "2024",
-      icon: <Star className="w-8 h-8" />,
-      color: "from-yellow-500 to-orange-600",
-      status: "Gold Level"
-    },
-    {
-      name: "Carbon Neutral Certified",
-      description: "Carbon Footprint Verification",
-      issuer: "Climate Action Reserve",
-      year: "2024",
+      description: "Electronics recycling and data security standard compliance",
+      status: "Research Phase",
+      timeline: "2026",
       icon: <Globe className="w-8 h-8" />,
       color: "from-teal-500 to-green-600",
-      status: "Verified"
-    },
-    {
-      name: "B Corp Certification",
-      description: "Social and Environmental Performance",
-      issuer: "B Lab",
-      year: "2023",
-      icon: <Award className="w-8 h-8" />,
-      color: "from-purple-500 to-purple-600",
-      status: "Certified"
-    },
-    {
-      name: "Energy Star Partner",
-      description: "Energy Efficiency Partnership",
-      issuer: "US Environmental Protection Agency",
-      year: "2024",
-      icon: <CheckCircle className="w-8 h-8" />,
-      color: "from-indigo-500 to-blue-600",
-      status: "Partner"
+      progress: 20,
+      why: "Establishing industry-leading data security and electronics handling protocols"
     }
   ]
 
   const commitments = [
     {
-      title: "2030 Carbon Neutral",
-      description: "Achieve net-zero carbon emissions across all operations",
+      title: "Professional Excellence",
+      description: "Achieve HTM certification to formalize our technical expertise",
+      progress: 65,
+      target: "Q2 2025",
+      impact: "Enhanced credibility and professional standards"
+    },
+    {
+      title: "Environmental Leadership",
+      description: "Implement comprehensive environmental management systems",
+      progress: 40,
+      target: "2025-2026",
+      impact: "Measurable environmental impact reduction"
+    },
+    {
+      title: "Industry Recognition",
+      description: "Establish Replugit as a certified leader in sustainable electronics",
+      progress: 25,
+      target: "2026-2027",
+      impact: "Market leadership in responsible electronics handling"
+    },
+    {
+      title: "Transparency Standards",
+      description: "Develop comprehensive reporting and accountability frameworks",
       progress: 75,
-      target: "2030"
+      target: "Ongoing",
+      impact: "Complete transparency in operations and impact"
+    }
+  ]
+
+  const ambitions = [
+    {
+      goal: "Become the most certified sustainable electronics company in our region",
+      timeline: "By 2027",
+      icon: <Star className="w-6 h-6" />
     },
     {
-      title: "Zero Waste to Landfill",
-      description: "Ensure 100% of processed devices avoid landfill disposal",
-      progress: 92,
-      target: "2025"
+      goal: "Set new industry standards for device lifecycle management",
+      timeline: "2025-2026",
+      icon: <TrendingUp className="w-6 h-6" />
     },
     {
-      title: "Sustainable Supply Chain",
-      description: "Partner only with certified sustainable suppliers",
-      progress: 68,
-      target: "2026"
-    },
-    {
-      title: "Community Impact",
-      description: "Provide technology access to 1M underserved individuals",
-      progress: 45,
-      target: "2028"
+      goal: "Achieve multiple internationally recognized certifications",
+      timeline: "2026-2027",
+      icon: <Target className="w-6 h-6" />
     }
   ]
 
@@ -101,61 +99,93 @@ export default function CertificationsSection() {
           
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6">
-              <Award className="w-4 h-4" />
-              Certifications & Commitments
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6">
+              <Target className="w-4 h-4" />
+              Certification Journey & Goals
             </div>
             <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              <span className="text-emerald-600">Verified</span> Sustainability Leadership
+              <span className="text-blue-600">Building</span> Credibility Through Excellence
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Our commitment to sustainability is verified by leading certification bodies 
-              and backed by measurable goals and transparent progress reporting.
+              We're actively pursuing industry certifications and building frameworks that will establish 
+              Replugit as a leader in sustainable electronics management. Our ambitious roadmap focuses on 
+              professional excellence and environmental responsibility.
             </p>
           </div>
 
-          {/* Certifications Grid */}
+          {/* Current Pursuit Goals */}
           <div className="mb-20">
-            <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Industry Certifications</h3>
+            <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Active Certification Pursuits</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-              {certifications.map((cert, index) => (
+              {pursuitGoals.map((goal, index) => (
                 <div 
                   key={index}
                   className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-500 hover:scale-105"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${cert.color} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg`}>
-                    {cert.icon}
+                  <div className={`w-16 h-16 bg-gradient-to-br ${goal.color} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg`}>
+                    {goal.icon}
                   </div>
                   
                   <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-slate-900">{cert.name}</h4>
-                    <span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">
-                      {cert.status}
+                    <h4 className="text-xl font-bold text-slate-900">{goal.name}</h4>
+                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
+                      {goal.status}
                     </span>
                   </div>
                   
-                  <p className="text-slate-600 mb-4 leading-relaxed">{cert.description}</p>
+                  <p className="text-slate-600 mb-4 leading-relaxed">{goal.description}</p>
                   
-                  <div className="border-t border-slate-200 pt-4">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-500">Issued by:</span>
-                      <span className="font-semibold text-slate-700">{cert.year}</span>
+                  {/* Progress Bar */}
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between text-sm mb-1">
+                      <span className="text-slate-500">Progress</span>
+                      <span className="font-bold text-blue-600">{goal.progress}%</span>
                     </div>
-                    <p className="text-slate-600 text-sm mt-1">{cert.issuer}</p>
+                    <div className="w-full bg-slate-200 rounded-full h-2">
+                      <div 
+                        className={`bg-gradient-to-r ${goal.color} h-2 rounded-full transition-all duration-1000 ease-out`}
+                        style={{ width: `${goal.progress}%` }}
+                      ></div>
+                    </div>
                   </div>
                   
-                  <button className="mt-4 flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors duration-300">
-                    <ExternalLink className="w-4 h-4" />
-                    Verify Certificate
-                  </button>
+                  <div className="border-t border-slate-200 pt-4">
+                    <div className="flex items-center justify-between text-sm mb-2">
+                      <span className="text-slate-500">Target:</span>
+                      <span className="font-semibold text-slate-700">{goal.timeline}</span>
+                    </div>
+                    <p className="text-slate-600 text-sm italic">{goal.why}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Sustainability Commitments */}
+          {/* Our Ambitious Vision */}
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-10 mb-16">
+            <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Our Ambitious Vision</h3>
+            
+            <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+              {ambitions.map((ambition, index) => (
+                <div 
+                  key={index}
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 flex items-center gap-4"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                    {ambition.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-lg font-bold text-slate-900 mb-1">{ambition.goal}</h4>
+                    <p className="text-blue-600 font-semibold text-sm">{ambition.timeline}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Strategic Commitments */}
           <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-10">
-            <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Our 2030 Sustainability Goals</h3>
+            <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Strategic Development Goals</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {commitments.map((commitment, index) => (
@@ -172,9 +202,9 @@ export default function CertificationsSection() {
                   
                   <p className="text-slate-600 mb-4">{commitment.description}</p>
                   
-                  <div className="mb-2">
+                  <div className="mb-3">
                     <div className="flex items-center justify-between text-sm mb-1">
-                      <span className="text-slate-500">Progress</span>
+                      <span className="text-slate-500">Development Progress</span>
                       <span className="font-bold text-emerald-600">{commitment.progress}%</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-3">
@@ -184,28 +214,32 @@ export default function CertificationsSection() {
                       ></div>
                     </div>
                   </div>
+                  
+                  <div className="text-sm text-slate-600 italic">
+                    <strong>Impact:</strong> {commitment.impact}
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Progress Summary */}
+            {/* Journey Summary */}
             <div className="mt-8 text-center">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
                 <div className="bg-white/60 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-emerald-600 mb-1">70%</div>
+                  <div className="text-2xl font-bold text-blue-600 mb-1">3</div>
+                  <div className="text-sm text-slate-600">Active Pursuits</div>
+                </div>
+                <div className="bg-white/60 rounded-xl p-4">
+                  <div className="text-2xl font-bold text-blue-600 mb-1">2025</div>
+                  <div className="text-sm text-slate-600">First Target</div>
+                </div>
+                <div className="bg-white/60 rounded-xl p-4">
+                  <div className="text-2xl font-bold text-blue-600 mb-1">45%</div>
                   <div className="text-sm text-slate-600">Avg. Progress</div>
                 </div>
                 <div className="bg-white/60 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-emerald-600 mb-1">6</div>
-                  <div className="text-sm text-slate-600">Active Goals</div>
-                </div>
-                <div className="bg-white/60 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-emerald-600 mb-1">2025</div>
-                  <div className="text-sm text-slate-600">Next Milestone</div>
-                </div>
-                <div className="bg-white/60 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-emerald-600 mb-1">100%</div>
-                  <div className="text-sm text-slate-600">Transparency</div>
+                  <div className="text-2xl font-bold text-blue-600 mb-1">100%</div>
+                  <div className="text-sm text-slate-600">Committed</div>
                 </div>
               </div>
             </div>
@@ -214,18 +248,18 @@ export default function CertificationsSection() {
           {/* Call to Action */}
           <div className="mt-16 text-center">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              Stay Updated on Our Sustainability Journey
+              Join Us on Our Certification Journey
             </h3>
             <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-              Subscribe to receive quarterly sustainability reports, certification updates, 
-              and progress on our environmental commitments.
+              Follow our progress as we work toward industry-leading certifications and 
+              sustainable practices. We're building something meaningful, and we want you to be part of it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-emerald-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-emerald-700 transition-all duration-300">
-                Download 2024 Report
+              <button className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-all duration-300">
+                Track Our Progress
               </button>
-              <button className="border border-emerald-300 text-emerald-600 px-8 py-4 rounded-2xl font-semibold hover:bg-emerald-50 transition-all duration-300">
-                Subscribe to Updates
+              <button className="border border-blue-300 text-blue-600 px-8 py-4 rounded-2xl font-semibold hover:bg-blue-50 transition-all duration-300">
+                Partner With Us
               </button>
             </div>
           </div>

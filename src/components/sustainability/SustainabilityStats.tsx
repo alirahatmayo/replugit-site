@@ -20,12 +20,12 @@ export default function SustainabilityStats() {
   }, [])
 
   const finalStats = {
-    devicesRefurbished: 850000, // More realistic number for a growing company
-    carbonSaved: 92000, // Tons CO2e - based on updated net savings (avg ~108kg per device)
-    waterSaved: 1200000000, // Liters - based on updated blended average
-    energySaved: 95000000, // kWh - manufacturing energy saved
-    partnersCount: 180, // Global business partners
-    certificationsCount: 8 // Industry certifications
+    devicesRefurbished: 2400, // Realistic number for a growing company (~200/month)
+    carbonSaved: 260, // Tons CO2e - based on realistic device count (~108kg per device)
+    waterSaved: 3600000, // Liters - based on realistic manufacturing water savings (~1500L per device)
+    energySaved: 330000, // kWh - manufacturing energy saved (~138kWh per device)
+    partnersCount: 12, // Realistic business partners for growing company
+    certificationsCount: 0 // Honest about current certifications (pursuing HTM)
   }
 
   const animateStats = () => {
@@ -107,7 +107,7 @@ export default function SustainabilityStats() {
               </div>
               <h3 className="text-lg font-semibold text-emerald-100 mb-2">Devices Refurbished</h3>
               <p className="text-sm text-emerald-200">
-                Extending device lifecycles across the globe
+                Professional refurbishment and lifecycle extension
               </p>
             </div>
 
@@ -121,7 +121,7 @@ export default function SustainabilityStats() {
               </div>
               <h3 className="text-lg font-semibold text-emerald-100 mb-2">CO₂ Emissions Prevented</h3>
               <p className="text-sm text-emerald-200">
-                Equivalent to planting 2.1M trees
+                Equivalent to planting 5,900 trees
               </p>
             </div>
 
@@ -135,7 +135,7 @@ export default function SustainabilityStats() {
               </div>
               <h3 className="text-lg font-semibold text-emerald-100 mb-2">Water Conserved</h3>
               <p className="text-sm text-emerald-200">
-                Enough to fill 12,000 Olympic pools
+                Enough for 36 average households annually
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function SustainabilityStats() {
               </div>
               <h3 className="text-lg font-semibold text-emerald-100 mb-2">Energy Saved</h3>
               <p className="text-sm text-emerald-200">
-                Powers 15,000 homes for a year
+                Powers 50 homes for a year
               </p>
             </div>
           </div>
@@ -159,19 +159,19 @@ export default function SustainabilityStats() {
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
               <Users className="w-8 h-8 text-emerald-300 mx-auto mb-4" />
               <div className="text-2xl font-bold text-white mb-2">{animatedStats.partnersCount}+</div>
-              <div className="text-emerald-100">Global Partners</div>
+              <div className="text-emerald-100">Business Partners</div>
             </div>
             
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
               <Award className="w-8 h-8 text-emerald-300 mx-auto mb-4" />
-              <div className="text-2xl font-bold text-white mb-2">{animatedStats.certificationsCount}</div>
-              <div className="text-emerald-100">Certifications</div>
+              <div className="text-2xl font-bold text-white mb-2">HTM</div>
+              <div className="text-emerald-100">Certification In Progress</div>
             </div>
             
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10">
               <Building className="w-8 h-8 text-emerald-300 mx-auto mb-4" />
-              <div className="text-2xl font-bold text-white mb-2">15</div>
-              <div className="text-emerald-100">Countries Served</div>
+              <div className="text-2xl font-bold text-white mb-2">3</div>
+              <div className="text-emerald-100">Regional Markets</div>
             </div>
           </div>
 
