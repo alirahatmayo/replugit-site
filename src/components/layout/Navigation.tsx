@@ -43,8 +43,10 @@ export default function Navigation() {
       href: '/services',
       dropdown: [
         { name: 'Refurbishing', href: '/refurbishing', description: 'Professional electronics refurbishment' },
-        { name: 'Repair Services', href: '/services#repair', description: 'Expert device repair solutions' },
-        { name: 'Quality Testing', href: '/services#testing', description: 'Comprehensive device testing' }
+        { name: 'QC and Auditing', href: '/qc-auditing', description: 'Quality control and auditing services' },
+        { name: 'Environmental Reporting', href: '/environmental-reporting', description: 'Sustainability impact tracking' },
+        { name: 'Prep Services', href: '/prep-services', description: 'Device preparation and logistics' },
+        { name: 'Data Wiping', href: '/data-wiping', description: 'Secure data erasure services' }
       ]
     },
     { 
@@ -62,8 +64,7 @@ export default function Navigation() {
       name: 'Sustainability', 
       href: '/sustainability',
       icon: Leaf 
-    },
-    { name: 'Contact Us', href: '/contact' }
+    }
   ]
 
   const isActive = (href: string) => {
@@ -183,7 +184,7 @@ export default function Navigation() {
               href="/contact"
               className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-emerald-500/25"
             >
-              Get Quote
+              Contact Us
             </Link>
           </div>
 
@@ -199,7 +200,7 @@ export default function Navigation() {
               href="/contact"
               className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-300 shadow-md"
             >
-              Quote
+              Contact
             </Link>
           </div>
 
@@ -275,7 +276,7 @@ export default function Navigation() {
                 className="block w-full text-center bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-4 py-3 text-base font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get Quote
+                Contact Us
               </Link>
             </div>
           </div>
