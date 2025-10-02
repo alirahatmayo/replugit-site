@@ -177,7 +177,8 @@ export default function BestBuyRepricerPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section - Commented out temporarily, redirecting to contact for custom demos */}
+      {/*
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -306,6 +307,7 @@ export default function BestBuyRepricerPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Final CTA Section */}
       <section className="py-20 bg-blue-900 text-white">
@@ -337,16 +339,22 @@ export default function BestBuyRepricerPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-300 transition-colors">
-              Start Your 14-Day Free Trial
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors">
-              Schedule a Demo
-            </button>
+            <a 
+              href="/contact" 
+              className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-300 transition-colors inline-block"
+            >
+              Schedule Custom Demo
+            </a>
+            <a 
+              href="/contact" 
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors inline-block"
+            >
+              Get Pricing & ROI Analysis
+            </a>
           </div>
 
           <p className="text-blue-200 mt-6">
-            No credit card required • 14-day free trial • Cancel anytime
+            No commitment required • Custom pricing available • Implementation support included
           </p>
         </div>
       </section>

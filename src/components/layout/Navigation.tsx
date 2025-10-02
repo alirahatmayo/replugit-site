@@ -40,6 +40,20 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
+
   // Cleanup timeouts on unmount
   useEffect(() => {
     return () => {
@@ -255,7 +269,7 @@ export default function Navigation() {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-slate-200/60 rounded-b-2xl">
-          <div className="px-6 pt-4 pb-6 space-y-3">
+          <div className="px-6 pt-4 pb-6 space-y-3 max-h-[calc(100vh-6rem)] overflow-y-auto overscroll-contain">
             {navItems.map((item) => (
               <div key={item.name}>
                 <Link

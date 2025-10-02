@@ -568,7 +568,8 @@ export default function WarrantyPage() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Pricing - Commented out temporarily, redirecting to contact for custom demos */}
+      {/*
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -581,7 +582,6 @@ export default function WarrantyPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Starter */}
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
               <p className="text-gray-600 mb-6">Perfect for small vendors</p>
@@ -611,7 +611,6 @@ export default function WarrantyPage() {
               </button>
             </div>
 
-            {/* Professional */}
             <div className="bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-2xl shadow-lg p-8 transform scale-105">
               <div className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold inline-block mb-4">
                 Most Popular
@@ -644,7 +643,6 @@ export default function WarrantyPage() {
               </button>
             </div>
 
-            {/* Enterprise */}
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
               <p className="text-gray-600 mb-6">For large operations</p>
@@ -680,6 +678,7 @@ export default function WarrantyPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Enhanced Final CTA */}
       <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
@@ -692,7 +691,7 @@ export default function WarrantyPage() {
             <svg className="w-4 h-4 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
             </svg>
-            Limited Time: Setup included FREE (normally $500)
+            Limited Time: Free consultation & setup guidance
           </div>
           
           <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -714,8 +713,8 @@ export default function WarrantyPage() {
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="font-bold text-lg mb-2">Setup in Days</h3>
-              <p className="text-blue-200 text-sm">Not months like other systems</p>
+              <h3 className="font-bold text-lg mb-2">Custom Demo</h3>
+              <p className="text-blue-200 text-sm">Tailored to your business needs</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -723,8 +722,8 @@ export default function WarrantyPage() {
                   <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="font-bold text-lg mb-2">ROI in 30 Days</h3>
-              <p className="text-blue-200 text-sm">Guaranteed positive return</p>
+              <h3 className="font-bold text-lg mb-2">ROI Analysis</h3>
+              <p className="text-blue-200 text-sm">See your potential savings</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -732,30 +731,36 @@ export default function WarrantyPage() {
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="font-bold text-lg mb-2">Zero Risk</h3>
-              <p className="text-blue-200 text-sm">30-day money-back guarantee</p>
+              <h3 className="font-bold text-lg mb-2">Implementation Plan</h3>
+              <p className="text-blue-200 text-sm">Step-by-step integration guide</p>
             </div>
           </div>
           
           {/* Main CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <button className="group bg-white text-blue-900 px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl border-2 border-transparent hover:border-yellow-400">
+            <a 
+              href="/contact" 
+              className="group bg-white text-blue-900 px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl border-2 border-transparent hover:border-yellow-400 inline-block"
+            >
               <span className="flex items-center gap-3 justify-center">
                 <svg className="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                Start Free 30-Day Trial
-                <span className="text-xs bg-yellow-500 text-white px-2 py-1 rounded-full">FREE SETUP</span>
+                Schedule Demo & Consultation
+                <span className="text-xs bg-yellow-500 text-white px-2 py-1 rounded-full">FREE</span>
               </span>
-            </button>
-            <button className="border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-blue-900 transition-all group">
+            </a>
+            <a 
+              href="/contact" 
+              className="border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-blue-900 transition-all group inline-block"
+            >
               <span className="flex items-center gap-2 justify-center">
                 <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
-                Watch 3-Min Demo
+                Watch Product Demo
               </span>
-            </button>
+            </a>
           </div>
 
           {/* Trust Indicators */}
@@ -764,19 +769,19 @@ export default function WarrantyPage() {
               <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              No credit card required
+              No commitment required
             </span>
             <span className="flex items-center gap-2">
               <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              Full access to all features
+              Personalized solution design
             </span>
             <span className="flex items-center gap-2">
               <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              Cancel anytime, keep the data
+              Implementation roadmap included
             </span>
           </div>
 

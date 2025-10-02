@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Leaf, Globe, Recycle, Zap, ArrowDown } from 'lucide-react'
+import { Leaf, Globe, ArrowDown, Wrench, Droplets } from 'lucide-react'
 
 export default function SustainabilityHero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -46,22 +46,22 @@ export default function SustainabilityHero() {
             {/* Key Stats Preview */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
-                <Leaf className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                <Wrench className="w-8 h-8 text-green-600 mx-auto mb-3" />
                 <div className="text-2xl font-bold text-slate-900 mb-1">2.4K+</div>
                 <div className="text-sm text-slate-600">Devices Refurbished</div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
-                <Recycle className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                <Leaf className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                 <div className="text-2xl font-bold text-slate-900 mb-1">260+</div>
                 <div className="text-sm text-slate-600">Tonnes CO₂e Saved</div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
-                <Zap className="w-8 h-8 text-orange-600 mx-auto mb-3" />
+                <Globe className="w-8 h-8 text-orange-600 mx-auto mb-3" />
                 <div className="text-2xl font-bold text-slate-900 mb-1">330K+</div>
                 <div className="text-sm text-slate-600">kWh Energy Saved</div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
-                <Globe className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+                <Droplets className="w-8 h-8 text-purple-600 mx-auto mb-3" />
                 <div className="text-2xl font-bold text-slate-900 mb-1">3.6M+</div>
                 <div className="text-sm text-slate-600">Liters Water Saved</div>
               </div>

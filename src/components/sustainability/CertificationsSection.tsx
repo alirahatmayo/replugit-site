@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { Target, Leaf, Globe, TrendingUp, Star, CheckCircle, Clock, Award } from 'lucide-react'
 
 export default function CertificationsSection() {
@@ -255,12 +256,18 @@ export default function CertificationsSection() {
               sustainable practices. We're building something meaningful, and we want you to be part of it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-all duration-300">
+              <Link
+                href="/sustainability#progress"
+                className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-all duration-300 hover:shadow-lg"
+              >
                 Track Our Progress
-              </button>
-              <button className="border border-blue-300 text-blue-600 px-8 py-4 rounded-2xl font-semibold hover:bg-blue-50 transition-all duration-300">
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center border border-blue-300 text-blue-600 px-8 py-4 rounded-2xl font-semibold hover:bg-blue-50 transition-all duration-300 hover:shadow-sm"
+              >
                 Partner With Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>
