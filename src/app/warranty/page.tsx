@@ -70,18 +70,23 @@ export default function WarrantyPage() {
             </div>
           </div>
 
-          {/* Enhanced Story Section */}
-          <div className="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <div className="bg-red-100 p-3 rounded-full">
-                <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                </svg>
+          {/* Core Problem Statement */}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white p-8 rounded-2xl shadow-xl">
+              <div className="flex items-start gap-4">
+                <div className="bg-white/20 p-3 rounded-full flex-shrink-0">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-3">The Problem:</h3>
+                  <p className="text-lg leading-relaxed">
+                    You sell refurbished devices on Walmart, Best Buy, and Amazon. A customer calls: "Where's my warranty?" You frantically search Excel files, can't find the serial number, and lose the customer forever. <span className="font-bold">This happens every single day.</span>
+                  </p>
+                </div>
               </div>
             </div>
-            <blockquote className="text-lg text-gray-700 leading-relaxed text-center italic pt-4">
-              "Every day, electronics vendors like you juggle multiple Excel files, trying to match serial numbers to customers across Walmart, Best Buy, and in-store sales. One missing record means angry customers, lost reputation, and money down the drain."
-            </blockquote>
           </div>
 
           {/* Pain Points Visualization */}
@@ -132,385 +137,209 @@ export default function WarrantyPage() {
         </div>
       </section>
 
-      {/* Transformation Section - Enhanced */}
+      {/* The Solution Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
+            <div className="inline-block bg-gradient-to-r from-green-400 to-emerald-500 text-white px-6 py-2 rounded-full text-sm font-bold mb-6">
+              ✨ THE SOLUTION
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Your Complete Warranty Command Center
+              What ReplugIT Does For You
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              One system that transforms chaos into clarity
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A simple, automated warranty system that works for any sales channel
             </p>
-            {/* Value Proposition Highlight */}
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              Works with ANY sales channel - E-commerce OR Manual
-            </div>
           </div>
 
-          {/* Enhanced Before/After with Visual Impact */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl border-2 border-red-200 relative">
-              <div className="absolute -top-3 -left-3">
-                <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">BEFORE</div>
+          {/* 3 Core Features - Big & Clear */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 rounded-3xl shadow-xl">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
               </div>
-              <h3 className="text-2xl font-bold text-red-900 mb-6 mt-4">The Excel Nightmare</h3>
-              <div className="space-y-4">
-                {[
-                  "Manual Excel tracking across platforms",
-                  "No serial number visibility", 
-                  "Lost warranty claims",
-                  "Angry customers calling support",
-                  "Hours spent searching records",
-                  "Professional reputation at risk"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 p-3 bg-white/60 rounded-lg">
-                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl border-2 border-green-200 relative">
-              <div className="absolute -top-3 -left-3">
-                <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">AFTER</div>
-              </div>
-              <h3 className="text-2xl font-bold text-green-900 mb-6 mt-4">ReplugIT Automation</h3>
-              <div className="space-y-4">
-                {[
-                  "Automated tracking for ALL sales channels",
-                  "Real-time serial number mapping",
-                  "99% claim success rate",
-                  "Happy customers with self-service",
-                  "85% faster warranty processing",
-                  "Professional brand reputation"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 p-3 bg-white/80 rounded-lg shadow-sm">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Enhanced Process Flow */}
-          <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 rounded-3xl p-12 border border-blue-200">
-            <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-              Universal Workflow - Works for Any Business Model
-            </h3>
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-gray-900">Multiple Inputs</h4>
-                <p className="text-sm text-gray-600">Walmart • Best Buy • Store Sales</p>
-              </div>
-              
-              <div className="hidden lg:block text-3xl text-blue-500 animate-pulse">→</div>
-              
-              <div className="flex flex-col items-center text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4 shadow-xl transform scale-110">
-                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-gray-900 text-lg">ReplugIT Engine</h4>
-                <p className="text-sm text-gray-600">Intelligent Processing</p>
-              </div>
-              
-              <div className="hidden lg:block text-3xl text-blue-500 animate-pulse">→</div>
-              
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                </div>
-                <h4 className="font-bold text-gray-900">Perfect Output</h4>
-                <p className="text-sm text-gray-600">QR Codes • Analytics • Reports</p>
-              </div>
-            </div>
-            <div className="text-center mt-8">
-              <p className="text-gray-600 font-medium">
-                One system handles everything - from your first sale to final warranty claim
+              <h3 className="text-2xl font-bold mb-4">Automatic Record Keeping</h3>
+              <p className="text-blue-100 text-lg">
+                Every device you sell is automatically recorded with its serial number, customer info, and warranty details. Never lose track again.
               </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-indigo-600 to-indigo-800 text-white p-8 rounded-3xl shadow-xl">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Customer Self-Service</h3>
+              <p className="text-indigo-100 text-lg">
+                Customers scan a QR code or click a link to activate warranties and file claims themselves. No more support calls.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-600 to-purple-800 text-white p-8 rounded-3xl shadow-xl">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Build Loyalty & Reviews</h3>
+              <p className="text-purple-100 text-lg">
+                Offer extended warranties or incentives in exchange for reviews. Turn warranty activations into 5-star ratings.
+              </p>
+            </div>
+          </div>
+
+          {/* Simple Value Proposition */}
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-3xl p-12 text-center max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold mb-6">Here's What Makes It Special</h3>
+            <div className="grid md:grid-cols-2 gap-8 text-left">
+              <div>
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="bg-white/20 p-3 rounded-xl flex-shrink-0">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-2">Works with ANY Sales Channel</h4>
+                    <p className="text-blue-100">Walmart, Best Buy, Amazon, eBay, in-store sales - all in one place</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/20 p-3 rounded-xl flex-shrink-0">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-2">Serial Number → Customer Matching</h4>
+                    <p className="text-blue-100">Know exactly which device went to which customer, instantly</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="bg-white/20 p-3 rounded-xl flex-shrink-0">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-2">QR Code Activation</h4>
+                    <p className="text-blue-100">Customers scan a sticker on their device - warranty activated in seconds</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/20 p-3 rounded-xl flex-shrink-0">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-2">Incentivize Reviews</h4>
+                    <p className="text-blue-100">Offer extended warranty in exchange for honest reviews</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works - Enhanced Timeline */}
+      {/* How It Works - Simplified */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              From Sale to Satisfaction in 4 Simple Steps
+              How It Works (Really Simple)
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              A seamless process that works for any type of sale
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Four steps that happen automatically
             </p>
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Setup time: Under 30 minutes
-            </div>
           </div>
 
-          {/* Enhanced Interactive Steps */}
-          <div className="max-w-5xl mx-auto space-y-8">
+          {/* Simplified Steps */}
+          <div className="max-w-5xl mx-auto space-y-6">
             {[
               {
                 id: 'step1',
-                number: '01',
-                title: 'Connect Any Sales Channel',
-                subtitle: 'Universal Integration',
-                description: 'Whether it\'s Walmart, Best Buy, or your cash register - connect in minutes',
-                details: [
-                  'E-commerce platforms auto-sync orders instantly',
-                  'Manual entry system for in-store sales',
-                  'Import existing inventory with one click',
-                  'Central dashboard unifies all channels'
-                ],
-                color: 'blue',
-                benefit: 'No more platform juggling'
+                number: '1',
+                title: 'You Sell a Device',
+                description: 'On Walmart, Best Buy, Amazon, eBay, or your local store - doesn\'t matter where',
+                icon: (
+                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                ),
+                color: 'blue'
               },
               {
                 id: 'step2',
-                number: '02',
-                title: 'Scan & Assign',
-                subtitle: 'Smart Automation',
-                description: 'Scan barcode, system generates QR code and warranty instantly',
-                details: [
-                  'Barcode scanner integration (phone or device)',
-                  'Automatic QR code generation in seconds',
-                  'Unique warranty codes for each product',
-                  'Perfect serial number mapping maintained'
-                ],
-                color: 'purple',
-                benefit: 'Zero manual data entry'
+                number: '2',
+                title: 'We Record Everything',
+                description: 'Serial number, customer name, email, order details - all saved automatically',
+                icon: (
+                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                ),
+                color: 'purple'
               },
               {
                 id: 'step3',
-                number: '03',
-                title: 'Customer Activates',
-                subtitle: 'Effortless Experience',
-                description: 'Customer scans QR or clicks email - instant warranty activation',
-                details: [
-                  'Professional QR sticker on device',
-                  'Backup email with activation link',
-                  'Simple name + email entry process',
-                  'Instant warranty confirmation & certificate'
-                ],
-                color: 'green',
-                benefit: 'Happy customers, zero calls'
+                number: '3',
+                title: 'Customer Gets QR Code',
+                description: 'They scan it (or click email link) and activate their warranty in 30 seconds',
+                icon: (
+                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                ),
+                color: 'indigo'
               },
               {
                 id: 'step4',
-                number: '04',
-                title: 'Track Everything',
-                subtitle: 'Complete Visibility',
-                description: 'Real-time dashboard shows all warranties, claims, and analytics',
-                details: [
-                  'Live warranty status for every product',
-                  'Automated claim management system',
-                  'Customer self-service portal reduces support',
-                  'Comprehensive reporting and insights'
-                ],
-                color: 'orange',
-                benefit: 'Complete control & insights'
+                number: '4',
+                title: 'You Have Complete Records',
+                description: 'Track warranties, handle claims, view analytics - all from one dashboard',
+                icon: (
+                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                ),
+                color: 'purple'
               }
             ].map((step, index) => (
-              <div key={step.id} className="group">
-                <div className="bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300">
-                  <button
-                    onClick={() => toggleDropdown(step.id)}
-                    className="w-full p-8 text-left flex items-start gap-6 hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="flex-shrink-0">
-                      <div className={`w-16 h-16 bg-gradient-to-br from-${step.color}-500 to-${step.color}-600 rounded-2xl flex items-center justify-center shadow-lg`}>
-                        <span className="text-2xl font-bold text-white">{step.number}</span>
-                      </div>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <div className={`inline-block px-3 py-1 bg-${step.color}-100 text-${step.color}-800 text-xs font-semibold rounded-full mb-2`}>
-                            {step.subtitle}
-                          </div>
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">{step.title}</h3>
-                          <p className="text-gray-600 mb-2">{step.description}</p>
-                          <div className={`inline-flex items-center gap-2 text-${step.color}-600 font-medium text-sm`}>
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                            {step.benefit}
-                          </div>
-                        </div>
-                        <div className={`transform transition-transform duration-300 ${activeDropdown === step.id ? 'rotate-180' : ''}`}>
-                          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </button>
-                  
-                  {activeDropdown === step.id && (
-                    <div className="px-8 pb-8">
-                      <div className={`border-t-2 border-${step.color}-200 pt-6`}>
-                        <div className="grid md:grid-cols-2 gap-6">
-                          <div>
-                            <h4 className="font-semibold text-gray-900 mb-4">What Happens:</h4>
-                            <ul className="space-y-3">
-                              {step.details.map((detail, detailIndex) => (
-                                <li key={detailIndex} className="flex items-start gap-3">
-                                  <div className={`w-2 h-2 bg-${step.color}-500 rounded-full mt-2 flex-shrink-0`}></div>
-                                  <span className="text-gray-700">{detail}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div className={`bg-${step.color}-50 p-6 rounded-xl`}>
-                            <h4 className={`font-semibold text-${step.color}-900 mb-3`}>The Result:</h4>
-                            <p className={`text-${step.color}-800`}>
-                              {step.id === 'step1' && "All your sales channels work together seamlessly, whether you're selling on Walmart or face-to-face in your store."}
-                              {step.id === 'step2' && "Every product gets its digital warranty instantly - no typing, no mistakes, no missing records."}
-                              {step.id === 'step3' && "Customers get a professional warranty experience that builds trust and reduces your support workload."}
-                              {step.id === 'step4' && "You have complete visibility into your warranty operations with actionable insights to grow your business."}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                
-                {/* Connector Line */}
-                {index < 3 && (
-                  <div className="flex justify-center py-4">
-                    <div className="w-px h-8 bg-gradient-to-b from-gray-300 to-gray-200"></div>
+              <div key={step.id} className="bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:border-blue-300">
+                <div className="flex items-start gap-6">
+                  <div className={`flex-shrink-0 w-20 h-20 bg-gradient-to-br from-${step.color}-500 to-${step.color}-600 rounded-2xl flex items-center justify-center shadow-lg`}>
+                    {step.icon}
                   </div>
-                )}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className={`bg-${step.color}-100 text-${step.color}-800 px-3 py-1 rounded-full text-sm font-bold`}>
+                        Step {step.number}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                    <p className="text-lg text-gray-600">{step.description}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
           
-          {/* Call to Action after steps */}
-          <div className="text-center mt-16">
-            <div className="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Ready to See It in Action?
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Contact us for a personalized consultation and see exactly how this works for your business
+          {/* That's It Message */}
+          <div className="text-center mt-12">
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 rounded-2xl shadow-xl max-w-2xl mx-auto">
+              <h3 className="text-3xl font-bold mb-4">That's It. Seriously.</h3>
+              <p className="text-xl text-blue-50">
+                No complicated setup. No training required. Just professional warranty management that actually works.
               </p>
-              <a 
-                href="/contact" 
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg inline-block"
-              >
-                Schedule Consultation
-              </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ROI Calculator */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              See Your Savings in Real-Time
-            </h2>
-            <p className="text-xl text-blue-100">
-              Calculate your potential return on investment
-            </p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div>
-                <label className="block text-blue-100 mb-2">Devices Sold Monthly</label>
-                <input
-                  type="range"
-                  min="100"
-                  max="5000"
-                  value={monthlyDevices}
-                  onChange={(e) => setMonthlyDevices(parseInt(e.target.value))}
-                  className="w-full"
-                />
-                <div className="text-2xl font-bold mt-2">{monthlyDevices.toLocaleString()}</div>
-              </div>
-              <div>
-                <label className="block text-blue-100 mb-2">Warranty Claim Rate (%)</label>
-                <input
-                  type="range"
-                  min="5"
-                  max="25"
-                  value={warrantyRate}
-                  onChange={(e) => setWarrantyRate(parseInt(e.target.value))}
-                  className="w-full"
-                />
-                <div className="text-2xl font-bold mt-2">{warrantyRate}%</div>
-              </div>
-              <div>
-                <label className="block text-blue-100 mb-2">Hours on Warranties (Weekly)</label>
-                <input
-                  type="range"
-                  min="5"
-                  max="40"
-                  value={hoursSpent}
-                  onChange={(e) => setHoursSpent(parseInt(e.target.value))}
-                  className="w-full"
-                />
-                <div className="text-2xl font-bold mt-2">{hoursSpent} hrs</div>
-              </div>
-            </div>
-
-            <div className="border-t border-white/20 pt-8">
-              <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-green-400">${annualSavings.toLocaleString()}</div>
-                  <p className="text-blue-100 mt-1">Annual Savings</p>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-yellow-400">{timeSaved} hrs/month</div>
-                  <p className="text-blue-100 mt-1">Time Saved</p>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-orange-400">{roi}%</div>
-                  <p className="text-blue-100 mt-1">ROI in Year 1</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center mt-8">
-              <button className="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                Get Detailed ROI Report
-              </button>
-            </div>
-          </div>
-
-          <p className="text-center text-blue-200 mt-6 italic">
-            Most vendors see positive ROI within 30 days
-          </p>
         </div>
       </section>
 
@@ -537,7 +366,7 @@ export default function WarrantyPage() {
                 <p className="text-gray-600">Warranties Managed</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">All Channels</div>
+                <div className="text-4xl font-bold text-indigo-600 mb-2">All Channels</div>
                 <p className="text-gray-600">E-commerce + Manual</p>
               </div>
               <div>
@@ -711,16 +540,16 @@ export default function WarrantyPage() {
           {/* Value Props Grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-10 max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="font-bold text-lg mb-2">Custom Demo</h3>
+              <h3 className="font-bold text-lg mb-2">Custom Consultation</h3>
               <p className="text-blue-200 text-sm">Tailored to your business needs</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
@@ -739,60 +568,28 @@ export default function WarrantyPage() {
             </div>
           </div>
           
-          {/* Main CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          {/* Main CTA */}
+          <div className="flex flex-col items-center gap-6 mb-12">
             <a 
               href="/contact" 
-              className="group bg-white text-blue-900 px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl border-2 border-transparent hover:border-yellow-400 inline-block"
+              className="group bg-gradient-to-r from-yellow-400 to-orange-400 text-blue-900 px-12 py-6 rounded-2xl font-bold text-2xl hover:from-yellow-300 hover:to-orange-300 transition-all transform hover:scale-105 shadow-2xl inline-block"
             >
               <span className="flex items-center gap-3 justify-center">
-                <svg className="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg className="w-7 h-7 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
-                Schedule Demo & Consultation
-                <span className="text-xs bg-yellow-500 text-white px-2 py-1 rounded-full">FREE</span>
+                Let's Talk About Your Business
               </span>
             </a>
-            <a 
-              href="/contact" 
-              className="border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-blue-900 transition-all group inline-block"
-            >
-              <span className="flex items-center gap-2 justify-center">
-                <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                Watch Product Demo
-              </span>
-            </a>
+            <p className="text-blue-100 text-lg">
+              Free consultation • No commitment • Custom solution design
+            </p>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-8 text-blue-100 mb-8">
-            <span className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              No commitment required
-            </span>
-            <span className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              Personalized solution design
-            </span>
-            <span className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              Implementation roadmap included
-            </span>
-          </div>
-
-          {/* Final Urgency Message */}
-          <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-xl p-6 border border-yellow-400/30 max-w-2xl mx-auto">
-            <p className="text-yellow-200 font-medium">
-              <span className="font-bold text-yellow-300">Don't wait another month</span> losing money to warranty chaos. 
-              Every day you delay costs you customers and profits.
+          {/* Simple Closing Message */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-100 text-center">
+              We'll show you exactly how this works for <span className="font-bold text-white">your specific business</span> - whether you sell 50 devices a month or 5,000.
             </p>
           </div>
         </div>
