@@ -15,7 +15,7 @@ export default function BestBuyRepricerPage() {
       <RepricerBanner />
 
       {/* Core Value Proposition */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -27,8 +27,8 @@ export default function BestBuyRepricerPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+            <div className="bg-white p-8 rounded-xl shadow-sm border-2 border-gray-200 hover:border-blue-400 hover:shadow-md transition-all">
+              <div className="w-16 h-16 bg-red-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
                 <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -39,8 +39,8 @@ export default function BestBuyRepricerPage() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+            <div className="bg-white p-8 rounded-xl shadow-sm border-2 border-gray-200 hover:border-blue-400 hover:shadow-md transition-all">
+              <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -51,8 +51,8 @@ export default function BestBuyRepricerPage() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+            <div className="bg-white p-8 rounded-xl shadow-sm border-2 border-gray-200 hover:border-blue-400 hover:shadow-md transition-all">
+              <div className="w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center mb-6 mx-auto">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -80,11 +80,11 @@ export default function BestBuyRepricerPage() {
 
             <div className="relative">
             {/* Connection Line */}
-            <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-blue-300 via-indigo-300 to-purple-300 transform -translate-y-1/2"></div>
+            <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-gray-300 transform -translate-y-1/2"></div>
             
             <div className="grid md:grid-cols-4 gap-8 relative">
               <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
+                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
                   1
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">Add Products</h3>
@@ -94,7 +94,7 @@ export default function BestBuyRepricerPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
+                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
                   2
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">We Monitor</h3>
@@ -104,7 +104,7 @@ export default function BestBuyRepricerPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
+                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
                   3
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">Smart Decisions</h3>
@@ -114,7 +114,7 @@ export default function BestBuyRepricerPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
+                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
                   4
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">Auto-Adjust</h3>
@@ -124,18 +124,18 @@ export default function BestBuyRepricerPage() {
               </div>
             </div>
           </div>          {/* Real Example */}
-          <div className="mt-16 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-100">
+          <div className="mt-16 bg-blue-50 rounded-xl p-8 border border-gray-200">
             <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">Real-Time Example</h3>
             <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
                 <div className="text-2xl font-bold text-red-600 mb-2">2:15 AM</div>
                 <p className="text-sm text-gray-600">Competitor drops price from $19.99 to $17.99</p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <div className="text-2xl font-bold text-indigo-600 mb-2">2:30 AM</div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                <div className="text-2xl font-bold text-blue-600 mb-2">2:30 AM</div>
                 <p className="text-sm text-gray-600">BB-Repricer adjusts your price to $17.89 (still 45% margin)</p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
                 <div className="text-2xl font-bold text-green-600 mb-2">2:31 AM</div>
                 <p className="text-sm text-gray-600">You're back to winning Buy Box, no sales lost</p>
               </div>
@@ -157,7 +157,7 @@ export default function BestBuyRepricerPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-white rounded-xl p-8 shadow-sm border-2 border-gray-200">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">📊 What You See</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -168,21 +168,21 @@ export default function BestBuyRepricerPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Performance Tracking</h4>
                     <p className="text-gray-600 text-sm">Buy Box win rates, revenue impact, and profit margin analysis</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Opportunity Alerts</h4>
                     <p className="text-gray-600 text-sm">When competitors are out of stock or priced high</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Market Intelligence</h4>
                     <p className="text-gray-600 text-sm">Competitor behavior patterns and strategic insights</p>
@@ -191,24 +191,24 @@ export default function BestBuyRepricerPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-8 text-white">
+            <div className="bg-slate-900 rounded-xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">🎯 What You Achieve</h3>
               <div className="space-y-6">
                 <div>
-                  <div className="text-3xl font-bold text-yellow-300">23%</div>
-                  <p className="text-indigo-100">Average revenue increase from faster Buy Box wins</p>
+                  <div className="text-3xl font-bold text-blue-400">23%</div>
+                  <p className="text-slate-300">Average revenue increase from faster Buy Box wins</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-green-300">15hrs</div>
-                  <p className="text-indigo-100">Weekly time saved from automated monitoring</p>
+                  <div className="text-3xl font-bold text-blue-400">15hrs</div>
+                  <p className="text-slate-300">Weekly time saved from automated monitoring</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-orange-300">30min</div>
-                  <p className="text-indigo-100">Fastest response time to market changes</p>
+                  <div className="text-3xl font-bold text-blue-400">30min</div>
+                  <p className="text-slate-300">Fastest response time to market changes</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-pink-300">40%</div>
-                  <p className="text-indigo-100">More Buy Box wins with smart automation</p>
+                  <div className="text-3xl font-bold text-blue-400">40%</div>
+                  <p className="text-slate-300">More Buy Box wins with smart automation</p>
                 </div>
               </div>
             </div>
@@ -230,27 +230,27 @@ export default function BestBuyRepricerPage() {
 
           {/* Plans Comparison Table */}
           <div className="overflow-x-auto">
-            <div className="min-w-[800px] bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="min-w-[800px] bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden">
               {/* Header */}
-              <div className="grid grid-cols-4 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50">
+              <div className="grid grid-cols-4 bg-gray-50">
                 <div className="p-4 lg:p-6">
                   <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2">Features</h3>
                   <p className="text-gray-600 text-xs lg:text-sm">Compare what you get</p>
                 </div>
-                <div className="p-4 lg:p-6 border-l border-indigo-200 text-center">
+                <div className="p-4 lg:p-6 border-l border-gray-200 text-center">
                   <h3 className="text-sm lg:text-lg font-bold text-gray-900 mb-1">Basic Monitor</h3>
                   <p className="text-gray-600 text-xs">See what's happening</p>
                   <div className="mt-2 text-xs text-gray-500">For beginners</div>
                 </div>
-                <div className="p-4 lg:p-6 border-l border-indigo-200 bg-gradient-to-br from-indigo-100 to-purple-100 relative text-center">
+                <div className="p-4 lg:p-6 border-l border-gray-200 bg-blue-50 relative text-center">
                   <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-10">
-                    <span className="bg-gradient-to-r from-yellow-400 to-orange-400 text-indigo-900 px-2 py-1 rounded-full text-xs font-bold whitespace-nowrap">Most Popular</span>
+                    <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-bold whitespace-nowrap">Most Popular</span>
                   </div>
-                  <h3 className="text-sm lg:text-lg font-bold text-indigo-700 mb-1 mt-2">Auto Repricer</h3>
+                  <h3 className="text-sm lg:text-lg font-bold text-blue-700 mb-1 mt-2">Auto Repricer</h3>
                   <p className="text-gray-600 text-xs">Hands-off automation</p>
-                  <div className="mt-2 text-xs text-indigo-700 font-medium">Recommended</div>
+                  <div className="mt-2 text-xs text-blue-700 font-medium">Recommended</div>
                 </div>
-                <div className="p-4 lg:p-6 border-l border-indigo-200 text-center">
+                <div className="p-4 lg:p-6 border-l border-gray-200 text-center">
                   <h3 className="text-sm lg:text-lg font-bold text-gray-900 mb-1">Enterprise Plus</h3>
                   <p className="text-gray-600 text-xs">Advanced insights</p>
                   <div className="mt-2 text-xs text-gray-500">Large sellers</div>
@@ -478,7 +478,7 @@ export default function BestBuyRepricerPage() {
             
             <a 
               href="/contact" 
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-12 py-4 text-xl font-bold rounded-2xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="group inline-flex items-center gap-3 bg-blue-600 text-white px-12 py-4 text-xl font-bold rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -511,50 +511,40 @@ export default function BestBuyRepricerPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white overflow-hidden">
+      <section className="relative py-20 bg-slate-900 text-white overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:40px_40px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/50 to-transparent"></div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-xl"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-400/10 rounded-full blur-xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-blue-400/10 rounded-full blur-xl"></div>
+        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px]"></div>
         
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <div className="mb-8">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6 border border-white/20">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              Limited Time Offer
-            </div>
             
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Ready to Dominate Best Buy Canada?
             </h2>
-            <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed">
               Join smart sellers who use BB-Repricer to automate their pricing and win more Buy Boxes
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 transform hover:scale-105 transition-all duration-300">
-              <div className="text-4xl md:text-5xl font-bold text-yellow-300 mb-2">50K+</div>
-              <div className="text-blue-200 text-sm md:text-base">SKUs monitored daily</div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">50K+</div>
+              <div className="text-slate-300 text-sm md:text-base">SKUs monitored daily</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 transform hover:scale-105 transition-all duration-300">
-              <div className="text-4xl md:text-5xl font-bold text-purple-300 mb-2">30min</div>
-              <div className="text-blue-200 text-sm md:text-base">Automated repricing cycles</div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">30min</div>
+              <div className="text-slate-300 text-sm md:text-base">Automated repricing cycles</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 transform hover:scale-105 transition-all duration-300">
-              <div className="text-4xl md:text-5xl font-bold text-orange-300 mb-2">24/7</div>
-              <div className="text-blue-200 text-sm md:text-base">Continuous monitoring</div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">24/7</div>
+              <div className="text-slate-300 text-sm md:text-base">Continuous monitoring</div>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             <a 
               href="/contact" 
-              className="group bg-gradient-to-r from-yellow-400 to-orange-400 text-indigo-900 px-8 py-4 rounded-xl font-bold text-lg hover:from-yellow-300 hover:to-orange-300 transition-all duration-300 inline-block transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="group bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all duration-300 inline-block shadow-lg hover:shadow-xl"
             >
               <span className="flex items-center justify-center gap-2">
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -565,7 +555,7 @@ export default function BestBuyRepricerPage() {
             </a>
             <a 
               href="/contact" 
-              className="group border-2 border-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-indigo-900 transition-all duration-300 inline-block transform hover:scale-105"
+              className="group border-2 border-slate-600 backdrop-blur-sm text-slate-300 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 hover:border-slate-500 transition-all duration-300 inline-block"
             >
               <span className="flex items-center justify-center gap-2">
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -576,21 +566,21 @@ export default function BestBuyRepricerPage() {
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-blue-200 text-sm">
+          <div className="flex flex-wrap justify-center gap-6 text-slate-400 text-sm">
             <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
               No commitment required
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
               Custom pricing available
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
               Implementation support included
