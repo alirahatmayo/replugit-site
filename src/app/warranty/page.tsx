@@ -419,11 +419,14 @@ export default function WarrantyPage() {
                 Ready to See It in Action?
               </h3>
               <p className="text-gray-600 mb-6">
-                Watch our 3-minute demo to see exactly how this works for your business
+                Contact us for a personalized consultation and see exactly how this works for your business
               </p>
-              <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg">
-                Watch Demo Now
-              </button>
+              <a 
+                href="/contact" 
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg inline-block"
+              >
+                Schedule Consultation
+              </a>
             </div>
           </div>
         </div>

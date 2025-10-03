@@ -56,17 +56,23 @@ const RepricerBanner = () => (
           </div>
           
           <div className="flex flex-col sm:flex-row gap-3 mb-6">
-            <button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-blue-900 px-6 py-3 rounded-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg group">
-              <span className="flex items-center gap-2">
-                Start 14-Day Free Trial
+            <a 
+              href="/contact" 
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 text-blue-900 px-6 py-3 rounded-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg group inline-block text-center"
+            >
+              <span className="flex items-center gap-2 justify-center">
+                Schedule Demo
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>
-            </button>
-            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all">
-              Watch Demo
-            </button>
+            </a>
+            <a 
+              href="/contact" 
+              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all inline-block text-center"
+            >
+              Get Pricing
+            </a>
           </div>
           
           {/* Social Proof */}
@@ -78,9 +84,9 @@ const RepricerBanner = () => (
               No setup fees
             </span>
             <span>•</span>
-            <span>14-day free trial</span>
+            <span>Flexible pricing options</span>
             <span>•</span>
-            <span>Cancel anytime</span>
+            <span>ROI guarantee</span>
           </div>
         </div>
         
