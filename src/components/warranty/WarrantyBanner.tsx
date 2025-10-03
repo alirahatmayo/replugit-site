@@ -1,9 +1,9 @@
 import React from 'react';
 
 const WarrantyBanner = () => (
-  <section className="relative min-h-[500px] flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
+  <section className="relative min-h-[500px] flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
     {/* Background Pattern */}
-    <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:40px_40px]"></div>
+    <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px]"></div>
     
     <div className="relative max-w-7xl mx-auto px-6 py-16">
       <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -11,43 +11,43 @@ const WarrantyBanner = () => (
         <div className="text-center lg:text-left">
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium mb-4 border border-white/20">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
             Professional Warranty Management
           </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
             Stop Losing Money to
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
+            <span className="block text-blue-400">
               Warranty Chaos
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-blue-100 mb-6 leading-relaxed">
-            Transform your Excel nightmare into an automated warranty powerhouse that saves vendors
-            <span className="text-yellow-300 font-semibold"> 40% on admin costs</span>
+          <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed">
+            Transform your Excel nightmare into an automated warranty system that saves vendors
+            <span className="text-white font-semibold"> 40% on admin costs</span>
           </p>
           
-          {/* Key Benefits List - Enhanced */}
+          {/* Key Benefits List - Minimal */}
           <div className="mb-6 space-y-2">
-            <div className="flex items-center gap-3 text-blue-200 text-sm">
-              <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex items-center gap-3 text-slate-300 text-sm">
+              <div className="w-5 h-5 bg-slate-700 rounded-full flex items-center justify-center">
+                <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
               <span>Automated claim processing & real-time analytics</span>
             </div>
-            <div className="flex items-center gap-3 text-blue-200 text-sm">
-              <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex items-center gap-3 text-slate-300 text-sm">
+              <div className="w-5 h-5 bg-slate-700 rounded-full flex items-center justify-center">
+                <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
               <span>Customer self-service portal & 24/7 support</span>
             </div>
-            <div className="flex items-center gap-3 text-blue-200 text-sm">
-              <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex items-center gap-3 text-slate-300 text-sm">
+              <div className="w-5 h-5 bg-slate-700 rounded-full flex items-center justify-center">
+                <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
@@ -58,7 +58,7 @@ const WarrantyBanner = () => (
           <div className="flex flex-col sm:flex-row gap-3 mb-6">
             <a 
               href="/contact" 
-              className="bg-gradient-to-r from-yellow-400 to-orange-500 text-blue-900 px-6 py-3 rounded-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg group inline-block text-center"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg group inline-block text-center"
             >
               <span className="flex items-center gap-2 justify-center">
                 Schedule Consultation
@@ -69,16 +69,16 @@ const WarrantyBanner = () => (
             </a>
             <a 
               href="/contact" 
-              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all inline-block text-center"
+              className="border-2 border-slate-600 text-slate-300 px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 hover:border-slate-500 transition-all inline-block text-center"
             >
               Get Custom Quote
             </a>
           </div>
           
           {/* Social Proof - Condensed */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-blue-200 text-xs">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-slate-400 text-xs">
             <span className="flex items-center gap-1">
-              <svg className="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
               No setup fees
@@ -92,7 +92,7 @@ const WarrantyBanner = () => (
         
         {/* Right Side - Enhanced Dashboard */}
         <div className="hidden lg:block relative">
-          <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/30 shadow-2xl">
+          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl">
             <div className="bg-white rounded-xl p-6 shadow-lg">
               <div className="flex items-center justify-between mb-6">
                 <div>
