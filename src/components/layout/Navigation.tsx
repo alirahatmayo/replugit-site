@@ -104,12 +104,12 @@ export default function Navigation() {
   }
 
   return (
-    <nav className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-white/95 backdrop-blur-xl border border-slate-200/60 shadow-xl shadow-slate-900/5' 
-        : 'bg-white/90 backdrop-blur-lg border border-slate-100/60 shadow-lg shadow-slate-900/3'
+        ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/60 shadow-xl shadow-slate-900/5' 
+        : 'bg-white/90 backdrop-blur-lg border-b border-slate-100/60 shadow-lg shadow-slate-900/3'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
           {/* Logo */}
@@ -156,14 +156,14 @@ export default function Navigation() {
                   >
                     <Link
                       href={item.href}
-                      className={`flex items-center space-x-2 px-5 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 ${
+                      className={`flex items-center space-x-2 px-5 py-2.5 text-base font-semibold rounded-xl transition-all duration-300 ${
                         isActive(item.href)
                           ? 'text-emerald-600 bg-emerald-50/80 shadow-sm' 
-                          : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50/80 hover:shadow-sm'
+                          : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50/80 hover:shadow-sm'
                       }`}
                     >
                       {item.icon && <item.icon className="w-4 h-4" />}
-                      <span className="font-medium">{item.name}</span>
+                      <span className="font-semibold">{item.name}</span>
                       <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -185,7 +185,7 @@ export default function Navigation() {
                                 </div>
                               )}
                               <div>
-                                <div className="font-medium text-slate-900">{dropdownItem.name}</div>
+                                <div className="font-semibold text-slate-900">{dropdownItem.name}</div>
                                 <div className="text-slate-500 text-xs mt-0.5 font-normal leading-relaxed">{dropdownItem.description}</div>
                               </div>
                             </Link>
@@ -197,14 +197,14 @@ export default function Navigation() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`flex items-center space-x-2 px-5 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 ${
+                    className={`flex items-center space-x-2 px-5 py-2.5 text-base font-semibold rounded-xl transition-all duration-300 ${
                       isActive(item.href)
                         ? 'text-emerald-600 bg-emerald-50/80 shadow-sm' 
-                        : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50/80 hover:shadow-sm'
+                        : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50/80 hover:shadow-sm'
                     }`}
                   >
                     {item.icon && <item.icon className="w-4 h-4" />}
-                    <span className="font-medium">{item.name}</span>
+                    <span className="font-semibold">{item.name}</span>
                   </Link>
                 )}
               </div>
@@ -215,14 +215,14 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-4">
             <Link
               href="/wholesale"
-              className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 px-5 py-2.5 text-sm font-medium border border-emerald-200/80 rounded-xl hover:bg-emerald-50/80 hover:border-emerald-300 transition-all duration-300 hover:shadow-sm"
+              className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 px-5 py-2.5 text-base font-semibold border border-emerald-200/80 rounded-xl hover:bg-emerald-50/80 hover:border-emerald-300 transition-all duration-300 hover:shadow-sm"
             >
               <ShoppingCart className="w-4 h-4" />
               <span>Wholesale Catalog</span>
             </Link>
             <Link
               href="/contact"
-              className="flex items-center space-x-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-6 py-2.5 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-emerald-500/25"
+              className="flex items-center space-x-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-emerald-500/25"
             >
               <Phone className="w-4 h-4" />
               <span>Contact Us</span>
@@ -233,13 +233,13 @@ export default function Navigation() {
           <div className="md:hidden flex items-center space-x-2">
             <Link
               href="/wholesale"
-              className="text-emerald-600 hover:text-emerald-700 px-3 py-2 text-xs font-medium border border-emerald-200/80 rounded-lg hover:bg-emerald-50/80 transition-all duration-300"
+              className="text-emerald-600 hover:text-emerald-700 px-3 py-2 text-sm font-semibold border border-emerald-200/80 rounded-lg hover:bg-emerald-50/80 transition-all duration-300"
             >
               Catalog
             </Link>
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-4 py-2 rounded-lg text-xs font-medium transition-all duration-300 shadow-md"
+              className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md"
             >
               Contact
             </Link>
@@ -249,7 +249,7 @@ export default function Navigation() {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-600 hover:text-emerald-600 hover:bg-slate-100/80 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all duration-300 hover:shadow-sm"
+              className="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-700 hover:text-emerald-600 hover:bg-slate-100/80 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all duration-300 hover:shadow-sm"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -268,16 +268,16 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-slate-200/60 rounded-b-2xl">
-          <div className="px-6 pt-4 pb-6 space-y-3 max-h-[calc(100vh-6rem)] overflow-y-auto overscroll-contain">
+        <div className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-slate-200/60">
+          <div className="px-4 sm:px-6 pt-4 pb-6 space-y-3 max-h-[calc(100vh-6rem)] overflow-y-auto overscroll-contain">
             {navItems.map((item) => (
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className={`flex items-center space-x-3 px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
+                  className={`flex items-center space-x-3 px-4 py-3 text-base font-semibold rounded-xl transition-all duration-300 ${
                     isActive(item.href)
                       ? 'text-emerald-600 bg-emerald-50/80 shadow-sm' 
-                      : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50/80 hover:shadow-sm'
+                      : 'text-slate-800 hover:text-emerald-600 hover:bg-slate-50/80 hover:shadow-sm'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -292,7 +292,7 @@ export default function Navigation() {
                       <Link
                         key={dropdownItem.name}
                         href={dropdownItem.href}
-                        className="block px-4 py-2 text-sm font-medium text-slate-500 hover:text-emerald-600 hover:bg-slate-50/80 rounded-xl transition-all duration-300"
+                        className="block px-4 py-2 text-sm font-semibold text-slate-600 hover:text-emerald-600 hover:bg-slate-50/80 rounded-xl transition-all duration-300"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {dropdownItem.name}
@@ -307,14 +307,14 @@ export default function Navigation() {
             <div className="pt-4 space-y-3 border-t border-slate-200/60">
               <Link
                 href="/wholesale"
-                className="block w-full text-center text-emerald-600 border border-emerald-200/80 px-4 py-3 text-base font-medium rounded-xl hover:bg-emerald-50/80 hover:border-emerald-300 transition-all duration-300 hover:shadow-sm"
+                className="block w-full text-center text-emerald-600 border border-emerald-200/80 px-4 py-3 text-base font-semibold rounded-xl hover:bg-emerald-50/80 hover:border-emerald-300 transition-all duration-300 hover:shadow-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Wholesale Catalog
               </Link>
               <Link
                 href="/contact"
-                className="block w-full text-center bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="block w-full text-center bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-4 py-3 text-base font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact Us
