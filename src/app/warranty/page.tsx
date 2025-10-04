@@ -248,6 +248,117 @@ export default function WarrantyPage() {
         </div>
       </section>
 
+      {/* Quebec Bill 29 Compliance Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-white rounded-2xl shadow-xl border-2 border-blue-200 p-8 md:p-12">
+            <div className="flex items-start gap-6 mb-8">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex-1">
+                <div className="inline-block bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm font-bold mb-4">
+                  🇨🇦 QUEBEC BILL 29 COMPLIANT
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  Stay Compliant with Quebec's New Warranty Laws
+                </h2>
+                <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                  Quebec's Bill 29 (2023) requires all merchants selling household appliances and electronics to provide mandatory "good working order" warranties. <span className="font-semibold text-gray-900">Non-compliance penalties: Up to 5% of worldwide revenue.</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-red-50 border-2 border-red-200 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-red-900 mb-4 flex items-center gap-2">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                  </svg>
+                  Bill 29 Requirements
+                </h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-600 mt-1">⚠️</span>
+                    <span>Provide mandatory warranty for prescribed goods</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-600 mt-1">⚠️</span>
+                    <span>Disclose warranty information in French before sale</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-600 mt-1">⚠️</span>
+                    <span>Maintain detailed warranty records for all sales</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-600 mt-1">⚠️</span>
+                    <span>Provide repair information and replacement parts</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-600 mt-1">⚠️</span>
+                    <span>Allow consumer access to warranty documentation</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-blue-900 mb-4 flex items-center gap-2">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  How ReplugIT Helps
+                </h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 mt-1">✅</span>
+                    <span>Automatic warranty record keeping with serial numbers</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 mt-1">✅</span>
+                    <span>Bilingual documentation (French/English)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 mt-1">✅</span>
+                    <span>Complete audit trail for compliance verification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 mt-1">✅</span>
+                    <span>Customer portal for warranty information access</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 mt-1">✅</span>
+                    <span>QR codes for instant warranty activation & tracking</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200 rounded-xl p-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-amber-900 mb-2">Don't Risk Penalties</h4>
+                  <p className="text-gray-700 mb-3">
+                    Bill 29 penalties can reach <span className="font-bold text-amber-900">up to 5% of your worldwide turnover</span>. Directors and officers are personally liable. Let ReplugIT handle your compliance automatically.
+                  </p>
+                  <p className="text-sm text-gray-600 italic">
+                    Reference: An Act to protect consumers from planned obsolescence and to promote the durability, repairability and maintenance of goods (2023, Chapter 21)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works - Simplified */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">

@@ -24,7 +24,7 @@ const WarrantyBanner = () => (
           
           <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed">
             Transform your Excel nightmare into an automated warranty system that saves vendors
-            <span className="text-white font-semibold"> 40% on admin costs</span>
+            <span className="text-white font-semibold"> 40% on admin costs</span> and ensures <span className="text-blue-400 font-semibold">Quebec Bill 29 compliance</span>
           </p>
           
           {/* Key Benefits List - Minimal */}
