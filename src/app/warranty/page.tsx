@@ -72,17 +72,17 @@ export default function WarrantyPage() {
 
           {/* Core Problem Statement */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white p-8 rounded-2xl shadow-xl">
+            <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-xl border-2 border-slate-700">
               <div className="flex items-start gap-4">
-                <div className="bg-white/20 p-3 rounded-full flex-shrink-0">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-white/10 p-3 rounded-full flex-shrink-0">
+                  <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-3">The Problem:</h3>
-                  <p className="text-lg leading-relaxed">
-                    You sell refurbished devices on Walmart, Best Buy, and Amazon. A customer calls: "Where's my warranty?" You frantically search Excel files, can't find the serial number, and lose the customer forever. <span className="font-bold">This happens every single day.</span>
+                  <h3 className="text-2xl font-bold mb-3 text-red-400">The Problem:</h3>
+                  <p className="text-lg leading-relaxed text-slate-300">
+                    You sell refurbished devices on Walmart, Best Buy, and Amazon. A customer calls: "Where's my warranty?" You frantically search Excel files, can't find the serial number, and lose the customer forever. <span className="font-bold text-white">This happens every single day.</span>
                   </p>
                 </div>
               </div>
@@ -91,8 +91,8 @@ export default function WarrantyPage() {
 
           {/* Pain Points Visualization */}
           <div className="mt-16 grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border-2 border-dashed border-red-200">
-              <h3 className="text-xl font-bold text-red-900 mb-4">The Daily Struggle</h3>
+            <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">The Daily Struggle</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 mt-1">❌</span>
@@ -112,8 +112,8 @@ export default function WarrantyPage() {
                 </li>
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border-2 border-dashed border-blue-200">
-              <h3 className="text-xl font-bold text-blue-900 mb-4">What Success Looks Like</h3>
+            <div className="bg-white rounded-2xl p-8 border-2 border-blue-200 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">What Success Looks Like</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="text-blue-500 mt-1">✅</span>
@@ -141,7 +141,7 @@ export default function WarrantyPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block bg-gradient-to-r from-green-400 to-emerald-500 text-white px-6 py-2 rounded-full text-sm font-bold mb-6">
+            <div className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-6">
               ✨ THE SOLUTION
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -249,7 +249,7 @@ export default function WarrantyPage() {
       </section>
 
       {/* How It Works - Simplified */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">

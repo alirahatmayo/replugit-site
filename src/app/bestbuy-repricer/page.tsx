@@ -457,10 +457,10 @@ export default function BestBuyRepricerPage() {
                     <span className="text-xs text-gray-500">Email</span>
                   </div>
                   <div className="p-4 lg:p-6 text-center">
-                    <span className="text-xs text-blue-600 font-medium">Chat</span>
+                    <span className="text-xs text-blue-600 font-medium">Priority</span>
                   </div>
                   <div className="p-4 lg:p-6 text-center">
-                    <span className="text-xs text-purple-600 font-medium">Phone</span>
+                    <span className="text-xs text-purple-600 font-medium">Dedicated</span>
                   </div>
                 </div>
               </div>

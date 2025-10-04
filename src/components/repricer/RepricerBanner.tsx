@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RepricerBanner = () => (
-  <section className="relative min-h-[500px] flex items-center justify-center bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
+  <section className="relative min-h-[500px] flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
     {/* Background Pattern */}
     <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:40px_40px]"></div>
     
@@ -11,43 +11,43 @@ const RepricerBanner = () => (
         <div className="text-center lg:text-left">
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium mb-4 border border-white/20">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
             Best Buy Canada Repricing
           </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
             Dominate Best Buy Canada with
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
+            <span className="block text-blue-400">
               Intelligent Repricing
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-blue-100 mb-6 leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed">
             Stay competitive 24/7 with AI-powered pricing that maximizes profits and wins
-            <span className="text-yellow-300 font-semibold"> 30% more Buy Boxes</span>
+            <span className="text-blue-400 font-semibold"> 30% more Buy Boxes</span>
           </p>
           
           {/* Key Benefits List */}
           <div className="mb-6 space-y-2">
-            <div className="flex items-center gap-3 text-blue-200 text-sm">
-              <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex items-center gap-3 text-slate-300 text-sm">
+              <div className="w-5 h-5 bg-slate-700 rounded-full flex items-center justify-center">
+                <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
               <span>Real-time competitor monitoring & instant price adjustments</span>
             </div>
-            <div className="flex items-center gap-3 text-blue-200 text-sm">
-              <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex items-center gap-3 text-slate-300 text-sm">
+              <div className="w-5 h-5 bg-slate-700 rounded-full flex items-center justify-center">
+                <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
               <span>Automated Buy Box optimization & margin protection</span>
             </div>
-            <div className="flex items-center gap-3 text-blue-200 text-sm">
-              <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex items-center gap-3 text-slate-300 text-sm">
+              <div className="w-5 h-5 bg-slate-700 rounded-full flex items-center justify-center">
+                <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
@@ -58,7 +58,7 @@ const RepricerBanner = () => (
           <div className="flex flex-col sm:flex-row gap-3 mb-6">
             <a 
               href="/contact" 
-              className="bg-gradient-to-r from-yellow-400 to-orange-500 text-blue-900 px-6 py-3 rounded-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg group inline-block text-center"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg group inline-block text-center"
             >
               <span className="flex items-center gap-2 justify-center">
                 Schedule Demo
@@ -69,16 +69,16 @@ const RepricerBanner = () => (
             </a>
             <a 
               href="/contact" 
-              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all inline-block text-center"
+              className="border-2 border-slate-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all inline-block text-center"
             >
               Get Pricing
             </a>
           </div>
           
           {/* Social Proof */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-blue-200 text-xs">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-slate-400 text-xs">
             <span className="flex items-center gap-1">
-              <svg className="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
               No setup fees

@@ -79,7 +79,7 @@ export default function ContactPartnerSection() {
             </div>
           </div>
 
-          {/* WhatsApp Contact */}
+          {/* WhatsApp Contact - Wholesale Only */}
           <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center">
@@ -89,8 +89,9 @@ export default function ContactPartnerSection() {
               </div>
               <div className="flex-1">
                 <h4 className="text-white font-medium">WhatsApp</h4>
-                <a href="https://chat.whatsapp.com/KdPqKlFB1eS6AO3I5mConi" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm">
-                  Join Community
+                <p className="text-slate-400 text-xs mb-1">For wholesale inquiries only</p>
+                <a href="https://chat.whatsapp.com/KdPqKlFB1eS6AO3I5mConi" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium">
+                  Join Wholesale Community →
                 </a>
               </div>
             </div>
