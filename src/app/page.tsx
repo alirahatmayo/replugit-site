@@ -5,12 +5,12 @@ import EnvironmentalImpactSection from '@/components/homepage/EnvironmentalImpac
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Banner - What we do */}
-      <HeroBanner src="/banner.png" />
-      
-      {/* Everything You Need - Detailed Solutions */}
+      {/* Hero - who we are */}
+      <HeroBanner />
+
+      {/* Our Solutions */}
       <VerticalSlider />
-      
+
       {/* Environmental Impact */}
       <EnvironmentalImpactSection />
     </main>

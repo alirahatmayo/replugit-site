@@ -1,277 +1,123 @@
-import Navigation from '@/components/layout/Navigation'
-import Footer from '@/components/layout/Footer'
+import { Leaf, Package, Settings, RefreshCw } from 'lucide-react'
+import { PageHero, Section, Grid, Card, Prose, StatRow, CTASection } from '@/components/shared/ui'
+
+/*
+ * Environmental impact overview. Navigation and Footer come from the root
+ * layout, so this page only renders its own sections.
+ */
+const impactStats = [
+  { value: '75%', label: 'E-Waste Reduced' },
+  { value: '10,000+', label: 'Devices Refurbished' },
+  { value: '50 Tons', label: 'CO₂ Prevented' },
+  { value: '95%', label: 'Materials Recovered' },
+]
+
+const benefits = [
+  { value: '75%', label: 'Reduction in E-Waste', note: 'Per device refurbished vs. disposed' },
+  { value: '70%', label: 'Lower Carbon Footprint', note: 'Compared to manufacturing new' },
+  { value: '95%', label: 'Materials Recovered', note: 'Valuable metals and components' },
+  { value: '80%', label: 'Water Conservation', note: 'Less water vs. new production' },
+]
+
+const certifications = [
+  {
+    badge: 'ISO',
+    title: 'ISO 14001',
+    description: 'Environmental Management System certification ensuring systematic approach to environmental responsibility.',
+  },
+  {
+    badge: 'R2',
+    title: 'R2 Certified',
+    description: 'Responsible Recycling standard for electronics recyclers, ensuring data security and environmental protection.',
+  },
+  {
+    badge: 'EPA',
+    title: 'EPA Compliant',
+    description: 'Full compliance with Environmental Protection Agency guidelines for electronic waste management.',
+  },
+]
 
 export default function EnvironmentalImpactPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
-      
+    <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-emerald-50 to-green-100 py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center">
-            <div className="inline-block bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              Environmental Impact
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              Building a Sustainable Future
-            </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Every refurbished device prevents toxic e-waste and reduces carbon emissions. 
-              Join us in creating a circular economy for electronics.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge="Environmental Impact"
+        icon={<Leaf className="w-3.5 h-3.5" />}
+        title="Building a Sustainable Future"
+        description="Every refurbished device prevents toxic e-waste and reduces carbon emissions. Join us in creating a circular economy for electronics."
+        align="center"
+      />
 
       {/* Impact Statistics */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">75%</div>
-              <div className="text-slate-600">E-Waste Reduced</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">10,000+</div>
-              <div className="text-slate-600">Devices Refurbished</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">50 Tons</div>
-              <div className="text-slate-600">CO₂ Prevented</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">95%</div>
-              <div className="text-slate-600">Materials Recovered</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Section wide>
+        <StatRow stats={impactStats} />
+      </Section>
 
       {/* The Problem */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
-                The E-Waste Crisis
-              </h2>
-              <div className="space-y-6 text-lg text-slate-600">
-                <p>
-                  Electronic waste is the fastest-growing waste stream globally, with over 
-                  54 million tons generated annually. Only 20% gets properly recycled.
-                </p>
-                <p>
-                  Toxic materials like lead, mercury, and cadmium contaminate soil and water, 
-                  while valuable materials like gold, silver, and rare earth elements are lost forever.
-                </p>
-                <p>
-                  The production of new electronics accounts for 4% of global greenhouse gas emissions, 
-                  more than the aviation industry.
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                Environmental Impact of E-Waste
-              </h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-700">54 million tons of e-waste generated annually</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-700">Only 20% properly recycled worldwide</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-700">$62.5 billion in materials lost annually</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-700">Toxic chemicals contaminate ecosystems</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <Section wide title="The E-Waste Crisis">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <Prose>
+            <p>Electronic waste is the fastest-growing waste stream globally, with over 54 million tons generated annually. Only 20% gets properly recycled.</p>
+            <p>Toxic materials like lead, mercury, and cadmium contaminate soil and water, while valuable materials like gold, silver, and rare earth elements are lost forever.</p>
+            <p>The production of new electronics accounts for 4% of global greenhouse gas emissions, more than the aviation industry.</p>
+          </Prose>
+          <Card
+            title="Environmental Impact of E-Waste"
+            tone="surface"
+            items={[
+              '54 million tons of e-waste generated annually',
+              'Only 20% properly recycled worldwide',
+              '$62.5 billion in materials lost annually',
+              'Toxic chemicals contaminate ecosystems',
+            ]}
+          />
         </div>
-      </section>
+      </Section>
 
       {/* Our Solution */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
-              Our Circular Economy Approach
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We transform the linear "take-make-waste" model into a circular system 
-              where electronics are refurbished, reused, and recycled responsibly.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Collect */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Collect</h3>
-              <p className="text-slate-600">
-                Partner with businesses to collect end-of-life electronics and 
-                C-grade devices that would otherwise become e-waste.
-              </p>
-            </div>
-
-            {/* Refurbish */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Refurbish</h3>
-              <p className="text-slate-600">
-                Restore devices to A-grade quality through comprehensive testing, 
-                repair, and quality assurance processes.
-              </p>
-            </div>
-
-            {/* Redistribute */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Redistribute</h3>
-              <p className="text-slate-600">
-                Extend device lifecycles by redistributing refurbished electronics 
-                to new users at affordable prices.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Section
+        wide
+        title="Our Circular Economy Approach"
+        subtitle={'We transform the linear "take-make-waste" model into a circular system where electronics are refurbished, reused, and recycled responsibly.'}
+        align="center"
+      >
+        <Grid cols={3}>
+          <Card icon={<Package />} title="Collect" description="Partner with businesses to collect end-of-life electronics and C-grade devices that would otherwise become e-waste." />
+          <Card icon={<Settings />} title="Refurbish" description="Restore devices to A-grade quality through comprehensive testing, repair, and quality assurance processes." />
+          <Card icon={<RefreshCw />} title="Redistribute" description="Extend device lifecycles by redistributing refurbished electronics to new users at affordable prices." />
+        </Grid>
+      </Section>
 
       {/* Environmental Benefits */}
-      <section className="py-20 bg-emerald-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
-              Environmental Benefits
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Every refurbished device creates measurable environmental impact
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">75%</div>
-              <div className="text-slate-600 text-sm">Reduction in E-Waste</div>
-              <p className="text-xs text-slate-500 mt-2">
-                Per device refurbished vs. disposed
-              </p>
+      <Section wide title="Environmental Benefits" subtitle="Every refurbished device creates measurable environmental impact" align="center">
+        <Grid cols={4}>
+          {benefits.map((b) => (
+            <div key={b.label} className="rounded-2xl bg-card-primary p-6">
+              <div className="font-mono text-2xl font-semibold tracking-tight text-foreground">{b.value}</div>
+              <div className="text-sm font-semibold text-foreground mt-2">{b.label}</div>
+              <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{b.note}</p>
             </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">70%</div>
-              <div className="text-slate-600 text-sm">Lower Carbon Footprint</div>
-              <p className="text-xs text-slate-500 mt-2">
-                Compared to manufacturing new
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">95%</div>
-              <div className="text-slate-600 text-sm">Materials Recovered</div>
-              <p className="text-xs text-slate-500 mt-2">
-                Valuable metals and components
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">80%</div>
-              <div className="text-slate-600 text-sm">Water Conservation</div>
-              <p className="text-xs text-slate-500 mt-2">
-                Less water vs. new production
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          ))}
+        </Grid>
+      </Section>
 
       {/* Certifications */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
-              Certifications & Standards
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Our environmental practices are verified by leading certification bodies
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-slate-50 rounded-xl p-8 text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-emerald-600 font-bold text-lg">ISO</span>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">ISO 14001</h3>
-              <p className="text-slate-600">
-                Environmental Management System certification ensuring systematic 
-                approach to environmental responsibility.
-              </p>
-            </div>
-            <div className="bg-slate-50 rounded-xl p-8 text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-emerald-600 font-bold text-lg">R2</span>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">R2 Certified</h3>
-              <p className="text-slate-600">
-                Responsible Recycling standard for electronics recyclers, 
-                ensuring data security and environmental protection.
-              </p>
-            </div>
-            <div className="bg-slate-50 rounded-xl p-8 text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-emerald-600 font-bold text-lg">EPA</span>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">EPA Compliant</h3>
-              <p className="text-slate-600">
-                Full compliance with Environmental Protection Agency 
-                guidelines for electronic waste management.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Section wide title="Certifications & Standards" subtitle="Our environmental practices are verified by leading certification bodies" align="center">
+        <Grid cols={3}>
+          {certifications.map((c) => (
+            <Card key={c.title} icon={<span className="text-[10px] font-mono font-bold">{c.badge}</span>} title={c.title} description={c.description} tone="surface" />
+          ))}
+        </Grid>
+      </Section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-green-600">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Join the Circular Economy Movement
-          </h2>
-          <p className="text-xl text-emerald-100 mb-8">
-            Partner with us to reduce e-waste and create a more sustainable future 
-            for electronics. Every device matters.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:bg-emerald-50 transition-colors">
-              Start Your Program
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition-colors">
-              View Impact Report
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
+      <CTASection
+        title="Join the Circular Economy Movement"
+        description="Partner with us to reduce e-waste and create a more sustainable future for electronics. Every device matters."
+        primary={{ label: 'Start Your Program', href: '/contact' }}
+        secondary={{ label: 'View Impact Report', href: '/sustainability' }}
+      />
+    </main>
   )
 }

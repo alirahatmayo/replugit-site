@@ -1,177 +1,131 @@
-import { ArrowRight, Shield, HardDrive, Lock, FileX, CheckCircle, Award, AlertTriangle } from 'lucide-react'
+import { Shield, HardDrive, Lock, FileX, CheckCircle, Award, AlertTriangle } from 'lucide-react'
+import { PageHero, Section, Grid, Card, DarkPanel, Notice, CTASection, Button } from '@/components/shared/ui'
+
+const benefits = [
+  { icon: Shield, text: 'Certified software and tools' },
+  { icon: Award, text: 'Industry-standard processes' },
+  { icon: CheckCircle, text: 'Verified data destruction' },
+  { icon: Lock, text: 'Complete process documentation' },
+  { icon: FileX, text: 'Detailed destruction reports' },
+  { icon: HardDrive, text: 'All storage types supported' },
+]
+
+const darkLink = 'text-primary-foreground underline underline-offset-4 decoration-primary-foreground/40 hover:decoration-primary-foreground'
 
 export default function DataWipingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-white">
-      {/* Navigation Spacer */}
-      <div className="h-32"></div>
-      
+    <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-medium mb-6">
-              <Shield className="w-4 h-4" />
-              Data Wiping
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Secure Data
-              <span className="block text-red-600 mt-2">Erasure Services</span>
-            </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Military-grade data destruction and secure erasure services ensuring complete data protection and compliance with privacy regulations.
-            </p>
-          </div>
+      <PageHero
+        badge="Data Wiping"
+        icon={<Shield className="w-3.5 h-3.5" />}
+        title="Secure Data"
+        titleMuted="Erasure Services"
+        description="Military-grade data destruction and secure erasure services ensuring complete data protection and compliance with privacy regulations."
+      />
 
-          {/* Key Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white/80 backdrop-blur-sm border border-red-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
-              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-                <HardDrive className="w-6 h-6 text-red-600" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Complete Data Erasure</h3>
-              <p className="text-slate-600 mb-4">Thorough data wiping using industry-standard protocols to ensure all data is permanently erased.</p>
-              <ul className="text-sm text-slate-500 space-y-1">
-                <li>• DoD 5220.22-M standards</li>
-                <li>• Multiple overwrite passes</li>
-                <li>• Verification processes</li>
-              </ul>
-            </div>
+      {/* Key Services Grid */}
+      <Section wide>
+        <Grid cols={3}>
+          <Card
+            icon={<HardDrive />}
+            title="Complete Data Erasure"
+            description="Thorough data wiping using industry-standard protocols to ensure all data is permanently erased."
+            items={['DoD 5220.22-M standards', 'Multiple overwrite passes', 'Verification processes']}
+          />
+          <Card
+            icon={<Lock />}
+            title="Compliance Documentation"
+            description="Detailed documentation and certificates from our certified data wiping software for your records."
+            items={['Software compliance certificates', 'Data destruction reports', 'Audit trail documentation']}
+          />
+          <Card
+            icon={<FileX />}
+            title="Physical Destruction"
+            description="Physical destruction of storage media for maximum security when required by sensitive data policies."
+            items={['Hard drive shredding', 'SSD destruction', 'Witnessed destruction']}
+          />
+        </Grid>
+      </Section>
 
-            <div className="bg-white/80 backdrop-blur-sm border border-red-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                <Lock className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Compliance Documentation</h3>
-              <p className="text-slate-600 mb-4">Detailed documentation and certificates from our certified data wiping software for your records.</p>
-              <ul className="text-sm text-slate-500 space-y-1">
-                <li>• Software compliance certificates</li>
-                <li>• Data destruction reports</li>
-                <li>• Audit trail documentation</li>
-              </ul>
-            </div>
+      {/* Security Standards */}
+      <Section wide caption="Standards" title="Our Data Wiping Standards">
+        <Grid cols={4}>
+          <Card icon={<Shield />} title="DoD Standards" description="Using certified software following DoD 5220.22-M protocols" tone="surface" />
+          <Card icon={<Award />} title="NIST Guidelines" description="Software certified to NIST SP 800-88 sanitization standards" tone="surface" />
+          <Card icon={<CheckCircle />} title="Certified Tools" description="Industry-certified data wiping software and tools" tone="surface" />
+          <Card icon={<Lock />} title="Process Tracking" description="Complete documentation and tracking throughout process" tone="surface" />
+        </Grid>
+      </Section>
 
-            <div className="bg-white/80 backdrop-blur-sm border border-red-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                <FileX className="w-6 h-6 text-green-600" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Physical Destruction</h3>
-              <p className="text-slate-600 mb-4">Physical destruction of storage media for maximum security when required by sensitive data policies.</p>
-              <ul className="text-sm text-slate-500 space-y-1">
-                <li>• Hard drive shredding</li>
-                <li>• SSD destruction</li>
-                <li>• Witnessed destruction</li>
-              </ul>
-            </div>
-          </div>
+      {/* The software behind the service */}
+      <Section wide>
+        <DarkPanel
+          align="left"
+          title="Powered by reCore, our own data wiping software"
+          description={
+            <>
+              Every drive we wipe runs through{' '}
+              <a href="https://recore.replugit.com" className={darkLink}>
+                reCore
+              </a>
+              , the ITAD platform we built for our own facility. It sanitizes drives to{' '}
+              <a href="https://recore.replugit.com/standards/nist-sp-800-88" className={darkLink}>
+                NIST SP 800-88 Rev 2
+              </a>{' '}
+              and{' '}
+              <a href="https://recore.replugit.com/standards/ieee-2883-2022" className={darkLink}>
+                IEEE 2883-2022
+              </a>
+              , tracks every drive by serial number, and issues a tamper-evident certificate you can verify independently.
+            </>
+          }
+        >
+          <p className="w-full text-sm text-primary-foreground/60">reCore is also available to other refurbishers and ITAD companies as a standalone product.</p>
+          <Button href="https://recore.replugit.com/features/data-wipe" variant="accent">
+            See reCore data wiping
+          </Button>
+        </DarkPanel>
+      </Section>
 
-          {/* Security Standards */}
-          <div className="bg-white/60 backdrop-blur-sm border border-slate-200 rounded-2xl p-8 mb-16">
-            <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Our Data Wiping Standards</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-red-600" />
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">DoD Standards</h3>
-                <p className="text-sm text-slate-600">Using certified software following DoD 5220.22-M protocols</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">NIST Guidelines</h3>
-                <p className="text-sm text-slate-600">Software certified to NIST SP 800-88 sanitization standards</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-8 h-8 text-green-600" />
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">Certified Tools</h3>
-                <p className="text-sm text-slate-600">Industry-certified data wiping software and tools</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Lock className="w-8 h-8 text-purple-600" />
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">Process Tracking</h3>
-                <p className="text-sm text-slate-600">Complete documentation and tracking throughout process</p>
-              </div>
-            </div>
-          </div>
+      {/* Security Alert */}
+      <Section wide>
+        <Notice icon={<AlertTriangle />} title="Why Professional Data Wiping Matters">
+          <p className="mb-3">Simply deleting files or formatting drives doesn&apos;t permanently remove data. Professional data wiping ensures:</p>
+          <ul className="space-y-1.5">
+            {[
+              'Complete protection against data recovery attempts',
+              'Compliance with privacy regulations and industry standards',
+              'Protection of sensitive personal and business information',
+              'Peace of mind for your organization and customers',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="w-1 h-1 rounded-full bg-accent mt-2.5 flex-none" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </Notice>
+      </Section>
 
-          {/* Security Alert */}
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-8 mb-16">
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <AlertTriangle className="w-5 h-5 text-amber-600" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">Why Professional Data Wiping Matters</h3>
-                <p className="text-slate-600 mb-4">
-                  Simply deleting files or formatting drives doesn't permanently remove data. Professional data wiping ensures:
-                </p>
-                <ul className="text-sm text-slate-600 space-y-1">
-                  <li>• Complete protection against data recovery attempts</li>
-                  <li>• Compliance with privacy regulations and industry standards</li>
-                  <li>• Protection of sensitive personal and business information</li>
-                  <li>• Peace of mind for your organization and customers</li>
-                </ul>
-              </div>
+      {/* Benefits Section */}
+      <Section wide caption="Why Replugit" title="Why Choose Our Data Wiping Services">
+        <div className="rounded-3xl bg-card-secondary p-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+          {benefits.map((b) => (
+            <div key={b.text} className="flex items-center gap-3 text-[15px] text-foreground">
+              <b.icon className="w-4 h-4 text-accent flex-none" />
+              <span>{b.text}</span>
             </div>
-          </div>
-
-          {/* Benefits Section */}
-          <div className="bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl p-8 text-white">
-            <h2 className="text-2xl font-bold mb-6 text-center">Why Choose Our Data Wiping Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-red-200" />
-                  <span>Certified software and tools</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Award className="w-5 h-5 text-red-200" />
-                  <span>Industry-standard processes</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-red-200" />
-                  <span>Verified data destruction</span>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Lock className="w-5 h-5 text-red-200" />
-                  <span>Complete process documentation</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FileX className="w-5 h-5 text-red-200" />
-                  <span>Detailed destruction reports</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <HardDrive className="w-5 h-5 text-red-200" />
-                  <span>All storage types supported</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center mt-16">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Protect Your Data & Reputation</h2>
-            <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-              Ensure complete data security with our professional data wiping services. Protect your organization and comply with regulations.
-            </p>
-            <a 
-              href="/contact" 
-              className="inline-flex items-center px-8 py-4 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
-            >
-              Get Secure Data Wiping
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </div>
+          ))}
         </div>
-      </section>
-    </div>
+      </Section>
+
+      {/* CTA Section */}
+      <CTASection
+        title="Protect Your Data & Reputation"
+        description="Ensure complete data security with our professional data wiping services. Protect your organization and comply with regulations."
+        primary={{ label: 'Get Secure Data Wiping', href: '/contact' }}
+      />
+    </main>
   )
 }

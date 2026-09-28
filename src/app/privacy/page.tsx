@@ -1,106 +1,84 @@
 import { Metadata } from 'next'
+import { PageHero, Section, Prose, Checklist } from '@/components/shared/ui'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Replugit',
   description: 'Replugit privacy policy and data protection practices for our electronics refurbishment services.',
 }
 
+const h2 = 'text-lg font-semibold text-foreground mt-8 mb-2'
+
 export default function PrivacyPage() {
+  const lastUpdated = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
   return (
-    <main className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
-            Privacy Policy
-          </h1>
-          <p className="text-xl text-slate-600">
-            Last updated: {new Date().toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}
+    <main className="min-h-screen">
+      <PageHero title="Privacy Policy" description={`Last updated: ${lastUpdated}`} />
+
+      <Section>
+        <Prose>
+          <h2 className={h2}>Information We Collect</h2>
+          <p>At Replugit, we collect information to provide better services to our users and clients. This includes:</p>
+          <Checklist
+            items={[
+              'Contact information (name, email, phone number)',
+              'Business information for wholesale clients',
+              'Device information for refurbishment services',
+              'Usage data to improve our platform',
+            ]}
+          />
+
+          <h2 className={h2}>Data Security</h2>
+          <p>We implement industry-standard security measures to protect your information:</p>
+          <Checklist
+            items={[
+              'Secure data wiping for all refurbished devices',
+              'Encrypted data transmission and storage',
+              'Regular security audits and updates',
+              'Limited access to personal information',
+            ]}
+          />
+
+          <h2 className={h2}>How We Use Your Information</h2>
+          <p>We use collected information to:</p>
+          <Checklist
+            items={[
+              'Provide refurbishment and quality assurance services',
+              'Communicate about your orders and services',
+              'Improve our platform and services',
+              'Generate environmental impact reports',
+            ]}
+          />
+
+          <h2 className={h2}>Data Retention</h2>
+          <p>
+            We retain personal information only as long as necessary to provide our services and comply with legal obligations. Device data is permanently wiped using
+            industry-standard methods.
           </p>
-        </div>
 
-        <div className="prose prose-lg max-w-none">
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Information We Collect</h2>
-            <p className="text-slate-700 mb-4">
-              At Replugit, we collect information to provide better services to our users and clients. This includes:
-            </p>
-            <ul className="text-slate-700 mb-4 list-disc pl-6">
-              <li>Contact information (name, email, phone number)</li>
-              <li>Business information for wholesale clients</li>
-              <li>Device information for refurbishment services</li>
-              <li>Usage data to improve our platform</li>
-            </ul>
-          </section>
+          <h2 className={h2}>Your Rights</h2>
+          <p>You have the right to:</p>
+          <Checklist items={['Access your personal information', 'Correct or update your information', 'Request deletion of your data', 'Opt-out of marketing communications']} />
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Data Security</h2>
-            <p className="text-slate-700 mb-4">
-              We implement industry-standard security measures to protect your information:
+          <h2 className={h2}>Contact Us</h2>
+          <p>If you have questions about this Privacy Policy, please contact us:</p>
+          <div className="rounded-2xl bg-surface p-6 space-y-2">
+            <p>
+              <strong className="text-foreground">Email:</strong> privacy@replugit.com
             </p>
-            <ul className="text-slate-700 mb-4 list-disc pl-6">
-              <li>Secure data wiping for all refurbished devices</li>
-              <li>Encrypted data transmission and storage</li>
-              <li>Regular security audits and updates</li>
-              <li>Limited access to personal information</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">How We Use Your Information</h2>
-            <p className="text-slate-700 mb-4">
-              We use collected information to:
+            <p>
+              <strong className="text-foreground">Phone:</strong> +1 (548) 503-5000
             </p>
-            <ul className="text-slate-700 mb-4 list-disc pl-6">
-              <li>Provide refurbishment and quality assurance services</li>
-              <li>Communicate about your orders and services</li>
-              <li>Improve our platform and services</li>
-              <li>Generate environmental impact reports</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Data Retention</h2>
-            <p className="text-slate-700 mb-4">
-              We retain personal information only as long as necessary to provide our services and comply with legal obligations. Device data is permanently wiped using industry-standard methods.
+            <p>
+              <strong className="text-foreground">Address:</strong> Replugit Privacy Officer, [Your Business Address]
             </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Your Rights</h2>
-            <p className="text-slate-700 mb-4">
-              You have the right to:
-            </p>
-            <ul className="text-slate-700 mb-4 list-disc pl-6">
-              <li>Access your personal information</li>
-              <li>Correct or update your information</li>
-              <li>Request deletion of your data</li>
-              <li>Opt-out of marketing communications</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Contact Us</h2>
-            <p className="text-slate-700 mb-4">
-              If you have questions about this Privacy Policy, please contact us:
-            </p>
-            <div className="bg-slate-50 p-4 rounded-lg">
-              <p className="text-slate-700 mb-2">
-                <strong>Email:</strong> privacy@replugit.com
-              </p>
-              <p className="text-slate-700 mb-2">
-                <strong>Phone:</strong> +1 (548) 503-5000
-              </p>
-              <p className="text-slate-700">
-                <strong>Address:</strong> Replugit Privacy Officer, [Your Business Address]
-              </p>
-            </div>
-          </section>
-        </div>
-      </div>
+          </div>
+        </Prose>
+      </Section>
     </main>
   )
 }

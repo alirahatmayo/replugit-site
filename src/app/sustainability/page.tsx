@@ -7,7 +7,7 @@ import CertificationsSection from '@/components/sustainability/CertificationsSec
 
 export default function SustainabilityPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen">
       <SustainabilityHero />
       <EnvironmentalImpactCalculator />
       <SustainabilityStats />

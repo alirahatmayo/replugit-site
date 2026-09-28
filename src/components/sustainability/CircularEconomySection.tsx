@@ -1,205 +1,173 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { RotateCcw, ArrowRight, Recycle, Wrench, Package, Truck, CheckCircle } from 'lucide-react'
+import { RotateCcw, ArrowRight, Wrench, Package, Truck, CheckCircle } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import { Section, Grid } from '@/components/shared/ui'
+
+/*
+ * Circular economy model. The ring auto-cycles through the six steps every
+ * 3 seconds; clicking a step or "Next Step" still selects it.
+ */
+const circularSteps: { id: number; title: string; description: string; icon: LucideIcon }[] = [
+  {
+    id: 1,
+    title: 'Collection',
+    description: 'Devices are collected from enterprises and consumers through our global network',
+    icon: Package,
+  },
+  {
+    id: 2,
+    title: 'Assessment',
+    description: 'Each device undergoes comprehensive testing and quality assessment',
+    icon: CheckCircle,
+  },
+  {
+    id: 3,
+    title: 'Refurbishment',
+    description: 'Professional restoration using certified processes and genuine parts',
+    icon: Wrench,
+  },
+  {
+    id: 4,
+    title: 'Quality Control',
+    description: 'Rigorous testing ensures devices meet our high-quality standards',
+    icon: CheckCircle,
+  },
+  {
+    id: 5,
+    title: 'Redistribution',
+    description: 'Refurbished devices reach new users through our sales channels',
+    icon: Truck,
+  },
+  {
+    id: 6,
+    title: 'Lifecycle Extension',
+    description: 'Devices continue serving users, reducing need for new manufacturing',
+    icon: RotateCcw,
+  },
+]
+
+const keyBenefits: { value: string; label: string }[] = [
+  { value: '95%', label: 'Less Environmental Impact' },
+  { value: '3-5 Years', label: 'Extended Device Life' },
+  { value: '70%', label: 'Cost Savings' },
+  { value: 'Zero', label: 'Waste to Landfill' },
+]
+
+// Steps sit on a ring at 40% of the container width, so the diagram scales with its box.
+const RING_RADIUS_PCT = 40
 
 export default function CircularEconomySection() {
-  const [isVisible, setIsVisible] = useState(false)
   const [activeStep, setActiveStep] = useState(0)
 
   useEffect(() => {
-    setIsVisible(true)
-    
     // Auto-cycle through steps
     const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % 6)
+      setActiveStep((prev) => (prev + 1) % circularSteps.length)
     }, 3000)
 
     return () => clearInterval(interval)
   }, [])
 
-  const circularSteps = [
-    {
-      id: 1,
-      title: 'Collection',
-      description: 'Devices are collected from enterprises and consumers through our global network',
-      icon: <Package className="w-8 h-8" />,
-      color: 'from-blue-500 to-blue-600'
-    },
-    {
-      id: 2,
-      title: 'Assessment',
-      description: 'Each device undergoes comprehensive testing and quality assessment',
-      icon: <CheckCircle className="w-8 h-8" />,
-      color: 'from-purple-500 to-purple-600'
-    },
-    {
-      id: 3,
-      title: 'Refurbishment',
-      description: 'Professional restoration using certified processes and genuine parts',
-      icon: <Wrench className="w-8 h-8" />,
-      color: 'from-emerald-500 to-emerald-600'
-    },
-    {
-      id: 4,
-      title: 'Quality Control',
-      description: 'Rigorous testing ensures devices meet our high-quality standards',
-      icon: <CheckCircle className="w-8 h-8" />,
-      color: 'from-orange-500 to-orange-600'
-    },
-    {
-      id: 5,
-      title: 'Redistribution',
-      description: 'Refurbished devices reach new users through our sales channels',
-      icon: <Truck className="w-8 h-8" />,
-      color: 'from-green-500 to-green-600'
-    },
-    {
-      id: 6,
-      title: 'Lifecycle Extension',
-      description: 'Devices continue serving users, reducing need for new manufacturing',
-      icon: <RotateCcw className="w-8 h-8" />,
-      color: 'from-teal-500 to-teal-600'
-    }
-  ]
+  const current = circularSteps[activeStep]
 
   return (
-    <section className="py-24 bg-gradient-to-br from-white via-emerald-50 to-green-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          
-          {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6">
-              <Recycle className="w-4 h-4" />
-              Circular Economy Model
-            </div>
-            <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              How We <span className="text-emerald-600">Transform</span> Technology
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Our circular economy approach extends device lifecycles, reduces waste, and creates value 
-              while minimizing environmental impact through every step of the process.
-            </p>
+    <Section
+      wide
+      caption="Circular Economy Model"
+      title="How We Transform Technology"
+      subtitle="Our circular economy approach extends device lifecycles, reduces waste, and creates value while minimizing environmental impact through every step of the process."
+      align="center"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        {/* Circular Diagram */}
+        <div className="relative w-full max-w-[22rem] aspect-square mx-auto">
+          {/* Connecting ring */}
+          <svg className="absolute inset-0 w-full h-full text-border" aria-hidden="true">
+            <circle cx="50%" cy="50%" r={`${RING_RADIUS_PCT}%`} fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+          </svg>
+
+          {/* Central circle */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+            <RotateCcw className="w-8 h-8" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
-            {/* Circular Diagram */}
-            <div className="relative">
-              <div className="w-96 h-96 mx-auto relative">
-                {/* Central circle */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center shadow-xl">
-                  <RotateCcw className="w-12 h-12 text-white animate-spin-slow" />
-                </div>
+          {/* Steps around the circle */}
+          {circularSteps.map((step, index) => {
+            const angle = index * 60 - 90 // Start from top
+            const x = Math.cos((angle * Math.PI) / 180) * RING_RADIUS_PCT
+            const y = Math.sin((angle * Math.PI) / 180) * RING_RADIUS_PCT
+            const active = activeStep === index
 
-                {/* Steps around the circle */}
-                {circularSteps.map((step, index) => {
-                  const angle = (index * 60) - 90 // Start from top
-                  const radius = 150
-                  const x = Math.cos(angle * Math.PI / 180) * radius
-                  const y = Math.sin(angle * Math.PI / 180) * radius
-                  
-                  return (
-                    <div
-                      key={step.id}
-                      className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
-                        activeStep === index ? 'scale-110 z-10' : 'scale-100'
-                      }`}
-                      style={{
-                        left: `calc(50% + ${x}px)`,
-                        top: `calc(50% + ${y}px)`
-                      }}
-                    >
-                      <div className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300 ${
-                        activeStep === index ? 'ring-4 ring-emerald-300 ring-opacity-60' : ''
-                      }`}
-                      onClick={() => setActiveStep(index)}>
-                        {step.icon}
-                      </div>
-                      
-                      {/* Step number */}
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center text-xs font-bold text-slate-700 shadow-md">
-                        {step.id}
-                      </div>
-                    </div>
-                  )
-                })}
-
-                {/* Connecting lines */}
-                <svg className="absolute inset-0 w-full h-full">
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    r="150"
-                    fill="none"
-                    stroke="#e5e7eb"
-                    strokeWidth="2"
-                    strokeDasharray="5,5"
-                    className="animate-pulse"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            {/* Step Details */}
-            <div className="space-y-8">
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50">
-                <div className={`w-16 h-16 bg-gradient-to-br ${circularSteps[activeStep].color} rounded-2xl flex items-center justify-center text-white mb-6`}>
-                  {circularSteps[activeStep].icon}
-                </div>
-                
-                <h3 className="text-3xl font-bold text-slate-900 mb-4">
-                  {circularSteps[activeStep].title}
-                </h3>
-                
-                <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                  {circularSteps[activeStep].description}
-                </p>
-
-                {/* Progress indicators */}
-                <div className="flex gap-2 mb-6">
-                  {circularSteps.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        index === activeStep ? 'bg-emerald-500 w-8' : 'bg-slate-200 w-2'
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <button 
-                  onClick={() => setActiveStep((activeStep + 1) % circularSteps.length)}
-                  className="flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors duration-300"
+            return (
+              <div
+                key={step.id}
+                className="absolute -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  left: `${50 + x}%`,
+                  top: `${50 + y}%`,
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setActiveStep(index)}
+                  aria-label={step.title}
+                  aria-pressed={active}
+                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-colors ${
+                    active ? 'bg-accent text-white' : 'bg-background border border-border text-muted-foreground hover:bg-muted'
+                  }`}
                 >
-                  Next Step <ArrowRight className="w-4 h-4" />
+                  <step.icon className="w-6 h-6" />
                 </button>
-              </div>
 
-              {/* Key Benefits */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-emerald-50 rounded-2xl p-6 text-center">
-                  <div className="text-2xl font-bold text-emerald-700 mb-1">95%</div>
-                  <div className="text-sm text-emerald-600">Less Environmental Impact</div>
-                </div>
-                <div className="bg-blue-50 rounded-2xl p-6 text-center">
-                  <div className="text-2xl font-bold text-blue-700 mb-1">3-5 Years</div>
-                  <div className="text-sm text-blue-600">Extended Device Life</div>
-                </div>
-                <div className="bg-purple-50 rounded-2xl p-6 text-center">
-                  <div className="text-2xl font-bold text-purple-700 mb-1">70%</div>
-                  <div className="text-sm text-purple-600">Cost Savings</div>
-                </div>
-                <div className="bg-orange-50 rounded-2xl p-6 text-center">
-                  <div className="text-2xl font-bold text-orange-700 mb-1">Zero</div>
-                  <div className="text-sm text-orange-600">Waste to Landfill</div>
+                {/* Step number */}
+                <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-foreground text-background flex items-center justify-center text-[11px] font-mono font-semibold">
+                  {step.id}
                 </div>
               </div>
+            )
+          })}
+        </div>
+
+        {/* Step Details */}
+        <div className="space-y-4">
+          <div className="rounded-3xl bg-card-primary p-8">
+            <div className="w-9 h-9 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-4">
+              <current.icon className="w-4 h-4" />
             </div>
+
+            <h3 className="text-xl font-semibold tracking-tight mb-2">{current.title}</h3>
+
+            <p className="text-[15px] text-muted-foreground leading-[1.75] mb-6">{current.description}</p>
+
+            {/* Progress indicators */}
+            <div className="flex gap-1.5 mb-6">
+              {circularSteps.map((step, index) => (
+                <div key={step.id} className={`h-1.5 rounded-full transition-all duration-300 ${index === activeStep ? 'bg-accent w-8' : 'bg-border w-2'}`} />
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setActiveStep((activeStep + 1) % circularSteps.length)}
+              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline underline-offset-4"
+            >
+              Next Step <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            </button>
           </div>
+
+          {/* Key Benefits */}
+          <Grid cols={2}>
+            {keyBenefits.map((b) => (
+              <div key={b.label} className="rounded-2xl bg-surface p-5">
+                <div className="font-mono text-xl font-semibold tracking-tight text-foreground">{b.value}</div>
+                <div className="text-sm text-muted-foreground mt-1">{b.label}</div>
+              </div>
+            ))}
+          </Grid>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

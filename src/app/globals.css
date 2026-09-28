@@ -1,47 +1,144 @@
 @import "tailwindcss";
 
+/*
+ * Theme tokens copied from reCore (recore.replugit.com) so the two sites
+ * share one look. Keep these in sync with reCore's globals.css by hand;
+ * this site does not import from the reCore repo.
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-frame: var(--frame);
+  --color-surface: var(--surface);
+  --color-card-primary: var(--card-primary);
+  --color-card-secondary: var(--card-secondary);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #1E293B;
+  /*
+   * The one accent hue on the site. reCore uses 250.5 (blue); Replugit keeps
+   * its green. Change this number and the accent, the tinted card backgrounds
+   * and every hover state follow. Emerald is 160; teal is 185; leaf is 145.
+   */
+  --accent-hue: 150;
+
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.40 0 0);
+  --accent: oklch(0.6 0.17 var(--accent-hue));
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  --frame: var(--background);
+  --surface: oklch(0.97 0 0);
+  --card-primary: oklch(0.96 0.025 var(--accent-hue));
+  --card-secondary: oklch(0.935 0.04 var(--accent-hue));
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  :root {
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-size: 1rem;
+  }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
-}
+@layer utilities {
+  /* Horizontal card rails on the homepage */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 
-/* Hide scrollbars for scroll stack */
-.scrollbar-hide {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
-}
+  /* Hero entrance, same curve as reCore */
+  @keyframes hero-blur-in {
+    from {
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0);
+    }
+  }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Safari and Chrome */
-}
+  @keyframes hero-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-/* Smooth scroll behavior for mobile stack */
-.snap-x {
-  scroll-snap-type: x mandatory;
-}
+  .hero-blur-in {
+    animation: hero-blur-in 0.8s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+    will-change: opacity, transform;
+  }
 
-.snap-y {
-  scroll-snap-type: y mandatory;
-}
+  .hero-fade-up {
+    animation: hero-fade-up 0.9s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+    will-change: opacity, transform;
+  }
 
-.snap-center {
-  scroll-snap-align: center;
-}
-
-.snap-start {
-  scroll-snap-align: start;
-}
-
-.snap-always {
-  scroll-snap-stop: always;
+  .delay-1 { animation-delay: 0.08s; }
+  .delay-2 { animation-delay: 0.16s; }
+  .delay-3 { animation-delay: 0.24s; }
+  .delay-4 { animation-delay: 0.32s; }
 }
