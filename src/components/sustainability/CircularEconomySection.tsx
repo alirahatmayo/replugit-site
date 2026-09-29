@@ -13,7 +13,7 @@ const circularSteps: { id: number; title: string; description: string; icon: Luc
   {
     id: 1,
     title: 'Collection',
-    description: 'Devices are collected from enterprises and consumers through our global network',
+    description: 'Devices are collected from enterprises and consumers through our network of business partners',
     icon: Package,
   },
   {

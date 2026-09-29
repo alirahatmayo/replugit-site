@@ -327,21 +327,21 @@ export default function WarrantyPage() {
           />
         </div>
 
-        {/* Use Cases */}
+        {/* Use Cases: illustrative, not customer quotes. Written in third person on purpose, not in quotation marks, so nothing here reads as a real customer testimonial. */}
         <Grid cols={3}>
           <Card
             title="Multi-Platform Sellers"
-            description="&quot;Finally, one system for all our sales channels - Walmart, Best Buy, and our website. No more juggling spreadsheets!&quot;"
+            description="One system across every sales channel: Walmart, Best Buy, and your own website. No spreadsheets to keep in sync."
             tone="surface"
           />
           <Card
             title="Repair Shops"
-            description="&quot;We don't sell online, just repairs in our shop. This gives us professional warranties without needing e-commerce.&quot;"
+            description="Works for repair-only businesses too. Get professional warranty tracking without needing an e-commerce storefront."
             tone="surface"
           />
           <Card
             title="Growing Businesses"
-            description="&quot;Started with 50 devices/month, now handling 500+. The system scaled perfectly with our growth.&quot;"
+            description="Scales from a small volume to hundreds of devices a month without switching systems."
             tone="surface"
           />
         </Grid>
