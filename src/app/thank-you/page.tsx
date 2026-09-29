@@ -1,9 +1,20 @@
 import { CheckCircle, Home, Phone, Mail } from 'lucide-react'
 import { PageHero, Section, Notice, Checklist, Button } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
+
+export const metadata = pageMetadata({
+  title: "Thank You",
+  description: "We've received your message and will get back to you shortly.",
+  path: '/thank-you/',
+  noindex: true,
+})
+
 
 export default function ThankYouPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Thank You', path: '/thank-you/' }])} />
       <PageHero title="Thank You!" description="We've received your message and will get back to you shortly." align="center" />
 
       <Section>

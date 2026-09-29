@@ -1,0 +1,29 @@
+# Replugit - The Company Behind reCore
+
+> Replugit is an electronics refurbisher based in Kitchener-Waterloo, Ontario. It transforms C-grade electronics into premium Grade A devices for resale, and built reCore, its own ITAD (IT Asset Disposition) software platform, to run that operation: hardware diagnostics, certified data erasure, cosmetic grading and compliance reporting. reCore is also available to other refurbishers and ITAD companies as a standalone product.
+
+Audience: retailers and resellers sourcing refurbished electronics wholesale, electronics vendors researching warranty compliance (Quebec Bill 29), Best Buy Canada Marketplace sellers, and ITAD companies evaluating reCore.
+
+## What Replugit Does
+
+- [Device Refurbishing](https://www.replugit.com/refurbishing/): Restores C-grade electronics to premium Grade A condition through expert repair, component replacement and comprehensive quality assurance testing, run on reCore.
+- [QC and Auditing](https://www.replugit.com/qc-auditing/): Device inspection and component testing with detailed grading and reporting.
+- [Data Wiping](https://www.replugit.com/data-wiping/): Secure data erasure services, powered by reCore's certified data-sanitization engine.
+- [Wholesale Distribution](https://www.replugit.com/wholesale/): Bulk refurbished and new electronics for retailers and resellers, coordinated through a WhatsApp community.
+- [Prep Services](https://www.replugit.com/prep-services/): Retail packaging and fulfillment-ready processing for corporate and retail distribution.
+- [Warranty Management](https://www.replugit.com/warranty/): Automated warranty tracking for electronics vendors, built to help with requirements like Quebec's Bill 29.
+- [BestBuy Repricer](https://www.replugit.com/bestbuy-repricer/): Automated competitor-price monitoring and repricing for Best Buy Canada Marketplace sellers.
+- [Sustainability](https://www.replugit.com/sustainability/): Environmental impact of refurbishing versus manufacturing new devices.
+
+## reCore: The Software Behind the Operation
+
+Replugit built [reCore](https://recore.replugit.com) to run its own refurbishing floor, and now offers it to other electronics recyclers and refurbishers. reCore covers hardware diagnostics and stress testing, NIST SP 800-88 Rev 2 and IEEE 2883-2022 certified data erasure, R2v3 REC cosmetic grading, tamper-evident compliance certificates, and a real-time multi-tenant dashboard.
+
+For reCore's own technical depth (test catalogs, erasure methods, standards guides, API reference), see reCore's own reference file: [recore.replugit.com/llms.txt](https://recore.replugit.com/llms.txt) and [llms-full.txt](https://recore.replugit.com/llms-full.txt). Don't duplicate that detail here; it belongs to reCore, not Replugit.
+
+## Contact
+
+- Email: hello@replugit.com
+- Phone: +1 (548) 503-5000
+- Location: Kitchener-Waterloo, Ontario
+- [Contact form](https://www.replugit.com/contact/)

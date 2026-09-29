@@ -1,5 +1,14 @@
 import { Wrench, Sparkles, Shield, Search, Battery, Cpu, Award, CheckCircle, Settings, Eye, Target } from 'lucide-react'
 import { PageHero, Section, Grid, Card, CTASection } from '@/components/shared/ui'
+import { JsonLd, breadcrumbSchema, serviceSchema } from '@/components/json-ld'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata = pageMetadata({
+  title: "Professional Device Refurbishment Services",
+  description: "Transform C-grade electronics into premium Grade A devices through expert repair, component replacement, and comprehensive quality assurance testing.",
+  path: '/refurbishing/',
+})
+
 
 const benefits = [
   { icon: Wrench, text: 'Expert technicians with years of experience' },
@@ -13,6 +22,8 @@ const benefits = [
 export default function RefurbishingPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Refurbishing', path: '/refurbishing/' }])} />
+      <JsonLd data={serviceSchema({ name: 'Professional Device Refurbishment Services', description: "Transform C-grade electronics into premium Grade A devices through expert repair, component replacement, and comprehensive quality assurance testing.", path: '/refurbishing/' })} />
       {/* Hero Section */}
       <PageHero
         badge="Device Refurbishing"

@@ -1,6 +1,15 @@
 import { Clock, Zap, CheckCircle, Check, X } from 'lucide-react'
 import { RepricerBanner } from '@/components/repricer'
 import { Section, Grid, Card, Button, DarkPanel } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
+
+export const metadata = pageMetadata({
+  title: "Dominate Best Buy Canada with Intelligent Repricing",
+  description: "Stay competitive 24/7 with AI-powered pricing that maximizes profits and wins 30% more Buy Boxes.",
+  path: '/bestbuy-repricer/',
+})
+
 
 /*
  * BestBuy Repricer landing page. Same sections and copy as before, built from
@@ -87,6 +96,7 @@ function CheckLine({ items, className = '' }: { items: string[]; className?: str
 export default function BestBuyRepricerPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'BestBuy Repricer', path: '/bestbuy-repricer/' }])} />
       <RepricerBanner />
 
       {/* Core Value Proposition */}

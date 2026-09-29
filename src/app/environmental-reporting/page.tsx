@@ -1,5 +1,14 @@
 import { BarChart3, Leaf, TrendingUp, FileText, Globe, Shield } from 'lucide-react'
 import { PageHero, Section, Grid, Card, CTASection } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
+
+export const metadata = pageMetadata({
+  title: "Sustainability Impact Tracking & Reporting",
+  description: "Comprehensive environmental impact measurement and transparent reporting for your refurbishment operations.",
+  path: '/environmental-reporting/',
+})
+
 
 const included = [
   { icon: Shield, text: 'Professional documentation support' },
@@ -13,6 +22,7 @@ const included = [
 export default function EnvironmentalReportingPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Environmental Reporting', path: '/environmental-reporting/' }])} />
       {/* Hero Section */}
       <PageHero
         badge="Environmental Reporting"

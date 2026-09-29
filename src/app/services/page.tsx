@@ -1,6 +1,14 @@
 import { Settings, CheckCircle, Shield } from 'lucide-react'
 import { PageHero, Section, Grid, Card, CTASection, Button } from '@/components/shared/ui'
 import { RECORE_URL, recoreFeatures, recorePlatform } from '@/data/recore'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
+
+export const metadata = pageMetadata({
+  title: 'Our Services',
+  description: "reCore is the ITAD platform we built and run on our own floor: hardware diagnostics, certified data erasure, cosmetic grading and compliance reporting in one system.",
+  path: '/services/',
+})
 
 /*
  * What Replugit offers as a service is reCore. The two lists below come from
@@ -9,6 +17,7 @@ import { RECORE_URL, recoreFeatures, recorePlatform } from '@/data/recore'
 export default function ServicesPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Services', path: '/services/' }])} />
       <PageHero
         badge="Our Services"
         icon={<Settings className="w-3.5 h-3.5" />}

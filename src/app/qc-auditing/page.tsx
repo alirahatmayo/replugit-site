@@ -1,5 +1,14 @@
 import { CheckCircle, Shield, Search, Award, BarChart3, Settings, Target } from 'lucide-react'
 import { PageHero, Section, Grid, Card, CTASection } from '@/components/shared/ui'
+import { JsonLd, breadcrumbSchema, serviceSchema } from '@/components/json-ld'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata = pageMetadata({
+  title: "Quality Control & Auditing Services",
+  description: "Comprehensive device inspection and component testing with detailed grading and reporting for electronics refurbishment quality assurance.",
+  path: '/qc-auditing/',
+})
+
 
 const benefits = [
   { icon: Shield, text: 'Industry-standard quality processes' },
@@ -13,6 +22,8 @@ const benefits = [
 export default function QCAuditingPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'QC and Auditing', path: '/qc-auditing/' }])} />
+      <JsonLd data={serviceSchema({ name: 'Quality Control & Auditing Services', description: "Comprehensive device inspection and component testing with detailed grading and reporting for electronics refurbishment quality assurance.", path: '/qc-auditing/' })} />
       {/* Hero Section */}
       <PageHero
         badge="QC and Auditing"

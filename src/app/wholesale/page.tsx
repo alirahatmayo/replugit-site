@@ -1,11 +1,18 @@
-import { Metadata } from 'next'
 import { Package, TrendingUp, Shield, Truck, Globe, Smartphone, Monitor, Server, Mail, MessageCircle, Phone, Clock, CheckCircle } from 'lucide-react'
 import { PageHero, Section, Grid, Card, Button } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema, serviceSchema } from '@/components/json-ld'
 
-export const metadata: Metadata = {
-  title: 'Wholesale Electronics Distribution | Replugit',
-  description: 'Professional wholesale electronics distribution for retailers, resellers, and enterprises. Bulk pricing, reliable supply, and business support.',
-}
+const PAGE_NAME = 'Wholesale Electronics Distribution'
+const PAGE_PATH = '/wholesale/'
+const PAGE_DESC =
+  "Join 500+ retailers and resellers in our exclusive WhatsApp community. Get instant access to daily wholesale deals, bulk pricing, and real-time inventory updates."
+
+export const metadata = pageMetadata({
+  title: PAGE_NAME,
+  description: PAGE_DESC,
+  path: PAGE_PATH,
+})
 
 const WHATSAPP_URL = 'https://chat.whatsapp.com/KdPqKlFB1eS6AO3I5mConi'
 const WHOLESALE_INQUIRY_URL =
@@ -73,6 +80,8 @@ const categories = [
 export default function WholesalePage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Wholesale', path: PAGE_PATH }])} />
+      <JsonLd data={serviceSchema({ name: PAGE_NAME, description: PAGE_DESC, path: PAGE_PATH })} />
       {/* Hero Section */}
       <PageHero
         badge="Wholesale Distribution"

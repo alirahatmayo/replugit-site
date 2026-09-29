@@ -1,4 +1,13 @@
 import { PageHero, Section } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
+
+export const metadata = pageMetadata({
+  title: 'Test Page',
+  description: "Internal Tailwind theme-token smoke test. Not a content page.",
+  path: '/test/',
+  noindex: true,
+})
 
 /* Smoke test for Tailwind: one swatch per theme token. */
 const swatches = [
@@ -14,6 +23,7 @@ const swatches = [
 export default function TestPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Test', path: '/test/' }])} />
       <PageHero title="Replugit Test Page" description="If you can see this page styled with the site's theme tokens, Tailwind is working!" align="center" />
       <Section wide>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

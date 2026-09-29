@@ -1,11 +1,13 @@
-import { Metadata } from 'next'
 import { Wrench, Shield, Recycle, CheckCircle, Clock, Award, Smartphone, Laptop, Monitor, Phone, Mail, MapPin } from 'lucide-react'
 import { PageHero, Section, Grid, Card, Button } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
 
-export const metadata: Metadata = {
-  title: 'Device Refurbishment Services | Replugit',
+export const metadata = pageMetadata({
+  title: 'Device Refurbishment Services',
   description: 'Professional device refurbishment services. We restore electronics to like-new condition with quality testing and warranty coverage.',
-}
+  path: '/device-refurbishment/',
+})
 
 const steps = [
   { n: '1', title: 'Initial Assessment', text: 'Comprehensive diagnostic to identify all issues and determine refurbishment scope' },
@@ -17,6 +19,7 @@ const steps = [
 export default function DeviceRefurbishmentPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Device Refurbishment', path: '/device-refurbishment/' }])} />
       {/* Hero Section */}
       <PageHero
         badge="Professional Refurbishment"

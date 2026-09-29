@@ -1,5 +1,14 @@
 import { Leaf, Package, Settings, RefreshCw } from 'lucide-react'
 import { PageHero, Section, Grid, Card, Prose, StatRow, CTASection } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
+
+export const metadata = pageMetadata({
+  title: "Building a Sustainable Future",
+  description: "Every refurbished device prevents toxic e-waste and reduces carbon emissions. Join us in creating a circular economy for electronics.",
+  path: '/environmental-impact/',
+})
+
 
 /*
  * Environmental impact overview. Navigation and Footer come from the root
@@ -40,6 +49,7 @@ const certifications = [
 export default function EnvironmentalImpactPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Environmental Impact', path: '/environmental-impact/' }])} />
       {/* Hero Section */}
       <PageHero
         badge="Environmental Impact"

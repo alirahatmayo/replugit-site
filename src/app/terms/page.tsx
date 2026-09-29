@@ -1,10 +1,12 @@
-import { Metadata } from 'next'
 import { PageHero, Section, Prose, Checklist } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
 
-export const metadata: Metadata = {
-  title: 'Terms of Service | Replugit',
+export const metadata = pageMetadata({
+  title: 'Terms of Service',
   description: 'Replugit terms of service for our electronics refurbishment and wholesale services.',
-}
+  path: '/terms/',
+})
 
 const h2 = 'text-lg font-semibold text-foreground mt-8 mb-2'
 
@@ -17,6 +19,7 @@ export default function TermsPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Terms of Service', path: '/terms/' }])} />
       <PageHero title="Terms of Service" description={`Last updated: ${lastUpdated}`} />
 
       <Section>

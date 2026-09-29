@@ -1,5 +1,14 @@
 import { Package, Truck, CheckCircle, Clock, MapPin, Shield, Settings } from 'lucide-react'
 import { PageHero, Section, Grid, Card, CTASection } from '@/components/shared/ui'
+import { JsonLd, breadcrumbSchema, serviceSchema } from '@/components/json-ld'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata = pageMetadata({
+  title: "Device Preparation & Logistics Services",
+  description: "Professional electronics preparation services with retail packaging, protective transit solutions, and fulfillment-ready processing for corporate and retail distribution.",
+  path: '/prep-services/',
+})
+
 
 const benefits = [
   { icon: Clock, text: 'Fast turnaround times' },
@@ -13,6 +22,8 @@ const benefits = [
 export default function PrepServicesPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Prep Services', path: '/prep-services/' }])} />
+      <JsonLd data={serviceSchema({ name: 'Device Preparation & Logistics Services', description: "Professional electronics preparation services with retail packaging, protective transit solutions, and fulfillment-ready processing for corporate and retail distribution.", path: '/prep-services/' })} />
       {/* Hero Section */}
       <PageHero
         badge="Prep Services"

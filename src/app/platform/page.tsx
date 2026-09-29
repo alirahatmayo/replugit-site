@@ -1,5 +1,14 @@
 import { Package, Shield, BarChart3, RefreshCw, FileText, Settings, Zap, TrendingUp, Target, Wrench, Mail } from 'lucide-react'
 import { PageHero, Section, Grid, Card, Prose, DarkPanel, Eyebrow, Caption } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
+
+export const metadata = pageMetadata({
+  title: "Complete Electronics Lifecycle Platform",
+  description: "From procurement to resale, a modular suite of tools that work independently or as part of our comprehensive platform.",
+  path: '/platform/',
+})
+
 
 /*
  * Platform overview. The nav links to /platform#inventory and
@@ -8,6 +17,7 @@ import { PageHero, Section, Grid, Card, Prose, DarkPanel, Eyebrow, Caption } fro
 export default function PlatformPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Platform', path: '/platform/' }])} />
       {/* Hero Section */}
       <PageHero
         badge="ReplugIT Platform & Tools"

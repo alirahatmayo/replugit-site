@@ -1,9 +1,20 @@
 import { Package, Clock } from 'lucide-react'
 import { PageHero, Section, Grid, Card, Notice, StatRow } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
+
+export const metadata = pageMetadata({
+  title: 'Wholesale Electronics Service',
+  description: 'Global bulk distribution for retailers, resellers, and enterprises with competitive pricing and reliable supply chains.',
+  path: '/services/wholesale/',
+  canonicalUrl: 'https://www.replugit.com/wholesale/',
+  noindex: true,
+})
 
 export default function WholesaleServicePage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Wholesale', path: '/services/wholesale/' }])} />
       <PageHero
         badge="Service"
         icon={<Package className="w-3.5 h-3.5" />}

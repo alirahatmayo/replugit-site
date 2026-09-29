@@ -15,6 +15,29 @@ import {
 } from 'lucide-react'
 import { Section, Grid, Card, Prose, StatRow, DarkPanel, Notice, Button, Caption } from '@/components/shared/ui'
 import WarrantyBanner from '@/components/warranty/WarrantyBanner'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema, faqSchema } from '@/components/json-ld'
+
+export const metadata = pageMetadata({
+  title: 'Automated Warranty Management',
+  description: "Transform your Excel nightmare into an automated warranty system that saves vendors 40% on admin costs and ensures Quebec Bill 29 compliance.",
+  path: '/warranty/',
+})
+
+const warrantyFaqs = [
+  {
+    question: `What is Quebec's Bill 29 and who does it apply to?`,
+    answer: `Quebec's Bill 29 (2023) requires all merchants selling household appliances and electronics to provide mandatory "good working order" warranties for prescribed goods. Non-compliance penalties can reach up to 5% of worldwide revenue, and directors and officers are personally liable.`,
+  },
+  {
+    question: `What does Bill 29 require electronics vendors to do?`,
+    answer: `Vendors must provide a mandatory warranty for prescribed goods, disclose warranty information in French before the sale, maintain detailed warranty records for all sales, provide repair information and replacement parts, and allow consumer access to warranty documentation.`,
+  },
+  {
+    question: `How does ReplugIT's warranty platform help with Bill 29 compliance?`,
+    answer: `It automatically keeps warranty records with serial numbers, produces bilingual French/English documentation, maintains a complete audit trail for compliance verification, gives customers a portal to access their warranty information, and issues QR codes for instant warranty activation and tracking.`,
+  },
+]
 
 /* Bulleted list with a small icon instead of the accent dot, used where the bullet carries meaning (a problem vs a fix). */
 function IconList({ items, icon }: { items: ReactNode[]; icon: ReactNode }) {
@@ -68,6 +91,8 @@ const steps = [
 export default function WarrantyPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Warranty', path: '/warranty/' }])} />
+      <JsonLd data={faqSchema(warrantyFaqs)} />
       <WarrantyBanner />
 
       {/* The Problem Section - Story Beginning */}

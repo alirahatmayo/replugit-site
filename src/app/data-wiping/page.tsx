@@ -1,5 +1,14 @@
 import { Shield, HardDrive, Lock, FileX, CheckCircle, Award, AlertTriangle } from 'lucide-react'
 import { PageHero, Section, Grid, Card, DarkPanel, Notice, CTASection, Button } from '@/components/shared/ui'
+import { JsonLd, breadcrumbSchema, serviceSchema } from '@/components/json-ld'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata = pageMetadata({
+  title: "Secure Data Erasure Services",
+  description: "Military-grade data destruction and secure erasure services ensuring complete data protection and compliance with privacy regulations.",
+  path: '/data-wiping/',
+})
+
 
 const benefits = [
   { icon: Shield, text: 'Certified software and tools' },
@@ -15,6 +24,8 @@ const darkLink = 'text-primary-foreground underline underline-offset-4 decoratio
 export default function DataWipingPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Data Wiping', path: '/data-wiping/' }])} />
+      <JsonLd data={serviceSchema({ name: 'Secure Data Erasure Services', description: "Military-grade data destruction and secure erasure services ensuring complete data protection and compliance with privacy regulations.", path: '/data-wiping/' })} />
       {/* Hero Section */}
       <PageHero
         badge="Data Wiping"

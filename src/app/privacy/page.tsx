@@ -1,10 +1,12 @@
-import { Metadata } from 'next'
 import { PageHero, Section, Prose, Checklist } from '@/components/shared/ui'
+import { pageMetadata } from '@/lib/metadata'
+import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy | Replugit',
+export const metadata = pageMetadata({
+  title: 'Privacy Policy',
   description: 'Replugit privacy policy and data protection practices for our electronics refurbishment services.',
-}
+  path: '/privacy/',
+})
 
 const h2 = 'text-lg font-semibold text-foreground mt-8 mb-2'
 
@@ -17,6 +19,7 @@ export default function PrivacyPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy/' }])} />
       <PageHero title="Privacy Policy" description={`Last updated: ${lastUpdated}`} />
 
       <Section>
