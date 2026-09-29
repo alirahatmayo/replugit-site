@@ -28,21 +28,26 @@ const benefits = [
   { value: '80%', label: 'Water Conservation', note: 'Less water vs. new production' },
 ]
 
+/*
+ * Matches the honest status on /sustainability#progress: these are goals
+ * we're actively working toward, not certifications we hold yet. Do not
+ * change this to "certified" language without updating that page too.
+ */
 const certifications = [
   {
+    badge: 'HTM',
+    title: 'HTM Certification',
+    description: 'Hardware Technology Management certification for professional electronics handling. In progress, targeting Q2 2025.',
+  },
+  {
     badge: 'ISO',
-    title: 'ISO 14001',
-    description: 'Environmental Management System certification ensuring systematic approach to environmental responsibility.',
+    title: 'ISO 14001 Preparation',
+    description: 'Environmental Management Systems framework implementation. Planning stage, targeting Q4 2025.',
   },
   {
     badge: 'R2',
-    title: 'R2 Certified',
-    description: 'Responsible Recycling standard for electronics recyclers, ensuring data security and environmental protection.',
-  },
-  {
-    badge: 'EPA',
-    title: 'EPA Compliant',
-    description: 'Full compliance with Environmental Protection Agency guidelines for electronic waste management.',
+    title: 'R2 Responsible Recycling',
+    description: 'Electronics recycling and data security standard compliance. Research phase, targeting 2026.',
   },
 ]
 
@@ -113,12 +118,17 @@ export default function EnvironmentalImpactPage() {
       </Section>
 
       {/* Certifications */}
-      <Section wide title="Certifications & Standards" subtitle="Our environmental practices are verified by leading certification bodies" align="center">
+      <Section wide title="Certifications & Standards" subtitle="Goals we're actively working toward as part of formalizing our environmental practices" align="center">
         <Grid cols={3}>
           {certifications.map((c) => (
             <Card key={c.title} icon={<span className="text-[10px] font-mono font-bold">{c.badge}</span>} title={c.title} description={c.description} tone="surface" />
           ))}
         </Grid>
+        <div className="mt-4 text-center">
+          <a href="/sustainability#progress" className="text-sm font-semibold text-accent hover:underline underline-offset-4">
+            See our full certification journey
+          </a>
+        </div>
       </Section>
 
       {/* CTA Section */}
