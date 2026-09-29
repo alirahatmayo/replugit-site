@@ -6,7 +6,10 @@ import {
   Check,
   CheckCircle,
   ClipboardList,
+  Clock,
+  DollarSign,
   FileText,
+  FileX,
   QrCode,
   ShoppingCart,
   Smartphone,
@@ -20,7 +23,7 @@ import { JsonLd, breadcrumbSchema, faqSchema } from '@/components/json-ld'
 
 export const metadata = pageMetadata({
   title: 'Automated Warranty Management',
-  description: "Transform your Excel nightmare into an automated warranty system that saves vendors 40% on admin costs and ensures Quebec Bill 29 compliance.",
+  description: "Replace the Excel spreadsheet with an automated warranty system that cuts the admin work and ensures Quebec Bill 29 compliance.",
   path: '/warranty/',
 })
 
@@ -97,23 +100,11 @@ export default function WarrantyPage() {
 
       {/* The Problem Section - Story Beginning */}
       <Section wide title="The Hidden Cost of Manual Warranty Management" subtitle="Every day, electronics vendors struggle with an invisible profit killer">
-        {/* Statistics */}
+        {/* Why manual tracking breaks down, in plain terms rather than invented statistics */}
         <Grid cols={3}>
-          <div className="rounded-2xl bg-surface p-6">
-            <div className="font-mono text-3xl font-semibold tracking-tight text-foreground mb-2">73%</div>
-            <p className="text-[15px] font-medium text-foreground">of warranty claims fail</p>
-            <p className="text-sm text-muted-foreground mt-1">due to missing serial number records</p>
-          </div>
-          <div className="rounded-2xl bg-surface p-6">
-            <div className="font-mono text-3xl font-semibold tracking-tight text-foreground mb-2">$2,500+</div>
-            <p className="text-[15px] font-medium text-foreground">monthly loss</p>
-            <p className="text-sm text-muted-foreground mt-1">from untracked warranties (average vendor)</p>
-          </div>
-          <div className="rounded-2xl bg-surface p-6">
-            <div className="font-mono text-3xl font-semibold tracking-tight text-foreground mb-2">6 hours</div>
-            <p className="text-[15px] font-medium text-foreground">wasted weekly</p>
-            <p className="text-sm text-muted-foreground mt-1">managing Excel spreadsheets</p>
-          </div>
+          <Card icon={<FileX />} title="Records go missing" description="A serial number that lives only in a spreadsheet is one deleted row or corrupted file away from disappearing, along with the warranty claim behind it." tone="surface" />
+          <Card icon={<DollarSign />} title="Untracked warranties cost money" description="Every claim you can't verify is a customer you either refund unnecessarily or lose for good." tone="surface" />
+          <Card icon={<Clock />} title="Spreadsheets take time" description="Logging serial numbers, customer details and claim status by hand for every sale adds up fast." tone="surface" />
         </Grid>
 
         {/* Core Problem Statement */}

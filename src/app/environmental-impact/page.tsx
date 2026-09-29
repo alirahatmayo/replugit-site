@@ -14,18 +14,24 @@ export const metadata = pageMetadata({
  * Environmental impact overview. Navigation and Footer come from the root
  * layout, so this page only renders its own sections.
  */
+/*
+ * We don't have audited totals for our own refurbishing volume, so this
+ * describes the process instead of claiming a cumulative number (the
+ * previous version said "10,000+ Devices Refurbished" with no source).
+ */
 const impactStats = [
-  { value: '75%', label: 'E-Waste Reduced' },
-  { value: '10,000+', label: 'Devices Refurbished' },
-  { value: '50 Tons', label: 'CO₂ Prevented' },
-  { value: '95%', label: 'Materials Recovered' },
+  { value: 'Circular', label: 'Refurbishment Model' },
+  { value: 'Graded', label: 'Every Device Tested' },
+  { value: 'Tracked', label: 'By Serial Number' },
+  { value: 'In Progress', label: 'Certification Journey' },
 ]
 
+/* Qualitative on purpose: we don't have a verified percentage for how much less water/carbon/material a refurbished device costs versus a new one, so this makes the true directional point without a fabricated number attached. */
 const benefits = [
-  { value: '75%', label: 'Reduction in E-Waste', note: 'Per device refurbished vs. disposed' },
-  { value: '70%', label: 'Lower Carbon Footprint', note: 'Compared to manufacturing new' },
-  { value: '95%', label: 'Materials Recovered', note: 'Valuable metals and components' },
-  { value: '80%', label: 'Water Conservation', note: 'Less water vs. new production' },
+  { label: 'Less E-Waste', note: 'Every refurbished device is one that does not end up in a landfill.' },
+  { label: 'Lower Carbon Footprint', note: 'Refurbishing avoids the manufacturing emissions of building a device from scratch.' },
+  { label: 'Materials Recovered', note: 'Valuable metals and components stay in use instead of being lost.' },
+  { label: 'Less Water Used', note: 'Refurbishing uses a fraction of what new manufacturing requires.' },
 ]
 
 /*
@@ -105,13 +111,12 @@ export default function EnvironmentalImpactPage() {
       </Section>
 
       {/* Environmental Benefits */}
-      <Section wide title="Environmental Benefits" subtitle="Every refurbished device creates measurable environmental impact" align="center">
+      <Section wide title="Environmental Benefits" subtitle="What refurbishing instead of manufacturing new actually avoids" align="center">
         <Grid cols={4}>
           {benefits.map((b) => (
             <div key={b.label} className="rounded-2xl bg-card-primary p-6">
-              <div className="font-mono text-2xl font-semibold tracking-tight text-foreground">{b.value}</div>
-              <div className="text-sm font-semibold text-foreground mt-2">{b.label}</div>
-              <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{b.note}</p>
+              <div className="text-sm font-semibold text-foreground">{b.label}</div>
+              <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{b.note}</p>
             </div>
           ))}
         </Grid>

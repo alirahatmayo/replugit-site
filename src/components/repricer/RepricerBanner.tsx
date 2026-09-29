@@ -35,8 +35,8 @@ const RepricerBanner = () => (
           </h1>
 
           <p className="text-base text-muted-foreground leading-[1.75] mb-6 hero-blur-in delay-2">
-            Stay competitive 24/7 with AI-powered pricing that maximizes profits and wins
-            <span className="text-accent font-semibold"> 30% more Buy Boxes</span>
+            Stay competitive 24/7 with automated pricing that
+            <span className="text-accent font-semibold"> protects your margins and keeps you winning Buy Box</span>
           </p>
 
           {/* Key Benefits List */}
@@ -67,7 +67,7 @@ const RepricerBanner = () => (
             <span>•</span>
             <span>Flexible pricing options</span>
             <span>•</span>
-            <span>ROI guarantee</span>
+            <span>No long-term commitment</span>
           </div>
         </div>
 
@@ -87,27 +87,29 @@ const RepricerBanner = () => (
                 </div>
               </div>
 
-              {/* Stats Grid */}
+              {/*
+               * Dashboard preview: describes what the product does, not
+               * Replugit's own live usage numbers. No invented SKU counts
+               * or win-rate benchmarks.
+               */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-card-primary p-4 rounded-xl">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="font-mono text-2xl font-semibold tracking-tight text-foreground">2,847</div>
+                    <div className="font-mono text-2xl font-semibold tracking-tight text-foreground">Unlimited</div>
                     <div className="w-8 h-8 bg-accent/10 text-accent rounded-lg flex items-center justify-center">
                       <LayoutGrid className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="text-xs text-muted-foreground font-medium">Active SKUs</div>
-                  <div className="text-xs text-accent font-semibold">↗ +347 this month</div>
+                  <div className="text-xs text-muted-foreground font-medium">SKUs Tracked</div>
                 </div>
                 <div className="bg-card-secondary p-4 rounded-xl">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="font-mono text-2xl font-semibold tracking-tight text-foreground">67.3%</div>
+                    <div className="font-mono text-2xl font-semibold tracking-tight text-foreground">Auto</div>
                     <div className="w-8 h-8 bg-accent/10 text-accent rounded-lg flex items-center justify-center">
                       <Award className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="text-xs text-muted-foreground font-medium">Buy Box Win Rate</div>
-                  <div className="text-xs text-accent font-semibold">↗ +12.3% vs last quarter</div>
+                  <div className="text-xs text-muted-foreground font-medium">Buy Box Price Matching</div>
                 </div>
               </div>
 
@@ -151,7 +153,7 @@ const RepricerBanner = () => (
             <div className="absolute -top-3 -right-3 bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold">
               <div className="flex items-center gap-1.5">
                 <TrendingUp className="w-4 h-4" />
-                30% More Buy Boxes
+                Auto-Adjusted Pricing
               </div>
             </div>
             <div className="absolute -bottom-3 -left-3 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">

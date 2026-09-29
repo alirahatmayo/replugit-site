@@ -1,5 +1,5 @@
 import { ShieldCheck, Clock } from 'lucide-react'
-import { PageHero, Section, Grid, Card, Notice, StatRow } from '@/components/shared/ui'
+import { PageHero, Section, Grid, Card, Notice } from '@/components/shared/ui'
 import { pageMetadata } from '@/lib/metadata'
 import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
 
@@ -30,9 +30,7 @@ export default function QualityAssuranceServicePage() {
 
         <Grid cols={2} className="mt-4">
           <Card title="Key Features" items={['Certified Testing', 'Compliance Check', 'Performance Audit']} />
-          <Card title="Pass Rate" tone="surface">
-            <StatRow stats={[{ value: '99%', label: 'Pass Rate' }]} />
-          </Card>
+          <Card title="Full Coverage" tone="surface" description="Every device is tested and graded before it goes back out for resale." />
         </Grid>
       </Section>
     </main>

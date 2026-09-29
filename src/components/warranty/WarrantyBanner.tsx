@@ -24,8 +24,8 @@ export default function WarrantyBanner() {
             </h1>
 
             <p className="text-base text-muted-foreground leading-[1.75] mb-6 hero-blur-in delay-2">
-              Transform your Excel nightmare into an automated warranty system that saves vendors
-              <span className="text-foreground font-medium"> 40% on admin costs</span> and ensures{' '}
+              Replace the Excel spreadsheet with an automated warranty system that
+              <span className="text-foreground font-medium"> cuts the admin work</span> and ensures{' '}
               <span className="text-accent font-medium">Quebec Bill 29 compliance</span>
             </p>
 
@@ -78,47 +78,50 @@ export default function WarrantyBanner() {
                   </div>
                 </div>
 
-                {/* Enhanced Stats Grid */}
+                {/*
+                 * Dashboard preview: what the interface does, not a claim
+                 * about Replugit's own live customer numbers. No invented
+                 * counts, ratings or comparative benchmarks here, only
+                 * mechanism facts already established elsewhere on this
+                 * page (30-second QR activation, bilingual documentation).
+                 */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="bg-card-primary p-4 rounded-2xl">
-                    <div className="font-mono text-2xl font-semibold tracking-tight text-foreground mb-2">1,247</div>
-                    <div className="text-xs text-muted-foreground font-medium">Active Claims</div>
-                    <div className="text-xs text-accent font-semibold">↗ +12% this month</div>
+                    <div className="font-mono text-2xl font-semibold tracking-tight text-foreground mb-2">Auto</div>
+                    <div className="text-xs text-muted-foreground font-medium">Warranty Record Keeping</div>
                   </div>
                   <div className="bg-card-secondary p-4 rounded-2xl">
-                    <div className="font-mono text-2xl font-semibold tracking-tight text-foreground mb-2">98.5%</div>
-                    <div className="text-xs text-muted-foreground font-medium">Resolution Rate</div>
-                    <div className="text-xs text-accent font-semibold">↗ +5.2% vs last quarter</div>
+                    <div className="font-mono text-2xl font-semibold tracking-tight text-foreground mb-2">Live</div>
+                    <div className="text-xs text-muted-foreground font-medium">Claim & Status Tracking</div>
                   </div>
                 </div>
 
-                {/* Enhanced Progress Section */}
                 <div className="space-y-4">
                   <div className="bg-surface p-4 rounded-2xl">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-foreground">Average Processing Time</span>
-                      <span className="text-sm font-semibold font-mono text-accent">2.3 days</span>
-                    </div>
-                    <div className="w-full bg-muted-foreground/10 rounded-full h-1.5 overflow-hidden">
-                      <div className="bg-accent h-1.5 rounded-full w-4/5"></div>
-                    </div>
-                    <div className="text-xs text-muted-foreground mt-1">85% faster than industry average</div>
-                  </div>
-                  <div className="bg-surface p-4 rounded-2xl">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-foreground">Customer Satisfaction</span>
-                      <span className="text-sm font-semibold font-mono text-accent">4.8/5.0</span>
+                      <span className="text-sm font-medium text-foreground">Warranty Activation</span>
+                      <span className="text-sm font-semibold font-mono text-accent">~30 seconds</span>
                     </div>
                     <div className="w-full bg-muted-foreground/10 rounded-full h-1.5 overflow-hidden">
                       <div className="bg-accent h-1.5 rounded-full w-11/12"></div>
                     </div>
-                    <div className="text-xs text-muted-foreground mt-1">92% recommend our service</div>
+                    <div className="text-xs text-muted-foreground mt-1">Customer scans a QR code to activate</div>
+                  </div>
+                  <div className="bg-surface p-4 rounded-2xl">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium text-foreground">Documentation</span>
+                      <span className="text-sm font-semibold font-mono text-accent">FR / EN</span>
+                    </div>
+                    <div className="w-full bg-muted-foreground/10 rounded-full h-1.5 overflow-hidden">
+                      <div className="bg-accent h-1.5 rounded-full w-full"></div>
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1">Bilingual, as Bill 29 requires</div>
                   </div>
                 </div>
               </div>
 
               {/* Enhanced Floating Elements */}
-              <div className="absolute -top-3 -right-3 bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold">40% Cost Savings</div>
+              <div className="absolute -top-3 -right-3 bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold">Bill 29 Ready</div>
               <div className="absolute -bottom-3 -left-3 bg-foreground text-background px-4 py-2 rounded-full text-sm font-semibold">24/7 Automated</div>
             </div>
           </div>

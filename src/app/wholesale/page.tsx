@@ -6,7 +6,7 @@ import { JsonLd, breadcrumbSchema, serviceSchema } from '@/components/json-ld'
 const PAGE_NAME = 'Wholesale Electronics Distribution'
 const PAGE_PATH = '/wholesale/'
 const PAGE_DESC =
-  "Join 500+ retailers and resellers in our exclusive WhatsApp community. Get instant access to daily wholesale deals, bulk pricing, and real-time inventory updates."
+  "Join retailers and resellers in our exclusive WhatsApp community. Get instant access to daily wholesale deals, bulk pricing, and real-time inventory updates."
 
 export const metadata = pageMetadata({
   title: PAGE_NAME,
@@ -88,7 +88,7 @@ export default function WholesalePage() {
         icon={<Package className="w-3.5 h-3.5" />}
         title="Wholesale Electronics"
         titleMuted="Distribution Partner"
-        description="Join 500+ retailers and resellers in our exclusive WhatsApp community. Get instant access to daily wholesale deals, bulk pricing, and real-time inventory updates."
+        description="Join retailers and resellers in our exclusive WhatsApp community. Get instant access to daily wholesale deals, bulk pricing, and real-time inventory updates."
         align="center"
       >
         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`${externalButton} px-7 py-3.5 text-base`}>

@@ -15,8 +15,8 @@ const solutions = [
     title: 'Wholesale Distribution',
     subtitle: 'Bulk Electronics Supply',
     description:
-      'Access our extensive inventory of wholesale electronics with competitive pricing and global shipping. Perfect for retailers, resellers, and distributors looking for reliable supply chains.',
-    features: ['Hundreds of units in stock', 'Volume discounts available', 'Global shipping network', 'Quality assured products', 'Dedicated account manager'],
+      'Access our extensive inventory of wholesale electronics with competitive pricing and reliable shipping. Perfect for retailers, resellers, and distributors looking for reliable supply chains.',
+    features: ['Hundreds of units in stock', 'Volume discounts available', 'Reliable shipping network', 'Quality assured products', 'Dedicated account manager'],
     metrics: { value: '1000s', label: 'of Units Monthly' },
     icon: WholesaleIcon,
     link: '/wholesale',
@@ -27,7 +27,7 @@ const solutions = [
     description:
       'Transform your C-Grade electronics into A-Grade quality with our professional refurbishing services. Complete testing, certification, and warranty included.',
     features: ['C-Grade to A-Grade transformation', '6-day turnaround time', 'Comprehensive testing', 'Warranty coverage', 'Environmental compliance'],
-    metrics: { value: '95%', label: 'Success Rate' },
+    metrics: { value: 'A-Grade', label: 'Quality Standard' },
     icon: RefurbishingIcon,
     link: '/refurbishing',
   },
@@ -47,7 +47,7 @@ const solutions = [
     description:
       'Ensure your electronics meet the highest standards with our comprehensive testing and certification services. Complete documentation and compliance reporting.',
     features: ['Multi-point inspection', 'Compliance certification', 'Performance testing', 'Documentation package', 'Quality guarantees'],
-    metrics: { value: '99%', label: 'Pass Rate' },
+    metrics: { value: 'Full', label: 'Device Coverage' },
     icon: QualityIcon,
     link: '/qc-auditing',
   },
@@ -57,7 +57,7 @@ const solutions = [
     description:
       'Join the circular economy movement with our comprehensive e-waste reduction and sustainability initiatives. Every refurbished device prevents toxic waste and reduces carbon footprint.',
     features: ['E-waste reduction programs', 'Carbon footprint tracking', 'Certified disposal methods', 'Sustainability reporting', 'Green certification badges'],
-    metrics: { value: '75%', label: 'Waste Reduced' },
+    metrics: { value: 'Circular', label: 'Refurbish First' },
     icon: EnvironmentalIcon,
     link: '/sustainability',
   },

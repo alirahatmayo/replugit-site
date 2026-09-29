@@ -6,7 +6,7 @@ import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
 
 export const metadata = pageMetadata({
   title: "Dominate Best Buy Canada with Intelligent Repricing",
-  description: "Stay competitive 24/7 with AI-powered pricing that maximizes profits and wins 30% more Buy Boxes.",
+  description: "Stay competitive 24/7 with automated pricing that protects your margins and keeps you winning Buy Box.",
   path: '/bestbuy-repricer/',
 })
 
@@ -36,11 +36,12 @@ const insights = [
   { title: 'Market Intelligence', text: 'Competitor behavior patterns and strategic insights' },
 ]
 
+/* Capabilities, not invented outcome numbers: what the product does, not an unverified result. */
 const outcomes = [
-  { value: '23%', text: 'Average revenue increase from faster Buy Box wins' },
-  { value: '15hrs', text: 'Weekly time saved from automated monitoring' },
+  { value: 'Faster', text: 'Buy Box wins from automatic price response' },
+  { value: 'Zero', text: 'Manual price-checking required' },
   { value: '30min', text: 'Fastest response time to market changes' },
-  { value: '40%', text: 'More Buy Box wins with smart automation' },
+  { value: 'Protected', text: 'Profit margins, never sold below your threshold' },
 ]
 
 /* A plan cell is a plain yes/no, or a short label with an optional check or cross above it. */
@@ -63,7 +64,7 @@ const planRows: { name: string; desc: string; cells: PlanCell[] }[] = [
 ]
 
 const finalStats = [
-  { value: '50K+', text: 'SKUs monitored daily' },
+  { value: 'Unlimited', text: 'SKUs monitored' },
   { value: '30min', text: 'Automated repricing cycles' },
   { value: '24/7', text: 'Continuous monitoring' },
 ]
@@ -120,7 +121,7 @@ export default function BestBuyRepricerPage() {
           <Card
             icon={<CheckCircle />}
             title="The Result"
-            description="23% average revenue increase, 40% more Buy Box wins, and 15+ hours saved weekly, all while maintaining your profit margins."
+            description="You keep winning Buy Box without watching the market yourself, and your margins stay protected the whole time."
           />
         </Grid>
       </Section>

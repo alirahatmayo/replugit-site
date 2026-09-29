@@ -29,7 +29,6 @@ export const WholesaleIcon = ({ className = "w-16 h-16" }: { className?: string 
     <rect x="58" y="80" width="4" height="5" fill="currentColor" fillOpacity="0.4"/>
     
     {/* Quantity indicators */}
-    <text x="50" y="30" textAnchor="middle" fontSize="8" fill="currentColor" opacity="0.6">10K+</text>
   </svg>
 )
 
@@ -152,7 +151,6 @@ export const QualityIcon = ({ className = "w-16 h-16" }: { className?: string })
     <path d="M8 66 L9 67 L11 65" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.6"/>
     
     {/* Quality percentage */}
-    <text x="50" y="85" textAnchor="middle" fontSize="8" fill="currentColor" opacity="0.7">99%</text>
   </svg>
 )
 
@@ -205,6 +203,5 @@ export const EnvironmentalIcon = ({ className = "w-16 h-16" }: { className?: str
     <text x="85" y="52" textAnchor="middle" fontSize="5" fill="currentColor" opacity="0.7">ECO</text>
     
     {/* Percentage indicator */}
-    <text x="50" y="90" textAnchor="middle" fontSize="8" fill="currentColor" opacity="0.7">75%</text>
   </svg>
 )

@@ -1,5 +1,5 @@
 import { RefreshCw, Clock } from 'lucide-react'
-import { PageHero, Section, Grid, Card, Notice, StatRow } from '@/components/shared/ui'
+import { PageHero, Section, Grid, Card, Notice } from '@/components/shared/ui'
 import { pageMetadata } from '@/lib/metadata'
 import { JsonLd, breadcrumbSchema } from '@/components/json-ld'
 
@@ -30,9 +30,7 @@ export default function RefurbishingServicePage() {
 
         <Grid cols={2} className="mt-4">
           <Card title="Key Features" items={['Grade Improvement', 'Quality Testing', 'Warranty Included']} />
-          <Card title="Success Rate" tone="surface">
-            <StatRow stats={[{ value: '95%', label: 'Success Rate' }]} />
-          </Card>
+          <Card title="Every Device" tone="surface" description="Tested and quality-checked before it ships, with a warranty included." />
         </Grid>
       </Section>
     </main>
